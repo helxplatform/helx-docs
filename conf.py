@@ -20,6 +20,7 @@
 project = 'HeLx'
 copyright = '2020, Isma Gilani'
 author = 'Isma Gilani'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0'
