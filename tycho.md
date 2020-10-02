@@ -31,7 +31,7 @@ Quick Start
 
 samples/jupyter-ds/docker-compose.yaml:
 
-```python
+```
 ---
 # Docker compose formatted system.
 version: "3"
