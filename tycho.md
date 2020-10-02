@@ -1,13 +1,13 @@
-Tycho
-=======
+# Tycho
+
 Tycho is an API, compiler, and executor for cloud native distributed systems.
 
 - A subset of [docker-compose](https://docs.docker.com/compose/) is the system specification syntax.
 - [Kubernetes](https://kubernetes.io/) is the first supported orchestrator.
 - The Helm chart for deploying Tycho can be found [here](https://github.com/helxplatform/devops/tree/master/helx/charts/tycho-api).
 
-Goals
----------
+## Goals
+
 
 - **Application Simplity**: The Kubernetes API is reliable, extensive, and well documented. It is also large, complex, supports a range of possibilities greater than many applications need, and often requires the creation and control of many objects to execute comparatively simple scenarios. Tycho bridges the simplicity of Compose to the richness of the Kubernetes' architecture.
 - **icroservice**: We wanted an end to end Python 12-factory style OpenAPI microservice that fits seamlessly into a Python ecosystem (which is why we did not use the excellent Kompose tool as a starting point).
@@ -15,8 +15,7 @@ Goals
 - **Pluggable Orchestrators**: The Tycho compiler abstracts clients from the orchestrator. It creates an abstract syntax tree to model input systems and generates orchestrator specific artifacts.
 - **Policy**: Tycho now generates network policy configurations governing the ingress and egress of traffic to systems. We anticipate generalizing the policy layer to allow security and other concerns to be woven into a deployment dynamically.
 
-Partnering Technologies
----------
+## Partnering Technologies
 
 This work relies on these foundations:
 - **[PIVOT](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjpusKw2YzsAhUBlHIEHXNbBicQFjAAegQIBBAB&url=https%3A%2F%2Frenci.org%2Fwp-content%2Fuploads%2F2019%2F02%2FCloud_19.pdf&usg=AOvVaw26F8j_JW86Vg3HZE6gHyaV)**: A cloud agnostic scheduler with an API for executing distributed systems.
@@ -26,8 +25,7 @@ This work relies on these foundations:
 - **[Docker-compose](https://docs.docker.com/compose/)**: Syntax and tool chain for executing distributed systems of containers.
 - **Docker Swarm**: Docker only container orchestration platform with minimal adoption.
 
-Quick Start
----------
+## Quick Start
 
 samples/jupyter-ds/docker-compose.yaml:
 
