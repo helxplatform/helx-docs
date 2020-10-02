@@ -5,11 +5,10 @@
 
 .. toctree::
    :maxdepth: 2
-  
-   Tycho <tycho>
-   AppStore <appstore>
-   Installation <installation>
-   Current and Upcoming Releases <releases>
+* [Tycho](tycho.md)
+* [AppStore](appstore.md)
+* [Installation](installation.md)
+* [Current and Upcoming Releases](releases.md)
 
 # HeLx User Documentation
 
