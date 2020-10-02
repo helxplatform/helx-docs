@@ -1,3 +1,9 @@
+.. toctree::
+   :maxdepth: 2
+
+   DevOps <install_devops>
+   More Specific Installs <install_more>
+
 Installation
 ==================
 

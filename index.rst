@@ -20,6 +20,7 @@ Contact HeLx Help with questions.
    Tycho <tycho>
    AppStore <appstore>
    Installation <installation>
+   Current and Upcoming Releases <releases>
      
 
 Indices and tables
