@@ -1,3 +1,11 @@
+.. toctree::
+   :maxdepth: 2
+
+   Overview <overview>
+   Authentication <authentication>
+   Applications <applications>
+    
+
 AppStore
 ==================
 
