@@ -11,9 +11,11 @@
    Installation <installation>
    Current and Upcoming Releases <releases>
 
-# HeLx User Documentation
+HeLx User Documentation
+=============
 
-## Welcome to HeLx 1.
+Welcome to HeLx 1.
+----------------
 
 HeLx puts the most advanced analytical scientific models at investigator's finger tips using equally advanced cloud native, container orchestrated, distributed computing systems. HeLx can be applied in many domains. Its ability to empower researchers to leverage advanced analytical tools without installation or other infrastructure concerns has broad reaching benefits.
 
