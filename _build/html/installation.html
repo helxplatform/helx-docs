@@ -14,8 +14,6 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sample Text" href="install_devops.html" />
-    <link rel="prev" title="Sample Text" href="app_rstudio.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,12 +30,10 @@
 
           <div class="body" role="main">
             
-  <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">More Specific Installs</a></li>
-</ul>
-</div>
+  <p>.. toctree::
+:maxdepth: 2</p>
+<p>DevOps &lt;install_devops&gt;
+More Specific Installs &lt;install_more&gt;</p>
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>This page describes the deployment artifacts and deployment instructions in a k8s environment.</p>
@@ -46,7 +42,7 @@
 <h1>Installing HeLx<a class="headerlink" href="#installing-helx" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-helm">
 <h2>Install Helm<a class="headerlink" href="#install-helm" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Download any helm3 release</p></li>
 <li><p>Unpack it using tar (tar -zxvf helm-v3.0.0-linux-amd64.tar.gz)</p></li>
 <li><p>Move the helm binary to a desired location (mv linux-amd64/helm /usr/local/bin/helm)</p></li>
@@ -71,36 +67,11 @@
 
 
 <h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tycho.html">Tycho</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html">Creating an Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_blackbalsam.html">Blackbalsam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_cloudtop.html">Cloudtop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_dicom.html">DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_imagej_napari.html">ImageJ-Napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_jupyter_datascience.html">Jupyter-DataScience</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_nextflow_api.html">Nextflow API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_rstudio.html">RStudio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appstore.html">AppStore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appstore.html#domains">Domains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">More Specific Installs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#installing-helx">Installing HeLx</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-helm">Install Helm</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Current and Upcoming Releases</a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="app_rstudio.html" title="previous chapter">Sample Text</a></li>
-      <li>Next: <a href="install_devops.html" title="next chapter">Sample Text</a></li>
   </ul></li>
 </ul>
 </div>
@@ -134,7 +105,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/installation.rst.txt"
+      <a href="_sources/installation.md.txt"
           rel="nofollow">Page source</a>
     </div>
 

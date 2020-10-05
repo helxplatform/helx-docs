@@ -14,8 +14,6 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sample Text" href="overview.html" />
-    <link rel="prev" title="Tycho" href="tycho.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,28 +30,61 @@
 
           <div class="body" role="main">
             
-  <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html">Creating an Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_blackbalsam.html">Blackbalsam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_cloudtop.html">Cloudtop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_dicom.html">DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_imagej_napari.html">ImageJ-Napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_jupyter_datascience.html">Jupyter-DataScience</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_nextflow_api.html">Nextflow API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_rstudio.html">RStudio</a></li>
-</ul>
-</div>
+  <p>.. toctree::
+:maxdepth: 2</p>
+<p>Overview <overview>
+Authentication <authentication>
+Applications <applications></p>
 <div class="section" id="appstore">
 <h1>AppStore<a class="headerlink" href="#appstore" title="Permalink to this headline">¶</a></h1>
 <p>The HeLx Appstore is the primary user experience component of the HeLx data science platform.</p>
-</div>
 <div class="section" id="domains">
-<h1>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h1>
-<p>HeLx can be applied in many domains. It’s ability to empower researchers to leverage advanced
-analytical tools without installation or other infrastructure concerns has broad reaching benefits.</p>
+<h2>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h2>
+<p>HeLx can be applied in many domains. It’s ability to empower researchers to leverage advanced analytical tools without installation or other infrastructure concerns has broad reaching benefits.</p>
+<p><strong>BRAIN-I</strong></p>
+<p>BRAIN-I investigators create large images of brain tissue which are then visualized and analyzed using a variety of tools which, architecturally, are not web applications but traditional desktop environments. These include image viewers like ImageJ and Napari. Appstore presents these kinds of workspaces using CloudTop, a Linux desktop with screen sharing software and adapters for presenting that interface via a web browser. CloudTop allows us to create HeLx apps for ImageJ, Napari, and other visualization tools. These tools would be time consuming, complex, and error prone, for researchers to install and would still require them to acquire the data. With CloudTop, the system can be run colocated with the data with no installation required.</p>
+<p><strong>SciDAS</strong></p>
+<p>The Scientific Data Analysis at Scale project brings large scale computational workflow for research to cloud and on premise computing. Using the appstore, users are able to launch Nextflow API, a web based user interface to the Nextflow workflow engine. Through that interface and associated tools, they are able to stage data into the system through a variety of protocols, execute Nextflow workflows such as the GPU accelerated <a class="reference external" href="https://github.com/SystemsGenetics/KINC">KINK</a> workflow. Appstore and associated infrastructure has run KINK on the Google Kubernetes Engine and is being installed on the <a class="reference external" href="https://nautilus.optiputer.net/">Nautilus Optiputer</a>.</p>
+<p><strong>BioData Catalyst</strong></p>
+<p>NHLBI BioData Catalyst is a cloud-based platform providing tools, applications, and workflows in secure workspaces. The RENCI team participating in the program uses HeLx as a development environment for new applications. It is the first host for the team’s DICOM medical imaging viewer. The system is designed to operate over 11TB of images in the cloud. We have created versions using the OrthaNC DICOM server at the persistence layer as well as the Google Health Dicom API service. HeLx also serves as the proving ground for concepts and demonstrations contributed to the BDC Apps and Tools Working Group. For more information, see the <a class="reference external" href="https://biodatacatalyst.nhlbi.nih.gov/">BioData Catalyst website</a>.</p>
+<p><strong>Blackbalsam</strong></p>
+<p>Blackbalsam is an open source data science environment with an initial focus on COVID-and North Carolina. It also serves as an experimental space for ideas and prototypes, some of which will graduate into the core of HeLx. For more information, see the <a class="reference external" href="https://github.com/stevencox/blackbalsam">blackbalsam documentation</a>.</p>
+<p><strong>ReCCAP</strong></p>
+<p>Coming soon.</p>
+</div>
+</div>
+<div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<p>HeLx puts the most advanced analytical scientific models at investigator’s finger tips using
+equally advanced cloud native, container orchestrated, distributed computing systems.</p>
+<div class="section" id="user-experience">
+<h3>User Experience<a class="headerlink" href="#user-experience" title="Permalink to this headline">¶</a></h3>
+<p>Users browse tools of interest and launch those tools to explore and analyze available data.
+From the user’s perspective, HeLx is like an operating system since it runs useful tools. But
+there’s no installation, the data’s already present in the cloud with the computation, and
+analyses can be reproducibly shared with others on the platform.</p>
+</div>
+<div class="section" id="compute">
+<h3>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h3>
+<p>The system’s underlying computational engine is Kubernetes. HeLx runs in a Kubernetes cluster and apps are launched and managed within the same namespace, or administrative context, it uses. Tycho translates the docker compose representation of systems with one ore more containers into a Kubernetes representation, coordinates and tracks related processes, provides utilization information on running processes, and manages the coordinated deletion of all components when a running application is stopped.</p>
+<p>HeLx’s cloud native design relies on containerization via Docker for creating reusable modules. These modules are orchestrated using the Kubernetes scheduler. Kubernetes, available at all major cloud vendors and multiple federally funded research platforms including the Texas Advanced Computing Center (TACC) and Pacific Research Platform (PRP) provides an important layer of portability and reproducibility for HeLx.</p>
+<p>Within the Kubernetes setting, the system requires a single public IP address. That address routes to a web server acting as a reverse proxy. It partitions the environment into paths requiring an existing authentication and paths that do not. The Appstore interface handles users requests to manage workspaces like Jupyter notebooks and the Nextflow API. For access to applications users have launched, the reverse proxy first consults Appstore to acquire an existing authentication token. If a token exists, the request is forwarded to the programmable reverse proxy which checks the identity of the authenticated user against the path for the launched application. If the user is authorized, the request proceeds.</p>
+<p>HeLx’s primary user interface is the Appstore, which is a Django based application whose chief responsibilities are authentication and authorization and providing a means to launch apps relevant to each compute platform.  Authentication is provided via an OpenID Connect (OIDC) Identity Provider (IdP) such as GitHub or Google as well as a SAML2 IdP. A SAML2 IdP can be configured on a per customer basis using django-saml2-auth module. After a principal is authenticated, AppStore uses a request filter to determine if it is whitelisted. A django middleware intercepts the request and checks the authenticated user’s email against an authorized whitelist to grant user access to apps.</p>
+<p>Certain data such as credentials for social authentication accounts must not be packaged with source code. Therefore this data must be dynamically injected during image deployment using Kubernetes secrets. AppStore offers a command line interface (CLI) consisting of uniform commands for providing default values for secrets for local deployment and a way to insert them for production deployment. It also provides interfaces for creating system super users, data migration, starting the application, and packaging executables, among other tasks.</p>
+<p>AppStore is packaged as a Docker image. It is a non-root container, meaning the user is not a superuser. It packages a branch of Tycho cloned within the AppStore hierarchy.</p>
+<p>Launching an application via the AppStore uses the Tycho module which manages a metadata based representation of all available workspaces. Workspaces are defined as docker-compose YAML artifacts. These, in turn, specify sets of cooperating Docker containers constituting a distributed system. Tycho translates these app specifications into Kubernetes constructs to instantiate and run the application. During this process, Tycho also registers the app instance with the Ambassador programmable reverse proxy specifying that only the user that instantiated the application is authorized to access the instance. In addition to configuring the application’s networking and authorization interfaces, Tycho also configures the workspace’s access to persistent storage. HeLx requires a single Kubernetes construct known as a persistent volume (PV) to designate a storage location. It must be configured as Read-Write-Many to allow multiple Kubernetes deployments to access it simultaneously. Given that configuration, Tycho will configure a sub path on the PV for each user’s home directory and mount that path to each container it creates that is a component of an app.</p>
+</div>
+<div class="section" id="storage">
+<h3>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h3>
+<p>HeLx apps, in the near term, will mount a read only file system containing reference data and to a writable file system for user data. Storage can also consist of an NFS-rods volume mounted to each container for access to data stored in iRODS.</p>
+</div>
+<div class="section" id="security">
+<h3>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
+<p>HeLx prefers open standard security protocols where available, and applies standards based best practices, especially from NIST and FISMA, in several areas.</p>
+</div>
+</div>
 </div>
 
 
@@ -73,32 +104,11 @@ analytical tools without installation or other infrastructure concerns has broad
 
 
 <h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tycho.html">Tycho</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html">Creating an Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_blackbalsam.html">Blackbalsam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_cloudtop.html">Cloudtop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_dicom.html">DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_imagej_napari.html">ImageJ-Napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_jupyter_datascience.html">Jupyter-DataScience</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_nextflow_api.html">Nextflow API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_rstudio.html">RStudio</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">AppStore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#domains">Domains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">Installing HeLx</a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tycho.html" title="previous chapter">Tycho</a></li>
-      <li>Next: <a href="overview.html" title="next chapter">Sample Text</a></li>
   </ul></li>
 </ul>
 </div>
@@ -132,7 +142,7 @@ analytical tools without installation or other infrastructure concerns has broad
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/appstore.rst.txt"
+      <a href="_sources/appstore.md.txt"
           rel="nofollow">Page source</a>
     </div>
 

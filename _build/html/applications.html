@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>&lt;no title&gt; &#8212; HeLx 1.0 documentation</title>
+    <title>Applications &#8212; HeLx 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,8 +14,6 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sample Text" href="app_create.html" />
-    <link rel="prev" title="Insert Content" href="authentication.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,17 +30,26 @@
 
           <div class="body" role="main">
             
-  <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html">Creating an Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_blackbalsam.html">Blackbalsam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_cloudtop.html">Cloudtop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_dicom.html">DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_imagej_napari.html">ImageJ-Napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_jupyter_datascience.html">Jupyter-DataScience</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_nextflow_api.html">Nextflow API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_rstudio.html">RStudio</a></li>
+  <p>.. toctree::
+:maxdepth: 2</p>
+<p>Creating an Application &lt;app_create&gt;
+Blackbalsam &lt;app_blackbalsam&gt;
+Cloudtop &lt;app_cloudtop&gt;
+DICOM Viewer for Google Health API &lt;app_dicom&gt;
+ImageJ-Napari &lt;app_imagej_napari&gt;
+Jupyter-DataScience &lt;app_jupyter_datascience&gt;
+Nextflow API &lt;app_nextflow_api&gt;
+RStudio &lt;app_rstudio&gt;</p>
+<div class="section" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
+<p>Appstore is deployed to Kubernetes in production using Helm. The main deployment
+concerns are:</p>
+<ul class="simple">
+<li><p><strong>Security</strong> : Secrets are added to the container via environment variables.</p></li>
+<li><p><strong>Persistence</strong> : Storage must be mounted for a database.</p></li>
+<li><p><strong>Services</strong> : The chief dependency is on Tycho which must be at the correct version.</p></li>
 </ul>
+<p>The Helm chart for deploying Appstore can be found <a class="reference external" href="https://github.com/helxplatform/devops/tree/master/helx/charts/appstore">here</a>.</p>
 </div>
 
 
@@ -62,34 +69,11 @@
 
 
 <h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tycho.html">Tycho</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html">Creating an Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_blackbalsam.html">Blackbalsam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_cloudtop.html">Cloudtop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_dicom.html">DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_imagej_napari.html">ImageJ-Napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_jupyter_datascience.html">Jupyter-DataScience</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_nextflow_api.html">Nextflow API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_rstudio.html">RStudio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appstore.html">AppStore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appstore.html#domains">Domains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">Installing HeLx</a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="appstore.html">AppStore</a><ul>
-      <li>Previous: <a href="authentication.html" title="previous chapter">Insert Content</a></li>
-      <li>Next: <a href="app_create.html" title="next chapter">Sample Text</a></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
@@ -123,7 +107,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/applications.rst.txt"
+      <a href="_sources/applications.md.txt"
           rel="nofollow">Page source</a>
     </div>
 
