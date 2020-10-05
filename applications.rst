@@ -11,6 +11,7 @@
    RStudio <app_rstudio>
 
 # Applications
+========================
 
 Appstore is deployed to Kubernetes in production using Helm. The main deployment
 concerns are: 
