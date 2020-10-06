@@ -25,7 +25,11 @@ questions.
 
 
 Indices and tables - avoid deletion for historical reasons
-==================
+<<<<<<< HEAD
+==========================================================
+=======
+========================================================================
+>>>>>>> b9bba8454b487c123becd70137465ce0bb213cb5
 
 * :ref:`genindex`
 * :ref:`modindex`
