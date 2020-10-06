@@ -5,8 +5,9 @@ AppStore
 The HeLx Appstore is the primary user experience component of the HeLx
 data science platform.
 
+********
 Domains
-^^^^^^^
+********
 
 HeLx can be applied in many domains. It's ability to empower researchers
 to leverage advanced analytical tools without installation or other
@@ -61,18 +62,20 @@ documentation_.
 
 **ReCCAP** Coming soon.
 
+*********
 Overview
-========
+*********
 
+==============
 Architecture
-------------
+===============
 
 HeLx puts the most advanced analytical scientific models at
 investigator's finger tips using equally advanced cloud native,
 container orchestrated, distributed computing systems.
 
 User Experience
-^^^^^^^^^^^^^^^^^^^^^
+------------------ 
 
 Users browse tools of interest and launch those tools to explore and
 analyze available data. From the user's perspective, HeLx is like an
@@ -82,7 +85,7 @@ computation, and analyses can be reproducibly shared with others on the
 platform.
 
 Compute
-^^^^^^^
+------------------ 
 
 The system's underlying computational engine is Kubernetes. HeLx runs in
 a Kubernetes cluster and apps are launched and managed within the same
@@ -155,7 +158,7 @@ path on the PV for each user’s home directory and mount that path to
 each container it creates that is a component of an app.
 
 Storage
-^^^^^^^
+------------------ 
 
 HeLx apps, in the near term, will mount a read only file system
 containing reference data and to a writable file system for user data.
@@ -163,7 +166,7 @@ Storage can also consist of an NFS-rods volume mounted to each container
 for access to data stored in iRODS.
 
 Security
-^^^^^^^^^^
+------------------ 
 
 HeLx prefers open standard security protocols where available, and
 applies standards based best practices, especially from NIST and FISMA,
