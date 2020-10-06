@@ -6,16 +6,22 @@
    Installation <installation.md>
    Current and Upcoming Releases <releases.md>
 
+###############################
 HeLx User Documentation
-================================
+###############################
 
+Welcome to HeLx 1.
+------------------
 
-Welcome to HeLx 1.0
-================================
+HeLx puts the most advanced analytical scientific models at
+investigator's finger tips using equally advanced cloud native,
+container orchestrated, distributed computing systems. HeLx can be
+applied in many domains. Its ability to empower researchers to leverage
+advanced analytical tools without installation or other infrastructure
+concerns has broad reaching benefits.
 
-HeLx puts the most advanced analytical scientific models at investigator's finger tips using equally advanced cloud native, container orchestrated, distributed computing systems. HeLx can be applied in many domains. Its ability to empower researchers to leverage advanced analytical tools without installation or other infrastructure concerns has broad reaching benefits.
-
-Contact [HeLx Help](mailto:catalyst-admin@lists.renci.org) with questions.
+Contact `HeLx Help <mailto:catalyst-admin@lists.renci.org>`__ with
+questions.
 
 
 Indices and tables - avoid deletion for historical reasons
