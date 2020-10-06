@@ -2,9 +2,6 @@
 Applications
 ############
 
-Applications
-============
-
 Appstore is deployed to Kubernetes in production using Helm. The main
 deployment concerns are: - **Security** : Secrets are added to the
 container via environment variables. - **Persistence** : Storage must be
