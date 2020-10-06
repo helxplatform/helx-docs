@@ -52,16 +52,14 @@ This work relies on these foundations:
 
 -  Kubernetes_: Widely deployed, highly programmable, horizontally scalable container orchestration platform. 
 
--  Kompose_:
-Automates conversion of Docker Compose to Kubernetes. Written in Go,
+-  Kompose_: Automates conversion of Docker Compose to Kubernetes. Written in Go,
 does not provide an API. Supports Docker Compose to Kubernetes only. 
 
 -  Docker_: Pervasive Linux
 containerization tool chain enabling programmable infrastructure and
 portability. 
 
--  Docker-compose_:
-Syntax and tool chain for executing distributed systems of containers. 
+-  Docker-compose_: Syntax and tool chain for executing distributed systems of containers. 
 
 -  Docker Swarm: Docker only container orchestration platform with
 minimal adoption.
