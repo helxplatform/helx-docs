@@ -80,13 +80,12 @@ Coming soon.
 .. ========
 
 .. toctree::
-   :maxdepth: 4
-   :numbered:		
+   :maxdepth: 2
    :hidden:
      
-  Overview 
-  Authentication
-  Applications
+   Overview <overview.rst>
+   Authentication <authentication.rst>
+   Applications <applications.rst>
 
 Indices and tables
 ==================

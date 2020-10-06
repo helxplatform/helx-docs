@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Authentication &#8212; HeLx 1.0 documentation</title>
+    <title>2.1.2. Authentication &#8212; HeLx 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="# Applications" href="applications.html" />
-    <link rel="prev" title="Sample Text" href="overview.html" />
+    <link rel="next" title="2.1.12. # Applications" href="applications.html" />
+    <link rel="prev" title="2.1.1. Overview" href="overview.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -33,77 +33,232 @@
           <div class="body" role="main">
             
   <div class="section" id="authentication">
-<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
-<p>Authentication is concerned with verifying the identity of a principal and is distinct from determining what actions the principal is entitled to take in the system. We use the OpenID Connect (OIDC) protocol to federate user identities from an OIDC identity provider (IdP) like Google or GitHub. The OIDC protocol is integrated into the system via open source connectors for the Django environment. This approach entails configuring the application within the platform of each IdP to permit and execute the OIDC handshake.</p>
+<h1><span class="section-number">2.1.2. </span>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+<p>Authentication is concerned with verifying the identity of a principal
+and is distinct from determining what actions the principal is entitled
+to take in the system. We use the OpenID Connect (OIDC) protocol to
+federate user identities from an OIDC identity provider (IdP) like
+Google or GitHub. The OIDC protocol is integrated into the system via
+open source connectors for the Django environment. This approach entails
+configuring the application within the platform of each IdP to permit
+and execute the OIDC handshake.</p>
 <div class="section" id="authorization">
-<h2>Authorization<a class="headerlink" href="#authorization" title="Permalink to this headline">¶</a></h2>
-<p>Authentication is provided via an OpenID Connect (OIDC) Identity Provider (IdP) such as GitHub or Google as well as a SAML2 IdP. A SAML2 IdP can be configured on a per customer basis using django-saml2-auth module. After a principal is authenticated, AppStore uses a request filter to determine if it is whitelisted. A django middleware intercepts the request and checks the authenticated user’s email against an authorized whitelist to grant user access to apps. Certain data such as credentials for social authentication accounts must not be packaged with source code. Therefore this data must be dynamically injected during image deployment using Kubernetes secrets. AppStore offers a command line interface (CLI) consisting of uniform commands for providing default values for secrets for local deployment and a way to insert them for production deployment. It also provides interfaces for creating system super users, data migration, starting the application, and packaging executables, among other tasks.</p>
+<h2><span class="section-number">2.1.2.1. </span>Authorization<a class="headerlink" href="#authorization" title="Permalink to this headline">¶</a></h2>
+<p>Authentication is provided via an OpenID Connect (OIDC) Identity
+Provider (IdP) such as GitHub or Google as well as a SAML2 IdP. A SAML2
+IdP can be configured on a per customer basis using django-saml2-auth
+module. After a principal is authenticated, AppStore uses a request
+filter to determine if it is whitelisted. A django middleware intercepts
+the request and checks the authenticated user’s email against an
+authorized whitelist to grant user access to apps. Certain data such as
+credentials for social authentication accounts must not be packaged with
+source code. Therefore this data must be dynamically injected during
+image deployment using Kubernetes secrets. AppStore offers a command
+line interface (CLI) consisting of uniform commands for providing
+default values for secrets for local deployment and a way to insert them
+for production deployment. It also provides interfaces for creating
+system super users, data migration, starting the application, and
+packaging executables, among other tasks.</p>
 <div class="section" id="secrets">
-<h3>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h3>
-<p>Data that serves, for example, as a credential for an authentication, must be secret. Since it may not be added to source code control, these values are private to the deployment organization, and must be dynamically injected. This is handled by using Kubernetes secrets during deployment, and trivial keys for developer desktops, all within a uniform process framework. That framework provides a command line interface (CLI) for creating system super users, data migration, starting the application, and packaging executables, among other tasks.</p>
-</div>
-</div>
+<h3><span class="section-number">2.1.2.1.1. </span>Secrets<a class="headerlink" href="#secrets" title="Permalink to this headline">¶</a></h3>
+<p>Data that serves, for example, as a credential for an authentication,
+must be secret. Since it may not be added to source code control, these
+values are private to the deployment organization, and must be
+dynamically injected. This is handled by using Kubernetes secrets during
+deployment, and trivial keys for developer desktops, all within a
+uniform process framework. That framework provides a command line
+interface (CLI) for creating system super users, data migration,
+starting the application, and packaging executables, among other tasks.</p>
 <div class="section" id="management-cli">
-<h2>Management CLI<a class="headerlink" href="#management-cli" title="Permalink to this headline">¶</a></h2>
-<p>The appstore management CLI provides uniform commands for using the environment. It provides default values for secrets during local development and ways to provide secrets in production.</p>
-<p>| Command                          | Description   |
-| ———————————|—————|
-| bin/appstore tests {product}     | Run automated unit tests with {product} settings. |
-| bin/appstore run {product}       | Run the appstore using {product} settings.      |
-| bin/appstore createsuperuser     | Create admin user with environment variable provided values.      |
-| bin/appstore image build         | Build the docker image.      |
-| bin/appstore image push          | Push the docker image to the repository.      |
-| bin/appstore image run {product} | Run automated unit tests with {product} settings.      |
-| bin/appstore help                | Run automated unit tests with {product} settings.      |</p>
+<h4><span class="section-number">2.1.2.1.1.1. </span>Management CLI<a class="headerlink" href="#management-cli" title="Permalink to this headline">¶</a></h4>
+<p>The appstore management CLI provides uniform commands for using the
+environment. It provides default values for secrets during local
+development and ways to provide secrets in production.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bin/appstore tests {product}</p></td>
+<td><p>Run automated unit tests with {product} settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin/appstore run {product}</p></td>
+<td><p>Run the appstore using {product} settings.</p></td>
+</tr>
+<tr class="row-even"><td><p>bin/appstore createsuperuser</p></td>
+<td><p>Create admin user with environment variable provided values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin/appstore image build</p></td>
+<td><p>Build the docker image.</p></td>
+</tr>
+<tr class="row-even"><td><p>bin/appstore image push</p></td>
+<td><p>Push the docker image to the repository.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin/appstore image run {product}</p></td>
+<td><p>Run automated unit tests with {product} settings.</p></td>
+</tr>
+<tr class="row-even"><td><p>bin/appstore help</p></td>
+<td><p>Run automated unit tests with {product} settings.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
-<p>Automated testing uses the Python standard unittest and Django testing frameworks. Tests should be fast enough to run conveniently, and maximize coverage. For example, the Django testing framework allows for testing URL routes, middleware and other use interface elements in addition to the logic of components.</p>
+<h4><span class="section-number">2.1.2.1.1.2. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h4>
+<p>Automated testing uses the Python standard unittest and Django testing
+frameworks. Tests should be fast enough to run conveniently, and
+maximize coverage. For example, the Django testing framework allows for
+testing URL routes, middleware and other use interface elements in
+addition to the logic of components.</p>
 </div>
 <div class="section" id="packaging">
-<h2>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h2>
-<p>Appstore is packaged as a Docker image. It is a non-root container, meaning the user is not a superuser. It packages a branch of Tycho cloned within the appstore hierarchy.</p>
-<p>Launching an application via the AppStore uses the Tycho module which manages a metadata based representation of all available workspaces. Workspaces are defined as docker-compose YAML artifacts. These, in turn, specify sets of cooperating Docker containers constituting a distributed system. Tycho translates these app specifications into Kubernetes constructs to instantiate and run the application. During this process, Tycho also registers the app instance with the Ambassador programmable reverse proxy specifying that only the user that instantiated the application is authorized to access the instance. In addition to configuring the application’s networking and authorization interfaces, Tycho also configures the workspace’s access to persistent storage. HeLx requires a single Kubernetes construct known as a persistent volume (PV) to designate a storage location. It must be configured as Read-Write-Many to allow multiple Kubernetes deployments to access it simultaneously. Given that configuration, Tycho will configure a sub path on the PV for each user’s home directory and mount that path to each container it creates that is a component of an app.</p>
+<h4><span class="section-number">2.1.2.1.1.3. </span>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h4>
+<p>Appstore is packaged as a Docker image. It is a non-root container,
+meaning the user is not a superuser. It packages a branch of Tycho
+cloned within the appstore hierarchy.</p>
+<p>Launching an application via the AppStore uses the Tycho module which
+manages a metadata based representation of all available workspaces.
+Workspaces are defined as docker-compose YAML artifacts. These, in turn,
+specify sets of cooperating Docker containers constituting a distributed
+system. Tycho translates these app specifications into Kubernetes
+constructs to instantiate and run the application. During this process,
+Tycho also registers the app instance with the Ambassador programmable
+reverse proxy specifying that only the user that instantiated the
+application is authorized to access the instance. In addition to
+configuring the application’s networking and authorization interfaces,
+Tycho also configures the workspace’s access to persistent storage. HeLx
+requires a single Kubernetes construct known as a persistent volume (PV)
+to designate a storage location. It must be configured as
+Read-Write-Many to allow multiple Kubernetes deployments to access it
+simultaneously. Given that configuration, Tycho will configure a sub
+path on the PV for each user’s home directory and mount that path to
+each container it creates that is a component of an app.</p>
 </div>
 </div>
 <div class="section" id="app-development">
-<h1>App Development<a class="headerlink" href="#app-development" title="Permalink to this headline">¶</a></h1>
-<p>During development, environment variables can be set to control execution:</p>
-<p>| Variable            | Description   |
-| ——————–|—————|
-| DEV_PHASE=[stub, local, dev, val, prod     | In stub, does not require a Tycho service. |
-| ALLOW_DJANGO_LOGIN=[TRUE, FALSE]     | When true, presents username and password authentication options.      |
-| SECRET_KEY     | Key for securing the application.      |
-| OAUTH_PROVIDERS     | Contains all the providers(google, github).     |
-| GOOGLE_CLIENT_ID     | Contains the client_id of the provider.     |
-| GOOGLE_SECRET     | Contains the secret key for provider.      |
-| GOOGLE_NAME     | Sets the name for the provider.     |
-| GOOGLE_KEY     | Holds the key value for provider. |
-| GOOGLE_SITES     | Contains the sites for the provider.      |
-| GITHUB_CLIENT_ID     | Contains the client_id of the provider.      |
-| GITHUB_SECRET     | Contains the secret key of the provider.     |
-| GITHUB_NAME     | Sets the name for the provider.     |
-| GITHUB_KEY     | Holds the key value for provider.      |
-| GITHUB_SITES     | Contains the sites for the provider.     |
-| APPSTORE_DJANGO_USERNAME     | Holds superuser username credentials. |
-| APPSTORE_DJANGO_PASSWORD     | Holds superuser password credentials.      |
-| TYCHO_URL     | Contains the url of the running tycho host.      |
-| OAUTH_DB_DIR     | Contains the path for the database directory.     |
-| OAUTH_DB_FILE     | Contains the path for the database file.     |
-| POSTGRES_DB     | Contains the connection of the database.      |
-| POSTGRES_HOST     | Contains the database host.     |
-| DATABASE_USER     | Contains the database username credentials.     |
-| DATABASE_PASSWORD     | Contains the database password credentials.      |
-| APPSTORE_DEFAULT_FROM_EMAIL     | Default email address for appstore.     |
-| APPSTORE_DEFAULT_SUPPORT_EMAIL     | Default support email for appstore.      |
-| ACCOUNT_DEFAULT_HTTP_PROTOCOL     | Allows to switch between http and https protocol.     |</p>
+<h3><span class="section-number">2.1.2.1.2. </span>App Development<a class="headerlink" href="#app-development" title="Permalink to this headline">¶</a></h3>
+<p>During development, environment variables can be set to control
+execution:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DEV_PHASE=[stub, local, dev, val, prod</p></td>
+<td><p>In stub, does not require a Tycho service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALLOW_DJANGO_LOGIN=[TRUE, FALSE]</p></td>
+<td><p>When true, presents username and password authentication options.</p></td>
+</tr>
+<tr class="row-even"><td><p>SECRET_KEY</p></td>
+<td><p>Key for securing the application.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OAUTH_PROVIDERS</p></td>
+<td><p>Contains all the providers(google, github).</p></td>
+</tr>
+<tr class="row-even"><td><p>GOOGLE_CLIENT_ID</p></td>
+<td><p>Contains the client_id of the provider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GOOGLE_SECRET</p></td>
+<td><p>Contains the secret key for provider.</p></td>
+</tr>
+<tr class="row-even"><td><p>GOOGLE_NAME</p></td>
+<td><p>Sets the name for the provider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GOOGLE_KEY</p></td>
+<td><p>Holds the key value for provider.</p></td>
+</tr>
+<tr class="row-even"><td><p>GOOGLE_SITES</p></td>
+<td><p>Contains the sites for the provider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GITHUB_CLIENT_ID</p></td>
+<td><p>Contains the client_id of the provider.</p></td>
+</tr>
+<tr class="row-even"><td><p>GITHUB_SECRET</p></td>
+<td><p>Contains the secret key of the provider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GITHUB_NAME</p></td>
+<td><p>Sets the name for the provider.</p></td>
+</tr>
+<tr class="row-even"><td><p>GITHUB_KEY</p></td>
+<td><p>Holds the key value for provider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>GITHUB_SITES</p></td>
+<td><p>Contains the sites for the provider.</p></td>
+</tr>
+<tr class="row-even"><td><p>APPSTORE_DJANGO_USERNAME</p></td>
+<td><p>Holds superuser username credentials.</p></td>
+</tr>
+<tr class="row-odd"><td><p>APPSTORE_DJANGO_PASSWORD</p></td>
+<td><p>Holds superuser password credentials.</p></td>
+</tr>
+<tr class="row-even"><td><p>TYCHO_URL</p></td>
+<td><p>Contains the url of the running tycho host.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OAUTH_DB_DIR</p></td>
+<td><p>Contains the path for the database directory.</p></td>
+</tr>
+<tr class="row-even"><td><p>OAUTH_DB_FILE</p></td>
+<td><p>Contains the path for the database file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>POSTGRES_DB</p></td>
+<td><p>Contains the connection of the database.</p></td>
+</tr>
+<tr class="row-even"><td><p>POSTGRES_HOST</p></td>
+<td><p>Contains the database host.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DATABASE_USER</p></td>
+<td><p>Contains the database username credentials.</p></td>
+</tr>
+<tr class="row-even"><td><p>DATABASE_PASSWORD</p></td>
+<td><p>Contains the database password credentials.</p></td>
+</tr>
+<tr class="row-odd"><td><p>APPSTORE_DEFAULT_FROM_EMAIL</p></td>
+<td><p>Default email address for appstore.</p></td>
+</tr>
+<tr class="row-even"><td><p>APPSTORE_DEFAULT_SUPPORT_EMAIL</p></td>
+<td><p>Default support email for appstore.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACCOUNT_DEFAULT_HTTP_PROTOCOL</p></td>
+<td><p>Allows to switch between http and https protocol.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="app-metadata">
-<h2>App Metadata<a class="headerlink" href="#app-metadata" title="Permalink to this headline">¶</a></h2>
-<p>Making application development easy is key to bringing the widest range of useful tools to the platform so we prefer metadata to code wherever possible for creating HeLx Apps. Apps are systems of cooperating processes. These are expressed using <a class="reference external" href="https://www.docker.com/">Docker</a> and <a class="reference external" href="https://docs.docker.com/compose/">Docker Compose</a>. Appstore uses the <a class="reference external" href="https://helxplatform.github.io/tycho-docs/gen/html/index.html">Tycho</a> engine to discover and manage Apps. The <a class="reference external" href="https://github.com/helxplatform/tycho/blob/metadata/tycho/conf/app-registry.yaml">Tycho app metadata</a> format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.</p>
-<p>Docker compose syntax is used to express cooperating containers comprising an application. The specifications are stored in <a class="reference external" href="https://github.com/helxplatform/app-support-prototype/tree/develop/dockstore-yaml-proposals">GitHub</a>, each in an application specific subfolder. Along with the docker compose, a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file specifies environment variables for the application. If a file called icon.png is provided, that is used as the application’s icon.</p>
+<h4><span class="section-number">2.1.2.1.2.1. </span>App Metadata<a class="headerlink" href="#app-metadata" title="Permalink to this headline">¶</a></h4>
+<p>Making application development easy is key to bringing the widest range
+of useful tools to the platform so we prefer metadata to code wherever
+possible for creating HeLx Apps. Apps are systems of cooperating
+processes. These are expressed using
+<a class="reference external" href="https://www.docker.com/">Docker</a> and Docker
+<a class="reference external" href="https://docs.docker.com/compose/">Compose</a>. Appstore uses the
+<a class="reference external" href="https://helxplatform.github.io/tycho-docs/gen/html/index.html">Tycho</a>
+engine to discover and manage Apps. The Tycho app
+<a class="reference external" href="https://github.com/helxplatform/tycho/blob/metadata/tycho/conf/app-registry.yaml">metadata</a>
+format specifies the details of each application, contexts to which
+applications belong, and inheritance relationships between contexts.</p>
+<p>Docker compose syntax is used to express cooperating containers
+comprising an application. The specifications are stored in
+<a class="reference external" href="https://github.com/helxplatform/app-support-prototype/tree/develop/dockstore-yaml-proposals">GitHub</a>,
+each in an application specific subfolder. Along with the docker
+compose, a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file specifies environment variables for the
+application. If a file called icon.png is provided, that is used as the
+application’s icon.</p>
 </div>
 <div class="section" id="development-environment">
-<h2>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this headline">¶</a></h2>
+<h4><span class="section-number">2.1.2.1.2.2. </span>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this headline">¶</a></h4>
 <p>More information coming soon. The following script outlines the process:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 
@@ -142,6 +297,8 @@ bin/appstore run $product
 </div>
 </div>
 </div>
+</div>
+</div>
 
 
           </div>
@@ -161,44 +318,43 @@ bin/appstore run $product
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tycho.html">Tycho</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#authorization">Authorization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#management-cli">Management CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#packaging">Packaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tycho.html">1. Tycho</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="appstore.html">2. AppStore</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="appstore.html#domains">2.1. Domains</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html">2.1.1. Overview</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.1.2. Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#authorization">2.1.2.1. Authorization</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#app-development">App Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#app-metadata">App Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-environment">Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_create.html">2.1.3. Creating an Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_create.html#log-in-and-start-your-app">2.1.4. Log in and Start your App</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_blackbalsam.html">2.1.5. Blackbalsam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_cloudtop.html">2.1.6. Cloudtop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_dicom.html">2.1.7. DICOM Viewer for Google Health API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_imagej_napari.html">2.1.8. ImageJ-Napari</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_jupyter_datascience.html">2.1.9. Jupyter-DataScience</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_nextflow_api.html">2.1.10. Nextflow API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app_rstudio.html">2.1.11. RStudio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications.html">2.1.12. # Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appstore.html#indices-and-tables">2.1.13. Indices and tables</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html">Creating an Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html#log-in-and-start-your-app">Log in and Start your App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_blackbalsam.html">Blackbalsam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_cloudtop.html">Cloudtop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_dicom.html">DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_imagej_napari.html">ImageJ-Napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_jupyter_datascience.html">Jupyter-DataScience</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_nextflow_api.html">Nextflow API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_rstudio.html">RStudio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="applications.html"># Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">Installing HeLx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Current and Upcoming Releases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install_devops.html">3. DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_more.html">4. More Specific Installs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">5. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">6. Installing HeLx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">7. Current and Upcoming Releases</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="appstore.html">&lt;no title&gt;</a><ul>
-      <li>Previous: <a href="overview.html" title="previous chapter">Sample Text</a></li>
-      <li>Next: <a href="applications.html" title="next chapter"># Applications</a></li>
+  <li><a href="appstore.html"><span class="section-number">2. </span>AppStore</a><ul>
+      <li>Previous: <a href="overview.html" title="previous chapter"><span class="section-number">2.1.1. </span>Overview</a></li>
+      <li>Next: <a href="applications.html" title="next chapter"><span class="section-number">2.1.12. </span># Applications</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -233,7 +389,7 @@ bin/appstore run $product
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/authentication.md.txt"
+      <a href="_sources/authentication.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
