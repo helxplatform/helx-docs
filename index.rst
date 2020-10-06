@@ -1,11 +1,3 @@
-.. toctree::
-   :maxdepth: 2
-   
-   Tycho
-   AppStore 
-   Installation 
-   Current and Upcoming Releases 
-
 ###############################
 HeLx User Documentation
 ###############################
@@ -25,8 +17,25 @@ Contact `HeLx Help <mailto:catalyst-admin@lists.renci.org>`__ with
 questions.
 
 
-Indices and tables - avoid deletion for historical reasons
-========================================================================
+.. Hide the contents from the front page because they are already in
+.. the side bar in the Alabaster sphinx style; requires Alabaster
+.. config sidebar_includehidden=True (default)
+
+.. Contents
+.. ========
+
+.. toctree::
+   :maxdepth: 4
+   :numbered:		
+   :hidden:
+     
+   Tycho <tycho.rst>
+   AppStore <appstore.rst>
+   Installation <installation.rst>
+   Current and Upcoming Releases <releases.rst>
+
+Indices and tables
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`
