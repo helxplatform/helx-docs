@@ -26,9 +26,7 @@ Application_. Select the CloudTop Viewer application.
 -  Google may prompt you to choose the account you wish to proceed with. If prompted, use the account with which you logged in to the App Store 
 -  Click Next. 
 -  Enter your password. The browser will ask if you want to save the password. It doesn’t matter if you do or not 
--  Respond to the 2 step authentication.
-If you haven't used it before, you may be prompted to set up the 2 step
-authentication. 
+-  Respond to the 2 step authentication. If you haven't used it before, you may be prompted to set up the 2 step authentication. 
 -  You should now see the basic OHIF screen with a large selection of projects.
 
 **Step 3:** Browse to The example Data Set
