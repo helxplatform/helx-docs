@@ -84,24 +84,15 @@ emulator from the applications menu. In the resultant shell, type:
 At this point the basic CloudTop functionality is working.
 
 **Step 4: Test the OHIF functionality** 
--  Exit the terminal emulator by
-typing ``exit`` 
--  Click the Firefox icon and browse to
-``localhost:3000`` 
--  At this point you will be prompted for your Google
-user ID. 
+-  Exit the terminal emulator by typing ``exit`` 
+-  Click the Firefox icon and browse to ``localhost:3000`` 
+-  At this point you will be prompted for your Google user ID. 
 -  Click Next. 
--  Google may prompt you to choose the account you
-wish to proceed with. If prompted, pick your G Suite account. 
--  Click
-Next. 
--  Enter your password. The browser will ask if you want to save
-the password. It doesn’t matter if you do or not 
--  Respond to the 2 step
-authentication. If you haven't used it before, you may be prompted to
-set up the 2 step authentication. 
--  You should now see the basic OHIF
-screen with a large selection of projects.
+-  Google may prompt you to choose the account you wish to proceed with. If prompted, pick your G Suite account. 
+-  Click Next. 
+-  Enter your password. The browser will ask if you want to save the password. It doesn’t matter if you do or not 
+-  Respond to the 2 step authentication. If you haven't used it before, you may be prompted to set up the 2 step authentication. 
+-  You should now see the basic OHIF screen with a large selection of projects.
 
 **Step 5: Browse to Your Data Set** 
 -  Select helx-dev 
