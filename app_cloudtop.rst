@@ -24,9 +24,12 @@ Application_. Select the CloudTop Viewer application.*
 authentication info you will need to log in for Step 2. Change the tag
 to whichever tag you want to test.
 
-**Step 2: Connect to the running docker** - Browse to ``localhost:8080``
-- Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
-``Dockerfile`` - Press the Login button - Wait for Guacamole to respond
+**Step 2: Connect to the running docker** 
+-  Browse to ``localhost:8080``
+-  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
+``Dockerfile`` 
+-  Press the Login button 
+-  Wait for Guacamole to respond
 
 **Step 3: Make sure the home directory is OK** Start a terminal emulator
 from the applications menu. In the resultant shell, type
@@ -60,11 +63,14 @@ keybase account. ``USER_NAME`` and ``VNC_PW`` can be whatever you want:
 those are the authentication info you will need to log in for Step 2.
 Change the tag to whichever tag you want to test.
 
-**Step 2: Connect to the running docker** - Browse to ``localhost:8080``
-- Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
-Dockerfile - Press the Login button - Wait for Guacamole to respond
+**Step 2: Connect to the running docker** 
+-  Browse to ``localhost:8080``
+-  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
+Dockerfile 
+-  Press the Login button - Wait for Guacamole to respond
 
-**Step 3: Make sure the home directory is OK** - Start a terminal
+**Step 3: Make sure the home directory is OK** 
+-  Start a terminal
 emulator from the applications menu. In the resultant shell, type:
 
 ::
@@ -77,20 +83,32 @@ emulator from the applications menu. In the resultant shell, type:
 
 At this point the basic CloudTop functionality is working.
 
-**Step 4: Test the OHIF functionality** - Exit the terminal emulator by
-typing ``exit`` - Click the Firefox icon and browse to
-``localhost:3000`` - At this point you will be prompted for your Google
-user ID. - Click Next. - Google may prompt you to choose the account you
-wish to proceed with. If prompted, pick your G Suite account. - Click
-Next. - Enter your password. The browser will ask if you want to save
-the password. It doesn’t matter if you do or not - Respond to the 2 step
+**Step 4: Test the OHIF functionality** 
+-  Exit the terminal emulator by
+typing ``exit`` 
+-  Click the Firefox icon and browse to
+``localhost:3000`` 
+-  At this point you will be prompted for your Google
+user ID. 
+-  Click Next. 
+-  Google may prompt you to choose the account you
+wish to proceed with. If prompted, pick your G Suite account. 
+-  Click
+Next. 
+-  Enter your password. The browser will ask if you want to save
+the password. It doesn’t matter if you do or not 
+-  Respond to the 2 step
 authentication. If you haven't used it before, you may be prompted to
-set up the 2 step authentication. - You should now see the basic OHIF
+set up the 2 step authentication. 
+-  You should now see the basic OHIF
 screen with a large selection of projects.
 
-**Step 5: Browse to Your Data Set** - Select helx-dev - Select the
-northamerica- northeast1 region - Select the DicomTestData dataset -
-Select the TestData Dicom Store - You should now see our test datasets.
+**Step 5: Browse to Your Data Set** 
+-  Select helx-dev 
+-  Select the northamerica- northeast1 region 
+-  Select the DicomTestData dataset 
+-  Select the TestData Dicom Store 
+-  You should now see our test datasets.
 Chose your test data set and have fun!
 
 Testing the CloudTop ImageJ/Napari Docker
@@ -108,9 +126,12 @@ where ``USER_NAME`` and ``VNC_PW`` can be whatever you want: those are
 the authentication info you will need to log in for Step 2. Change the
 tag to whichever tag you want to test.
 
-**Step 2: Connect to the running docker** - Browse to ``localhost:8080``
-- Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
-Dockerfile - Press the Login button - Wait for Guacamole to respond
+**Step 2: Connect to the running docker** 
+-  Browse to ``localhost:8080``
+-  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
+Dockerfile 
+-  Press the Login button 
+-  Wait for Guacamole to respond
 
 **Step 3: Make sure the home directory is OK** - Start a terminal
 emulator from the applications menu. In the resultant shell, type:
