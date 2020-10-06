@@ -24,6 +24,7 @@ authentication info you will need to log in for Step 2. Change the tag
 to whichever tag you want to test.
 
 **Step 2:** Connect to the running docker 
+
 -  Browse to ``localhost:8080``
 -  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
 ``Dockerfile`` 
@@ -65,12 +66,14 @@ those are the authentication info you will need to log in for Step 2.
 Change the tag to whichever tag you want to test.
 
 **Step 2:** Connect to the running docker 
+
 -  Browse to ``localhost:8080``
 -  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
 Dockerfile 
 -  Press the Login button - Wait for Guacamole to respond
 
 **Step 3:** Make sure the home directory is OK 
+
 -  Start a terminal
 emulator from the applications menu. In the resultant shell, type:
 
@@ -85,6 +88,7 @@ emulator from the applications menu. In the resultant shell, type:
 At this point the basic CloudTop functionality is working.
 
 **Step 4:** Test the OHIF functionality 
+
 -  Exit the terminal emulator by typing ``exit`` 
 -  Click the Firefox icon and browse to ``localhost:3000`` 
 -  At this point you will be prompted for your Google user ID. 
@@ -96,6 +100,7 @@ At this point the basic CloudTop functionality is working.
 -  You should now see the basic OHIF screen with a large selection of projects.
 
 **Step 5:** Browse to Your Data Set 
+
 -  Select helx-dev 
 -  Select the northamerica- northeast1 region 
 -  Select the DicomTestData dataset 
@@ -107,6 +112,7 @@ Testing the CloudTop ImageJ/Napari Docker
 -----------------------------------------
 
 **Step 1:** Start the Docker 
+
 -  Start the docker with the following
 command:
 
@@ -120,6 +126,7 @@ the authentication info you will need to log in for Step 2. Change the
 tag to whichever tag you want to test.
 
 **Step 2:** Connect to the running docker 
+
 -  Browse to ``localhost:8080``
 -  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
 Dockerfile 
@@ -127,6 +134,7 @@ Dockerfile
 -  Wait for Guacamole to respond
 
 **Step 3:** Make sure the home directory is OK
+
 -  Start a terminal
 emulator from the applications menu. In the resultant shell, type:
 
@@ -142,6 +150,7 @@ emulator from the applications menu. In the resultant shell, type:
    will want to verify that ImageJ and Napari are working
 
 **Step 4:** Make sure the ImageJ application launcher works correct 
+
 -  Exit the terminal application and click the ImageJ icon. There is no
 ImageJ test data included in the docker. 
 -  Exit ImageJ and make sure the
