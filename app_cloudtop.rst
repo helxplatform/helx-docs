@@ -9,8 +9,8 @@ CloudTop OHIF Docker, and the CloudTop ImageJ/Napari Docker.
 Testing the CloudTop Docker
 ===========================
 
-*Begin by starting the App as described in the section Creating an
-Application_. Select the CloudTop Viewer application.*
+Begin by starting the App as described in the section Creating an
+Application_. Select the CloudTop Viewer application.
 
 .. _Application: https://helx-10.readthedocs.io/en/latest/app_create.html?highlight=create%20an%20application
 
