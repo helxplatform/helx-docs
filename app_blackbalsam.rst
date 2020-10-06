@@ -3,6 +3,11 @@ Blackbalsam
 ###########
 
 
+Begin by starting the App as described in the section Creating an
+Application_. Select the CloudTop Viewer application.
+
+.. _Application: https://helx-10.readthedocs.io/en/latest/app_create.html?highlight=create%20an%20application
+
 =============================
 Exporting REDCap Data into R
 =============================
