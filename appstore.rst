@@ -68,7 +68,9 @@ documentation_.
 .. _documentation: https://github.com/stevencox/blackbalsam
 
 
-**ReCCAP** Coming soon.
+**ReCCAP** 
+
+Coming soon.
 
 ********
 Overview
