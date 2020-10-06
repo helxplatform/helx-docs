@@ -48,7 +48,7 @@ Partnering Technologies
 
 This work relies on these foundations:
 
-- **PIVOT_**: A cloud agnostic scheduler with an API for executing distributed
+- PIVOT_: A cloud agnostic scheduler with an API for executing distributed
 systems. 
 
 - **Kubernetes_**: Widely deployed,
@@ -59,7 +59,7 @@ platform.
 Automates conversion of Docker Compose to Kubernetes. Written in Go,
 does not provide an API. Supports Docker Compose to Kubernetes only. 
 
--**Docker_**: Pervasive Linux
+- **Docker_**: Pervasive Linux
 containerization tool chain enabling programmable infrastructure and
 portability. 
 
