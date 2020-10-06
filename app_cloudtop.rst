@@ -12,7 +12,7 @@ Testing the CloudTop Docker
 *Begin by starting the App as described in the section Creating an
 Application_. Select the CloudTop Viewer application.*
 
-.. _<app_create.rst>
+.. _</helx-docs/app_create>
 
 **Step 1:** Run the CloudTop Docker
 ::
