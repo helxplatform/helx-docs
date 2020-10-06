@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2.1.12. # Applications &#8212; HeLx 1.0 documentation</title>
+    <title>Applications &#8212; HeLx 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.1.3. Creating an Application" href="app_create.html" />
+    <link rel="next" title="2.1.3.1. Creating an Application" href="app_create.html" />
     <link rel="prev" title="2.1.2. Authentication" href="authentication.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -32,27 +32,27 @@
 
           <div class="body" role="main">
             
-  <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html">2.1.3. Creating an Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_create.html#log-in-and-start-your-app">2.1.4. Log in and Start your App</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_blackbalsam.html">2.1.5. Blackbalsam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_cloudtop.html">2.1.6. Cloudtop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_dicom.html">2.1.7. DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_imagej_napari.html">2.1.8. ImageJ-Napari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_jupyter_datascience.html">2.1.9. Jupyter-DataScience</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_nextflow_api.html">2.1.10. Nextflow API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="app_rstudio.html">2.1.11. RStudio</a></li>
+  <div class="section" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
+<p>Appstore is deployed to Kubernetes in production using Helm. The main
+deployment concerns are:</p>
+<ul class="simple">
+<li><p><strong>Security</strong> : Secrets are added to the container via environment variables.</p></li>
+<li><p><strong>Persistence</strong> : Storage must be mounted for a database.</p></li>
+<li><p><strong>Services</strong> : The chief dependency is on Tycho which must be at the correct version.</p></li>
+</ul>
+<p>The Helm chart for deploying Appstore can be found
+<a class="reference external" href="https://github.com/helxplatform/devops/tree/master/helx/charts/appstore">here</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
-<div class="section" id="applications">
-<h1><span class="section-number">2.1.12. </span># Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
-<p>Appstore is deployed to Kubernetes in production using Helm. The main deployment
-concerns are:
-- <strong>Security</strong> : Secrets are added to the container via environment variables.
-- <strong>Persistence</strong> : Storage must be mounted for a database.
-- <strong>Services</strong> : The chief dependency is on Tycho which must be at the correct version.</p>
-<p>The Helm chart for deploying Appstore can be found [here](<a class="reference external" href="https://github.com/helxplatform/devops/tree/master/helx/charts/appstore">https://github.com/helxplatform/devops/tree/master/helx/charts/appstore</a>).</p>
 </div>
 
 
@@ -78,17 +78,19 @@ concerns are:
 <li class="toctree-l2 current"><a class="reference internal" href="appstore.html#domains">2.1. Domains</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="overview.html">2.1.1. Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="authentication.html">2.1.2. Authentication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_create.html">2.1.3. Creating an Application</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_create.html#log-in-and-start-your-app">2.1.4. Log in and Start your App</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_blackbalsam.html">2.1.5. Blackbalsam</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_cloudtop.html">2.1.6. Cloudtop</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_dicom.html">2.1.7. DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_imagej_napari.html">2.1.8. ImageJ-Napari</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_jupyter_datascience.html">2.1.9. Jupyter-DataScience</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_nextflow_api.html">2.1.10. Nextflow API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app_rstudio.html">2.1.11. RStudio</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.1.12. # Applications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="appstore.html#indices-and-tables">2.1.13. Indices and tables</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app_create.html">2.1.3.1. Creating an Application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_blackbalsam.html">2.1.3.2. Blackbalsam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_cloudtop.html">2.1.3.3. Cloudtop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_dicom.html">2.1.3.4. DICOM Viewer for Google Health API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_imagej_napari.html">2.1.3.5. ImageJ-Napari</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_jupyter_datascience.html">2.1.3.6. Jupyter-DataScience</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_nextflow_api.html">2.1.3.7. Nextflow API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_rstudio.html">2.1.3.8. RStudio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="appstore.html#indices-and-tables">2.1.4. Indices and tables</a></li>
 </ul>
 </li>
 </ul>
@@ -106,7 +108,7 @@ concerns are:
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="appstore.html"><span class="section-number">2. </span>AppStore</a><ul>
       <li>Previous: <a href="authentication.html" title="previous chapter"><span class="section-number">2.1.2. </span>Authentication</a></li>
-      <li>Next: <a href="app_create.html" title="next chapter"><span class="section-number">2.1.3. </span>Creating an Application</a></li>
+      <li>Next: <a href="app_create.html" title="next chapter"><span class="section-number">2.1.3.1. </span>Creating an Application</a></li>
   </ul></li>
   </ul></li>
 </ul>

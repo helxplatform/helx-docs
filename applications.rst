@@ -26,7 +26,6 @@ here_.
 
 .. toctree::
    :maxdepth: 4
-   :numbered:		
    :hidden:
      
    Creating an Application <app_create>

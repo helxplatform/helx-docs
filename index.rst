@@ -26,7 +26,6 @@ questions.
 
 .. toctree::
    :maxdepth: 4
-   :numbered:		
    :hidden:
      
    Tycho <tycho.rst>
