@@ -171,21 +171,27 @@ Making application development easy is key to bringing the widest range
 of useful tools to the platform so we prefer metadata to code wherever
 possible for creating HeLx Apps. Apps are systems of cooperating
 processes. These are expressed using
-`Docker <https://www.docker.com/>`__ and `Docker
-Compose <https://docs.docker.com/compose/>`__. Appstore uses the
-`Tycho <https://helxplatform.github.io/tycho-docs/gen/html/index.html>`__
-engine to discover and manage Apps. The `Tycho app
-metadata <https://github.com/helxplatform/tycho/blob/metadata/tycho/conf/app-registry.yaml>`__
+Docker_ and Docker
+Compose_. Appstore uses the
+Tycho_
+engine to discover and manage Apps. The Tycho app
+metadata_
 format specifies the details of each application, contexts to which
 applications belong, and inheritance relationships between contexts.
 
 Docker compose syntax is used to express cooperating containers
 comprising an application. The specifications are stored in
-`GitHub <https://github.com/helxplatform/app-support-prototype/tree/develop/dockstore-yaml-proposals>`__,
+GitHub_,
 each in an application specific subfolder. Along with the docker
 compose, a ``.env`` file specifies environment variables for the
 application. If a file called icon.png is provided, that is used as the
 application's icon.
+
+.. _Docker: https://www.docker.com/
+.. _Compose: https://docs.docker.com/compose/
+.. _Tycho: https://helxplatform.github.io/tycho-docs/gen/html/index.html
+.. _metadata: https://github.com/helxplatform/tycho/blob/metadata/tycho/conf/app-registry.yaml
+.. _GitHub: https://github.com/helxplatform/app-support-prototype/tree/develop/dockstore-yaml-proposals
 
 Development Environment
 -----------------------
