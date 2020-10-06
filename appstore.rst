@@ -1,13 +1,13 @@
-###############################
+########
 AppStore
-###############################
+########
 
 The HeLx Appstore is the primary user experience component of the HeLx
 data science platform.
 
-********
+*******
 Domains
-********
+*******
 
 HeLx can be applied in many domains. It's ability to empower researchers
 to leverage advanced analytical tools without installation or other
@@ -171,3 +171,27 @@ Security
 HeLx prefers open standard security protocols where available, and
 applies standards based best practices, especially from NIST and FISMA,
 in several areas.
+
+.. Hide the contents from the front page because they are already in
+.. the side bar in the Alabaster sphinx style; requires Alabaster
+.. config sidebar_includehidden=True (default)
+
+.. Contents
+.. ========
+
+.. toctree::
+   :maxdepth: 4
+   :numbered:		
+   :hidden:
+     
+  Overview
+  Authentication
+  Applications
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
