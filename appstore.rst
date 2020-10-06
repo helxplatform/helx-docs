@@ -62,20 +62,20 @@ documentation_.
 
 **ReCCAP** Coming soon.
 
-*********
+********
 Overview
-*********
+********
 
-==============
+============
 Architecture
-===============
+============
 
 HeLx puts the most advanced analytical scientific models at
 investigator's finger tips using equally advanced cloud native,
 container orchestrated, distributed computing systems.
 
 User Experience
------------------- 
+------------------
 
 Users browse tools of interest and launch those tools to explore and
 analyze available data. From the user's perspective, HeLx is like an
