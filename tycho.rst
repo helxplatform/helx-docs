@@ -47,19 +47,25 @@ Partnering Technologies
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 This work relies on these foundations: -
-**`PIVOT <https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjpusKw2YzsAhUBlHIEHXNbBicQFjAAegQIBBAB&url=https%3A%2F%2Frenci.org%2Fwp-content%2Fuploads%2F2019%2F02%2FCloud_19.pdf&usg=AOvVaw26F8j_JW86Vg3HZE6gHyaV>`__**:
+**PIVOT_**:
 A cloud agnostic scheduler with an API for executing distributed
-systems. - **`Kubernetes <https://kubernetes.io/>`__**: Widely deployed,
+systems. - **Kubernetes_**: Widely deployed,
 highly programmable, horizontally scalable container orchestration
-platform. - **`Kompose <https://docs.docker.com/compose/>`__**:
+platform. - **Kompose_**:
 Automates conversion of Docker Compose to Kubernetes. Written in Go,
 does not provide an API. Supports Docker Compose to Kubernetes only. -
-**`Docker <https://www.docker.com/>`__**: Pervasive Linux
+**Docker_**: Pervasive Linux
 containerization tool chain enabling programmable infrastructure and
-portability. - **Docker-compose](https://docs.docker.com/compose/)**:
+portability. - **Docker-compose_**:
 Syntax and tool chain for executing distributed systems of containers. -
 **Docker Swarm**: Docker only container orchestration platform with
 minimal adoption.
+
+.._PIVOT:  https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjpusKw2YzsAhUBlHIEHXNbBicQFjAAegQIBBAB&url=https%3A%2F%2Frenci.org%2Fwp-content%2Fuploads%2F2019%2F02%2FCloud_19.pdf&usg=AOvVaw26F8j_JW86Vg3HZE6gHyaV
+.._Kubernetes:  https://kubernetes.io
+.._kompose:  https://docs.docker.com/compose/
+.._Docker:  https://www.docker.com/
+.._Docker-compose:  https://docs.docker.com/compose/
 
 Quick Start
 ~~~~~~~~~~~
