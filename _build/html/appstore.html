@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>AppStore &#8212; HeLx 1.0 documentation</title>
+    <title>2. AppStore &#8212; HeLx 1.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" />
-    <link rel="prev" title="HeLx Framework Overview" href="tycho.html" />
+    <link rel="next" title="5. Installation" href="installation.html" />
+    <link rel="prev" title="1. HeLx Framework Overview" href="tycho.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -33,11 +33,11 @@
           <div class="body" role="main">
             
   <div class="section" id="appstore">
-<h1>AppStore<a class="headerlink" href="#appstore" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>AppStore<a class="headerlink" href="#appstore" title="Permalink to this headline">¶</a></h1>
 <p>The HeLx Appstore is the primary user experience component of the HeLx
 data science platform.</p>
 <div class="section" id="domains">
-<h2>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Domains<a class="headerlink" href="#domains" title="Permalink to this headline">¶</a></h2>
 <p>HeLx can be applied in many domains. It’s ability to empower researchers
 to leverage advanced analytical tools without installation or other
 infrastructure concerns has broad reaching benefits.</p>
@@ -79,18 +79,14 @@ experimental space for ideas and prototypes, some of which will graduate
 into the core of HeLx. For more information, see the blackbalsam
 <a class="reference external" href="https://github.com/stevencox/blackbalsam">documentation</a>.</p>
 <p><strong>ReCCAP</strong> Coming soon.</p>
+</div>
 <div class="section" id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="architecture">
-<h4>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h4>
+<h2><span class="section-number">2.2. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>HeLx puts the most advanced analytical scientific models at
 investigator’s finger tips using equally advanced cloud native,
 container orchestrated, distributed computing systems.</p>
-</div>
-</div>
-</div>
 <div class="section" id="user-experience">
-<h2>User Experience<a class="headerlink" href="#user-experience" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.2.1. </span>User Experience<a class="headerlink" href="#user-experience" title="Permalink to this headline">¶</a></h3>
 <p>Users browse tools of interest and launch those tools to explore and
 analyze available data. From the user’s perspective, HeLx is like an
 operating system since it runs useful tools. But there’s no
@@ -99,7 +95,7 @@ computation, and analyses can be reproducibly shared with others on the
 platform.</p>
 </div>
 <div class="section" id="compute">
-<h2>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.2.2. </span>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h3>
 <p>The system’s underlying computational engine is Kubernetes. HeLx runs in
 a Kubernetes cluster and apps are launched and managed within the same
 namespace, or administrative context, it uses. Tycho translates the
@@ -165,17 +161,18 @@ path on the PV for each user’s home directory and mount that path to
 each container it creates that is a component of an app.</p>
 </div>
 <div class="section" id="storage">
-<h2>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.2.3. </span>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h3>
 <p>HeLx apps, in the near term, will mount a read only file system
 containing reference data and to a writable file system for user data.
 Storage can also consist of an NFS-rods volume mounted to each container
 for access to data stored in iRODS.</p>
 </div>
 <div class="section" id="security">
-<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.2.4. </span>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
 <p>HeLx prefers open standard security protocols where available, and
 applies standards based best practices, especially from NIST and FISMA,
 in several areas.</p>
+</div>
 </div>
 </div>
 
@@ -197,28 +194,31 @@ in several areas.</p>
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tycho.html">Tycho</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">AppStore</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#domains">Domains</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#user-experience">User Experience</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#compute">Compute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storage">Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#security">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tycho.html">1. Tycho</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. AppStore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#domains">2.1. Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">2.2. Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#user-experience">2.2.1. User Experience</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute">2.2.2. Compute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storage">2.2.3. Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security">2.2.4. Security</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">Installing HeLx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Current and Upcoming Releases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install_devops.html">3. DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_more.html">4. More Specific Installs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">5. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">6. Installing HeLx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">7. Current and Upcoming Releases</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="tycho.html" title="previous chapter">HeLx Framework Overview</a></li>
-      <li>Next: <a href="installation.html" title="next chapter">Installation</a></li>
+      <li>Previous: <a href="tycho.html" title="previous chapter"><span class="section-number">1. </span>HeLx Framework Overview</a></li>
+      <li>Next: <a href="installation.html" title="next chapter"><span class="section-number">5. </span>Installation</a></li>
   </ul></li>
 </ul>
 </div>
