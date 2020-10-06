@@ -1,17 +1,18 @@
 .. toctree::
    :maxdepth: 2
    
-   Tycho <tycho.md>
-   AppStore <appstore.md>
-   Installation <installation.md>
-   Current and Upcoming Releases <releases.md>
+   Tycho
+   AppStore 
+   Installation 
+   Current and Upcoming Releases 
 
 ###############################
 HeLx User Documentation
 ###############################
 
+****************** 
 Welcome to HeLx 1.
-------------------
+****************** 
 
 HeLx puts the most advanced analytical scientific models at
 investigator's finger tips using equally advanced cloud native,
