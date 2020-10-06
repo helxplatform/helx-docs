@@ -25,7 +25,7 @@ questions.
 
 
 Indices and tables - avoid deletion for historical reasons
-==================
+========================================================================
 
 * :ref:`genindex`
 * :ref:`modindex`
