@@ -5,14 +5,11 @@ Applications
 Appstore is deployed to Kubernetes in production using Helm. The main
 deployment concerns are: 
 
-- **Security** : Secrets are added to the
-container via environment variables. 
+- **Security** : Secrets are added to the container via environment variables. 
 
-- **Persistence** : Storage must be
-mounted for a database. 
+- **Persistence** : Storage must be mounted for a database. 
 
-- **Services** : The chief dependency is on
-Tycho which must be at the correct version.
+- **Services** : The chief dependency is on Tycho which must be at the correct version.
 
 The Helm chart for deploying Appstore can be found
 here_.
