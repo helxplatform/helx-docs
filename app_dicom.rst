@@ -2,9 +2,10 @@
 DICOM Viewer for Google Health API
 ##################################
 
+====================================
 
 Running the DICOM Viewer Application
-------------------------------------
+====================================
 
 Begin by starting the App as described in the section Creating an
 Application_. Select the CloudTop Viewer application.
@@ -12,6 +13,7 @@ Application_. Select the CloudTop Viewer application.
 .. _Application: https://helx-10.readthedocs.io/en/latest/app_create.html?highlight=create%20an%20application
 
 **Step 1:** Connect to the application
+
 -  Enter the ``USERNAME`` and
 ``VNC_PW`` you have been provided 
 -  Press the Login button 
@@ -19,6 +21,7 @@ Application_. Select the CloudTop Viewer application.
 the app to respond
 
 **Step 2:** Use OHIF functionality
+
 -  Click the Firefox icon and browse
 to ``localhost:3000`` 
 -  At this point you will be prompted for your
@@ -38,6 +41,7 @@ authentication.
 selection of projects.
 
 **Step 3:** Browse to The example Data Set
+
 - Select helx-dev 
 - Select
 the northamerica- northeast1 region 
