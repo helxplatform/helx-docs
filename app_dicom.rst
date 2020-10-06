@@ -2,9 +2,9 @@
 DICOM Viewer for Google Health API
 ##################################
 
-====================================
+
 Running the DICOM Viewer Application
-====================================
+------------------------------------
 
 Begin by starting the App as described in the section Creating an
 Application_. Select the CloudTop Viewer application.
