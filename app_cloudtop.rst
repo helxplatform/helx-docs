@@ -147,9 +147,12 @@ emulator from the applications menu. In the resultant shell, type:
 -  At this point the basic CloudTop functionality is working. Next we
    will want to verify that ImageJ and Napari are working
 
-**Step 4: Make sure the ImageJ application launcher works correct** -
-Exit the terminal application and click the ImageJ icon. There is no
-ImageJ test data included in the docker. - Exit ImageJ and make sure the
-Napari application launcher works correctly. - The docker does not
-contain any test data. The docker test is now complete. - Exit Napari
+**Step 4: Make sure the ImageJ application launcher works correct** 
+-  Exit the terminal application and click the ImageJ icon. There is no
+ImageJ test data included in the docker. 
+-  Exit ImageJ and make sure the
+Napari application launcher works correctly. 
+-  The docker does not
+contain any test data. The docker test is now complete. 
+-  Exit Napari
 and stop the docker.
