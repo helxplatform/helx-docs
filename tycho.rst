@@ -8,12 +8,16 @@ Tycho
 Tycho is an API, compiler, and executor for cloud native distributed
 systems.
 
--  A subset of `docker-compose <https://docs.docker.com/compose/>`__ is
+-  A subset of docker-compose_ is
    the system specification syntax.
--  `Kubernetes <https://kubernetes.io/>`__ is the first supported
+-  Kubernetes_ is the first supported
    orchestrator.
 -  The Helm chart for deploying Tycho can be found
-   `here <https://github.com/helxplatform/devops/tree/master/helx/charts/tycho-api>`__.
+   here_.
+   
+.. _docker-compose: https://docs.docker.com/compose/
+.. _Kubernetes: https://kubernetes.io
+.. _here:  https://github.com/helxplatform/devops/tree/master/helx/charts/tycho-api
 
 Goals
 ~~~~~
