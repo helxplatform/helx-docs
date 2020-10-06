@@ -171,3 +171,27 @@ Security
 HeLx prefers open standard security protocols where available, and
 applies standards based best practices, especially from NIST and FISMA,
 in several areas.
+
+.. Hide the contents from the front page because they are already in
+.. the side bar in the Alabaster sphinx style; requires Alabaster
+.. config sidebar_includehidden=True (default)
+
+.. Contents
+.. ========
+
+.. toctree::
+   :maxdepth: 4
+   :numbered:		
+   :hidden:
+     
+  Overview
+  Authentication
+  Applications
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
