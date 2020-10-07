@@ -53,17 +53,11 @@ coredns.kube-system.svc for on-prem clusters.*
 Installation Notes
 ------------------
 
--  role.yaml - set of permissions binding to a single namespace(service
-account) using Role and Rolebinding having access to only that
-namespace.
+-  role.yaml - set of permissions binding to a single namespace (service account) using Role and Rolebinding having access to only that namespace.
 
--  serviceaccount.yaml - set of permissions binding to a
-single namespace(service account) using ClusterRole(cluster-admin) and
-ClusterRoleBinding having access to entire cluster.
+-  serviceaccount.yaml - set of permissions binding to a single namespace(service account) using ClusterRole(cluster-admin) and ClusterRoleBinding having access to entire cluster.
 
--  The current
-version of tycho-api on Braini/Scidas needs a LoadBalancer IP, but the
-later versions we will not need that.
+-  The current version of tycho-api on Braini/Scidas needs a LoadBalancer IP, but the later versions we will not need that.
 
 1. helm install release-name tycho-api/ -n
 
