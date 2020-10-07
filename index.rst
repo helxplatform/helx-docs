@@ -1,10 +1,9 @@
 ###############################
-HeLx User Documentation
+HeLx Documentation
 ###############################
 
-*******************
-Welcome to HeLx 1.0
-******************* 
+:Release: |release|
+:Date: |today|
 
 HeLx puts the most advanced analytical scientific models at
 investigator's finger tips using equally advanced cloud native,
@@ -16,20 +15,25 @@ concerns has broad reaching benefits.
 Contact `HeLx Help <mailto:catalyst-admin@lists.renci.org>`__ with
 questions.
 
+********************
 Installing HeLx
-====================
-# HeLx Configuration for a Bare-Metal Kubernetes Cluster
+********************
+
+HeLx Configuration for a Bare-Metal Kubernetes Cluster
+==========================================================
  
-## Requirements for Cluster
+Requirements for Cluster
+--------------------------
  
-### Tools Needed
-- kubectl
-   - Needs to be configured with a kubeconfig to access the cluster.
-- Helm version 2
+Tools Needed
+^^^^^^^^^^^^^^
+* kubectl
+   * Needs to be configured with a kubeconfig to access the cluster.
+* Helm version 2
  
-Access to a Kubernetes cluster.  Currently we use Kubernetes version 1.17 for development and testing.  Older and newer versions of Kubernetes should also work.
+* Access to a Kubernetes cluster.  Currently we use Kubernetes version 1.17 for development and testing.  Older and newer versions of Kubernetes should also work.
  
-Admin access to a namespace on a Kubernetes cluster as well as the ability to create Persistent Volumes on the cluster.
+* Admin access to a namespace on a Kubernetes cluster as well as the ability to create Persistent Volumes on the cluster.
  
 Copy the example configuration file below to a new file and adjust the variables according to the information below.
  
@@ -49,7 +53,8 @@ Set a password for CLOUD_TOP_VNC_PW.
  
 Set a username and password for the outgoing email service to use.  Currently this is set to use a Google Email App username and password and Google's SMTP server.
  
-### An Example Configuration File
+An Example Configuration File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 export CLUSTER_NAME="helx-cluster" # GKE cluster name and also used for other object names.
 export NAMESPACE="helx"
@@ -75,14 +80,16 @@ export EMAIL_HOST_USER="email@example.com"
 export EMAIL_HOST_PASSWORD="< SECRET HERE >"
 ```
  
-### Commands to Deploy HeLx
+Commands to Deploy HeLx
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 git clone https://github.com/helxplatform/devops.git
 cd devops/bin
 ./k8s-apps.sh -c $YOUR_CONFIGURATION_FILE deploy all
 ```
  
-### Command to Delete HeLx
+Command to Delete HeLx
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `./k8s-apps.sh -c $YOUR_CONFIGURATION_FILE delete all`
  
 This will leave the PVs and PVCs behind to also remove them add the following to your configuration file.
