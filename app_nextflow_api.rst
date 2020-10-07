@@ -23,6 +23,7 @@ Working with Nextflow on HeLx
 ==============================
 
 **Step-1:** 
+
 -  Launch a Nextflow API by clicking on the "New Application"
 button on the app manager page on HelX. 
 
@@ -30,6 +31,7 @@ button on the app manager page on HelX.
 THAT GOES HERE!!!!]]
 
 **Step-2:** 
+
 -  This brings us to the Nextflow API home page, where we can
 view the launched workflows and create new workflows. 
 
@@ -37,6 +39,7 @@ view the launched workflows and create new workflows.
 THERE'S A PICTURE THAT GOES HERE!!!!]]
 
 **Step-3:** 
+
 -  Below is a demo of how to launch a systemsgenetics/kinc
 workflow. 
 -  Click on "Create Workflow" button and fill in the form to give
@@ -47,6 +50,7 @@ it a "Name" and specify the Pipeline (in this case
 HERE!!!!]]
 
 **Step-4:** 
+
 -  Uploading the necessary files, a GEM file in the format
 "\*.emx.txt" and a nextflow.config file (can upload all files at once). 
 -  Click on "Upload" button. 
@@ -55,6 +59,7 @@ HERE!!!!]]
 HERE!!!!]]
 
 **Step-5:** 
+
 -  Now we are all set to launch the workflow. Go ahead and
 click on "Launch" button. 
 -  This should show all the logs of the
