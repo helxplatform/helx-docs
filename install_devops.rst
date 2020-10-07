@@ -4,8 +4,7 @@ DevOps
 
 To deploy HeLx 1.0 on the Google Kubernetes Engine you will need to have
 an account with Google Cloud Platform and configure the `Google Cloud
-SDK_ on your local
-system.
+SDK_ on your local system.
 
 .. _SDK: https://cloud.google.com/sdk/docs/quickstarts
 Check your Google Cloud SDK is setup correctly.
