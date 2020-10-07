@@ -1,41 +1,181 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>1. HeLx Framework Overview &#8212; HeLx 1.0 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. HeLx Framework Overview &mdash; HeLx 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. AppStore" href="appstore.html" />
-    <link rel="prev" title="HeLx User Documentation" href="index.html" />
+    <link rel="prev" title="HeLx User Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> HeLx
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Tycho</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tycho">1.1. Tycho</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#goals">1.1.1. Goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partnering-technologies">1.1.2. Partnering Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quick-start">1.1.3. Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#architecture">1.1.4. Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install">1.1.5. Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-a-development-environment-next-to-minikube">1.1.6. Usage - A. Development Environment Next to Minikube</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#usage-b-development-environment-within-minikube">1.1.6.1. Usage - B. Development Environment Within Minikube</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage-c-within-google-kubernetes-engine-from-the-google-cloud">1.1.6.2. Usage - C. Within Google Kubernetes Engine from the Google Cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shell">1.1.6.3. Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#client-endpoint-autodiscovery">1.1.6.4. Client Endpoint Autodiscovery</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appstore.html">2. AppStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_devops.html">3. DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_more.html">4. More Specific Installs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">5. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">6. Installing HeLx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">7. Current and Upcoming Releases</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HeLx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>HeLx Framework Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tycho.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="helx-framework-overview">
-<h1><span class="section-number">1. </span>HeLx Framework Overview<a class="headerlink" href="#helx-framework-overview" title="Permalink to this headline">¶</a></h1>
+<h1>HeLx Framework Overview<a class="headerlink" href="#helx-framework-overview" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tycho">
-<h2><span class="section-number">1.1. </span>Tycho<a class="headerlink" href="#tycho" title="Permalink to this headline">¶</a></h2>
+<h2>Tycho<a class="headerlink" href="#tycho" title="Permalink to this headline">¶</a></h2>
 <p>Tycho is an API, compiler, and executor for cloud native distributed
 systems.</p>
 <ul class="simple">
@@ -47,7 +187,7 @@ orchestrator.</p></li>
 <a class="reference external" href="https://github.com/helxplatform/devops/tree/master/helx/charts/tycho-api">here</a>.</p></li>
 </ul>
 <div class="section" id="goals">
-<h3><span class="section-number">1.1.1. </span>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h3>
+<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Application Simplity</strong>: The Kubernetes API is reliable, extensive,
 and well documented. It is also large, complex, supports a range of
@@ -72,7 +212,7 @@ be woven into a deployment dynamically.</p></li>
 </ul>
 </div>
 <div class="section" id="partnering-technologies">
-<h3><span class="section-number">1.1.2. </span>Partnering Technologies<a class="headerlink" href="#partnering-technologies" title="Permalink to this headline">¶</a></h3>
+<h3>Partnering Technologies<a class="headerlink" href="#partnering-technologies" title="Permalink to this headline">¶</a></h3>
 <p>This work relies on these foundations:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjpusKw2YzsAhUBlHIEHXNbBicQFjAAegQIBBAB&amp;url=https%3A%2F%2Frenci.org%2Fwp-content%2Fuploads%2F2019%2F02%2FCloud_19.pdf&amp;usg=AOvVaw26F8j_JW86Vg3HZE6gHyaV">PIVOT</a>: A cloud agnostic scheduler with an API for executing distributed systems.</p></li>
@@ -84,7 +224,7 @@ be woven into a deployment dynamically.</p></li>
 </ul>
 </div>
 <div class="section" id="quick-start">
-<h3><span class="section-number">1.1.3. </span>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h3>
+<h3>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h3>
 <p>samples/jupyter-ds/docker-compose.yaml:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
 <span class="c1"># Docker compose formatted system.</span>
@@ -143,11 +283,11 @@ None running
 </div>
 </div>
 <div class="section" id="architecture">
-<h3><span class="section-number">1.1.4. </span>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h3>
+<h3>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h3>
 <p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
 </div>
 <div class="section" id="install">
-<h3><span class="section-number">1.1.5. </span>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Install python 3.7.x or greater.</p></li>
 <li><p>Create a virtual environment.</p></li>
@@ -163,7 +303,7 @@ tycho api
 </div>
 </div>
 <div class="section" id="usage-a-development-environment-next-to-minikube">
-<h3><span class="section-number">1.1.6. </span>Usage - A. Development Environment Next to Minikube<a class="headerlink" href="#usage-a-development-environment-next-to-minikube" title="Permalink to this headline">¶</a></h3>
+<h3>Usage - A. Development Environment Next to Minikube<a class="headerlink" href="#usage-a-development-environment-next-to-minikube" title="Permalink to this headline">¶</a></h3>
 <p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
 <p>This mode uses a local minikube instance with Tycho running outside of
 Minikube. This is the easiest way to add and test new features quickly.</p>
@@ -184,7 +324,7 @@ PYTHONPATH=$PWD/.. python api.py
 <p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
 <p>Use the Tycho CLI client as shown above or invoke the API.</p>
 <div class="section" id="usage-b-development-environment-within-minikube">
-<h4><span class="section-number">1.1.6.1. </span>Usage - B. Development Environment Within Minikube<a class="headerlink" href="#usage-b-development-environment-within-minikube" title="Permalink to this headline">¶</a></h4>
+<h4>Usage - B. Development Environment Within Minikube<a class="headerlink" href="#usage-b-development-environment-within-minikube" title="Permalink to this headline">¶</a></h4>
 <p>When we deploy Tycho into Minikube it is now able to get its Kubernetes
 API configuration from within the cluster.</p>
 <p>In the repo’s kubernetes directory, we define deployment, pod, service,
@@ -203,10 +343,10 @@ service/tycho-api created
 <p>Then we use the client as usual.</p>
 </div>
 <div class="section" id="usage-c-within-google-kubernetes-engine-from-the-google-cloud">
-<h4><span class="section-number">1.1.6.2. </span>Usage - C. Within Google Kubernetes Engine from the Google Cloud<a class="headerlink" href="#usage-c-within-google-kubernetes-engine-from-the-google-cloud" title="Permalink to this headline">¶</a></h4>
+<h4>Usage - C. Within Google Kubernetes Engine from the Google Cloud<a class="headerlink" href="#usage-c-within-google-kubernetes-engine-from-the-google-cloud" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="shell">
-<h4><span class="section-number">1.1.6.3. </span>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h4>
+<h4>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h4>
 <p>Starting out, Tycho’s not running on the cluster:</p>
 <p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
 <p>First deploy the Tycho API</p>
@@ -276,7 +416,7 @@ $ wget --quiet -O- http://$job_lb_ip:8888 | grep -i /title
 the launcher.</p>
 </div>
 <div class="section" id="client-endpoint-autodiscovery">
-<h4><span class="section-number">1.1.6.4. </span>Client Endpoint Autodiscovery<a class="headerlink" href="#client-endpoint-autodiscovery" title="Permalink to this headline">¶</a></h4>
+<h4>Client Endpoint Autodiscovery<a class="headerlink" href="#client-endpoint-autodiscovery" title="Permalink to this headline">¶</a></h4>
 <p>Using the command lines above without the <code class="docutils literal notranslate"><span class="pre">-s</span></code> flag for server will
 work on GKE. That is, the client is created by first using the K8s API
 to locate the Tycho-API endpoint and port. It builds the URL
@@ -291,94 +431,59 @@ automatically and creates a TychoAPI object ready to use.</p>
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">HeLx</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Tycho</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tycho">1.1. Tycho</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#goals">1.1.1. Goals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#partnering-technologies">1.1.2. Partnering Technologies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quick-start">1.1.3. Quick Start</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#architecture">1.1.4. Architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install">1.1.5. Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#usage-a-development-environment-next-to-minikube">1.1.6. Usage - A. Development Environment Next to Minikube</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#usage-b-development-environment-within-minikube">1.1.6.1. Usage - B. Development Environment Within Minikube</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#usage-c-within-google-kubernetes-engine-from-the-google-cloud">1.1.6.2. Usage - C. Within Google Kubernetes Engine from the Google Cloud</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#shell">1.1.6.3. Shell</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#client-endpoint-autodiscovery">1.1.6.4. Client Endpoint Autodiscovery</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="appstore.html">2. AppStore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">3. DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">4. More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">5. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">6. Installing HeLx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">7. Current and Upcoming Releases</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">HeLx User Documentation</a></li>
-      <li>Next: <a href="appstore.html" title="next chapter"><span class="section-number">2. </span>AppStore</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appstore.html" class="btn btn-neutral float-right" title="2. AppStore" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="HeLx User Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Isma Gilani
 
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2020, Isma Gilani.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/tycho.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>
