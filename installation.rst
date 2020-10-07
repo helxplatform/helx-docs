@@ -50,7 +50,8 @@ coredns.kube-system.svc for on-prem clusters.*
 1. Edit the values.yaml (**Important**: service(ClusterIP or LoadBalancer) and image). 
 2. Copy the role.yaml (for PRP) or serviceaccount.yaml (for SciDas and BRAIN-I) from /devops/helx to /devops/helx/charts/tycho-api/templates/.
 
-**8Installation Notes**
+Installation Notes
+------------------
 
 -  role.yaml - set of permissions binding to a single namespace(service
 account) using Role and Rolebinding having access to only that
