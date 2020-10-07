@@ -24,14 +24,7 @@ Working with Nextflow on HeLx
 
 **Step-1:** 
 
--  Launch a Nextflow API by clicking on the "New Application" button on the app manager page on HelX. 
-
-[[AUTHOR NOTE: THERE'S A PICTURE
-THAT GOES HERE!!!!]]
-
-**Step-2:** 
-
--  This brings us to the Nextflow API home page, where we can view the launched workflows and create new workflows. 
+-  After selecting the Nextflow API application, you will be taken to the Nextflow API home page, where we can view the launched workflows and create new workflows. 
 
 [[AUTHOR NOTE:
 THERE'S A PICTURE THAT GOES HERE!!!!]]
