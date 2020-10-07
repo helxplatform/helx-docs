@@ -53,7 +53,6 @@ HDF5_, Gadfly_, and RDatasets_ packages.
 .. _numba: https://numba.pydata.org/
 .. _bokeh: https://docs.bokeh.org/en/latest/
 .. _sqlalchemy: https://www.sqlalchemy.org/
-.. _hdf5: http://www.h5py.org/
 .. _vincent: https://vincent.readthedocs.io/en/latest/
 .. _beautifulsoup: https://www.crummy.com/software/BeautifulSoup/
 .. _protobuf: https://developers.google.com/protocol-buffers/docs/pythontutorial
