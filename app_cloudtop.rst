@@ -25,24 +25,24 @@ to whichever tag you want to test.
 
 **Step 2:** Connect to the running docker 
 
--  Browse to ``localhost:8080``
--  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
+1. Browse to ``localhost:8080``
+2. Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
 ``Dockerfile`` 
--  Press the Login button 
--  Wait for Guacamole to respond
+3. Press the Login button 
+4. Wait for Guacamole to respond
 
 **Step 3:** Make sure the home directory is OK
 
--  Start a terminal emulator
+1. Start a terminal emulator
 from the applications menu. In the resultant shell, type
 
 ::
 
     echo $HOME
 
--  You should see ``/home/USER_NAME`` where ``USER_NAME`` is the user
+1. You should see ``/home/USER_NAME`` where ``USER_NAME`` is the user
    name specified in
--  Note the presence of the Firefox browser icon
+2. Note the presence of the Firefox browser icon
 
 At this point the basic CloudTop functionality is working.
 
@@ -67,45 +67,45 @@ Change the tag to whichever tag you want to test.
 
 **Step 2:** Connect to the running docker 
 
--  Browse to ``localhost:8080``
--  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
+1. Browse to ``localhost:8080``
+2. Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
 Dockerfile 
--  Press the Login button - Wait for Guacamole to respond
+3. Press the Login button - Wait for Guacamole to respond
 
 **Step 3:** Make sure the home directory is OK 
 
--  Start a terminal
+1. Start a terminal
 emulator from the applications menu. In the resultant shell, type:
 
 ::
 
     echo $HOME
 
--  You should see ``/home/USER_NAME`` where ``USER_NAME`` is the user
+2. You should see ``/home/USER_NAME`` where ``USER_NAME`` is the user
    name specified in Step 1
--  Note the presence of the Firefox browser icon
+3. Note the presence of the Firefox browser icon
 
 At this point the basic CloudTop functionality is working.
 
 **Step 4:** Test the OHIF functionality 
 
--  Exit the terminal emulator by typing ``exit`` 
--  Click the Firefox icon and browse to ``localhost:3000`` 
--  At this point you will be prompted for your Google user ID. 
--  Click Next. 
--  Google may prompt you to choose the account you wish to proceed with. If prompted, pick your G Suite account. 
--  Click Next. 
--  Enter your password. The browser will ask if you want to save the password. It doesn’t matter if you do or not 
--  Respond to the 2 step authentication. If you haven't used it before, you may be prompted to set up the 2 step authentication. 
--  You should now see the basic OHIF screen with a large selection of projects.
+1. Exit the terminal emulator by typing ``exit`` 
+2. Click the Firefox icon and browse to ``localhost:3000`` 
+3. At this point you will be prompted for your Google user ID. 
+4. Click Next. 
+5. Google may prompt you to choose the account you wish to proceed with. If prompted, pick your G Suite account. 
+6. Click Next. 
+7. Enter your password. The browser will ask if you want to save the password. It doesn’t matter if you do or not 
+8. Respond to the 2 step authentication. If you haven't used it before, you may be prompted to set up the 2 step authentication. 
+9. You should now see the basic OHIF screen with a large selection of projects.
 
 **Step 5:** Browse to Your Data Set 
 
--  Select helx-dev 
--  Select the northamerica- northeast1 region 
--  Select the DicomTestData dataset 
--  Select the TestData Dicom Store 
--  You should now see our test datasets.
+1. Select helx-dev 
+2. Select the northamerica- northeast1 region 
+3. Select the DicomTestData dataset 
+4. Select the TestData Dicom Store 
+5. You should now see our test datasets.
 Chose your test data set and have fun!
 
 Testing the CloudTop ImageJ/Napari Docker
@@ -113,7 +113,7 @@ Testing the CloudTop ImageJ/Napari Docker
 
 **Step 1:** Start the Docker 
 
--  Start the docker with the following
+1. Start the docker with the following
 command:
 
 ::
@@ -127,31 +127,31 @@ tag to whichever tag you want to test.
 
 **Step 2:** Connect to the running docker 
 
--  Browse to ``localhost:8080``
--  Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
+1. Browse to ``localhost:8080``
+2. Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
 Dockerfile 
--  Press the Login button 
--  Wait for Guacamole to respond
+3. Press the Login button 
+4. Wait for Guacamole to respond
 
 **Step 3:** Make sure the home directory is OK
 
--  Start a terminal
+1. Start a terminal
 emulator from the applications menu. In the resultant shell, type:
 
 ::
 
     echo $HOME
 
--  You should see ``/home/USER_NAME`` where ``USER_NAME`` is the user
+2. You should see ``/home/USER_NAME`` where ``USER_NAME`` is the user
    name specified in Step 1
--  Note the presence of the ImageJ, Napari and Firefox browser icon.
+3. Note the presence of the ImageJ, Napari and Firefox browser icon.
    **If any are missing the test fails.**
--  At this point the basic CloudTop functionality is working. Next we
+4. At this point the basic CloudTop functionality is working. Next we
    will want to verify that ImageJ and Napari are working
 
 **Step 4:** Make sure the ImageJ application launcher works correctly
 
--  Exit the terminal application and click the ImageJ icon. There is no ImageJ test data included in the docker. 
--  Exit ImageJ and make sure the Napari application launcher works correctly. 
--  The docker does not contain any test data. The docker test is now complete. 
--  Exit Napari and stop the docker.
+1. Exit the terminal application and click the ImageJ icon. There is no ImageJ test data included in the docker. 
+2. Exit ImageJ and make sure the Napari application launcher works correctly. 
+3. The docker does not contain any test data. The docker test is now complete. 
+4. Exit Napari and stop the docker.
