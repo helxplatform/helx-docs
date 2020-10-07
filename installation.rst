@@ -7,7 +7,7 @@ Installing HeLx
 ***************
 
 Install helm3
---------------
+=============
 
 1. Download_ any helm3 release.
 2. Unpack it using tar (tar -zxvf helm-v3.0.0-linux-amd64.tar.gz).
@@ -26,12 +26,14 @@ Install charts individually
 ---------------------------
 
 **Ambassador** 
+
 1. Edit the values.yaml ( **Important** :
 service(ClusterIP or LoadBalancer) and prp(True or False)). 
 2. helm
 install **release-name** ambassador/ -n
 
 **AppsStore** 
+
 1. Edit the values.yaml (**Important**: service(ClusterIP
 or LoadBalancer, ambassador.flag(True or False) and image). 
 2. helm
@@ -41,6 +43,7 @@ install **release-name** appstore/ -n
 and ambassador. Mapping for AppsStore is defined in the ambassador*
 
 **nginx** 
+
 1. Edit the values.yaml ( **Important** :
 resolver(coredns.kube-system.svc or kube-dns.kube- system.svc)). 
 2. helm
@@ -50,6 +53,7 @@ install **release-name** nginx/ -n
 coredns.kube-system.svc for on-prem clusters.*
 
 **tycho-api** 
+
 1. Edit the values.yaml ( **Important** :
 service(ClusterIP or LoadBalancer) and image). 
 2. Copy the role.yaml(for
