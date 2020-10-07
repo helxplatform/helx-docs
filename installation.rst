@@ -7,7 +7,7 @@ Installing HeLx
 ***************
 
 Install helm3
-=============
+--------------
 
 1. Download_ any helm3 release.
 2. Unpack it using tar (tar -zxvf helm-v3.0.0-linux-amd64.tar.gz).
