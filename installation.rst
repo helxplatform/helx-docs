@@ -35,7 +35,7 @@ Install charts individually
 2. helm install **release-name** appstore/ -n
 
 *LoadBalancer IP won't be necessary when used with nginx reverse proxy
-and ambassador. Mapping for AppsStore is defined in the ambassador*
+and ambassador. Mapping for AppsStore is defined in the ambassador.*
 
 **nginx** 
 
@@ -50,11 +50,15 @@ coredns.kube-system.svc for on-prem clusters.*
 1. Edit the values.yaml (**Important**: service(ClusterIP or LoadBalancer) and image). 
 2. Copy the role.yaml (for PRP) or serviceaccount.yaml (for SciDas and BRAIN-I) from /devops/helx to /devops/helx/charts/tycho-api/templates/.
 
-*- role.yaml - set of permissions binding to a single namespace(service
+*-  role.yaml - set of permissions binding to a single namespace(service
 account) using Role and Rolebinding having access to only that
-namespace.* *- serviceaccount.yaml - set of permissions binding to a
+namespace.* 
+
+*-  serviceaccount.yaml - set of permissions binding to a
 single namespace(service account) using ClusterRole(cluster-admin) and
-ClusterRoleBinding having access to entire cluster.* *- The current
+ClusterRoleBinding having access to entire cluster.* 
+
+*-  The current
 version of tycho-api on Braini/Scidas needs a LoadBalancer IP, but the
 later versions we will not need that.*
 
