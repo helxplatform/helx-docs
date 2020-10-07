@@ -70,20 +70,23 @@ HDF5_, Gadfly_, and RDatasets_ packages.
 .. _RDatasets: https://github.com/JuliaStats/RDatasets.jl
 
 Working with jupyter-datascience notebook in HeLx
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Begin by starting the App as described in the section Creating an
-Application [[AUTHOR NOTE: TIHS WILL NEED TO BE LINKED OUT APPROPRIATELY
-IN SPHINX]]. Select the CloudTop Viewer application.*
+================================================= 
 
 **Step-1:** Launch a jupyter-datascience notebook from HeLx by clicking
-on “Launch Application” button. [[AUTHOR NOTE: THERE'S A PICTURE THAT
+on “Launch Application” button. 
+
+[[AUTHOR NOTE: THERE'S A PICTURE THAT
 GOES HERE!!!!]]
 
 **Step-2:** This brings us to the jupyter-lab panel where we can select
-the environment that we want to work on (Python, Julia, R). [[AUTHOR
+the environment that we want to work on (Python, Julia, R). 
+
+[[AUTHOR
 NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
 
 **Step-3:** Start working on it. Below code shows loading iris dataset
 (features, labels) from sklearn package to train/test our machine
-learning model. [[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
+learning model. 
+
+
+[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
