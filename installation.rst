@@ -27,7 +27,7 @@ Install charts individually
 
 **Ambassador** 
 
-1. Edit the `values.yaml` ( **Important** : service(ClusterIP or LoadBalancer) and prp(True or False)). 
+1. Edit the ::values.yaml:: ( **Important** : service(ClusterIP or LoadBalancer) and prp(True or False)). 
 2. helm install `**release-name** ambassador/ -n`
 
 **AppsStore** 
