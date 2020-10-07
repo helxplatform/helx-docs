@@ -8,7 +8,7 @@ for upcoming improvements.
 Architecture
 ============
 
-**Semantic Search** Our team has a `semantic search
+**Semantic Search** Our team has a semantic search
 engine_ for mapping to research
 data sets based on full text search. We anticipate extending the Tycho
 metadata model to include semantic links to ontologies, incorporating
