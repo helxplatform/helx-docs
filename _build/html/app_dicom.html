@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.1.3.4. Sample Text &mdash; HeLx 1.0 documentation</title>
+  <title>DICOM Viewer for Google Health API &mdash; HeLx 1.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.1.3.5. Sample Text" href="app_imagej_napari.html" />
+    <link rel="next" title="ImageJ-Napari" href="app_imagej_napari.html" />
     <link rel="prev" title="CloudTop" href="app_cloudtop.html" /> 
 </head>
 
@@ -92,11 +92,11 @@
 <li class="toctree-l4"><a class="reference internal" href="app_create.html">2.1.3.1. Creating an Application</a></li>
 <li class="toctree-l4"><a class="reference internal" href="app_blackbalsam.html">Blackbalsam</a></li>
 <li class="toctree-l4"><a class="reference internal" href="app_cloudtop.html">Cloudtop</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.3.4. DICOM Viewer for Google Health API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="app_imagej_napari.html">2.1.3.5. ImageJ-Napari</a></li>
-<li class="toctree-l4"><a class="reference internal" href="app_jupyter_datascience.html">2.1.3.6. Jupyter-DataScience</a></li>
-<li class="toctree-l4"><a class="reference internal" href="app_nextflow_api.html">2.1.3.7. Nextflow API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="app_rstudio.html">2.1.3.8. RStudio</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">DICOM Viewer for Google Health API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_imagej_napari.html">ImageJ-Napari</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_jupyter_datascience.html">Jupyter-DataScience</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_nextflow_api.html">Nextflow API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app_rstudio.html">RStudio</a></li>
 <li class="toctree-l4"><a class="reference internal" href="applications.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
@@ -105,10 +105,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">3. DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">4. More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">5. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">6. Installing HeLx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases.html">7. Current and Upcoming Releases</a></li>
 </ul>
 
@@ -160,7 +157,7 @@
         
           <li><a href="applications.html">Applications</a> &raquo;</li>
         
-      <li><span class="section-number">2.1.3.4. </span>Sample Text</li>
+      <li>DICOM Viewer for Google Health API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,8 +176,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sample-text">
-<h1>Sample Text<a class="headerlink" href="#sample-text" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dicom-viewer-for-google-health-api">
+<h1>DICOM Viewer for Google Health API<a class="headerlink" href="#dicom-viewer-for-google-health-api" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="running-the-dicom-viewer-application">
+<h2>Running the DICOM Viewer Application<a class="headerlink" href="#running-the-dicom-viewer-application" title="Permalink to this headline">¶</a></h2>
+<p>Begin by starting the App as described in the section Creating an
+<a class="reference external" href="https://helx-10.readthedocs.io/en/latest/app_create.html?highlight=create%20an%20application">Application</a>. Select the CloudTop Viewer application.</p>
+<p><strong>Step 1:</strong> Connect to the application</p>
+<ul class="simple">
+<li><p>Enter the <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> and <code class="docutils literal notranslate"><span class="pre">VNC_PW</span></code> you have been provided</p></li>
+<li><p>Press the Login button</p></li>
+<li><p>Wait for the app to respond</p></li>
+</ul>
+<p><strong>Step 2:</strong> Use OHIF functionality</p>
+<ul class="simple">
+<li><p>Click the Firefox icon and browse to <code class="docutils literal notranslate"><span class="pre">localhost:3000</span></code></p></li>
+<li><p>At this point you will be prompted for your Google user ID.</p></li>
+<li><p>Click Next.</p></li>
+<li><p>Google may prompt you to choose the account you wish to proceed with. If prompted, use the account with which you logged in to the App Store</p></li>
+<li><p>Click Next.</p></li>
+<li><p>Enter your password. The browser will ask if you want to save the password. It doesn’t matter if you do or not</p></li>
+<li><p>Respond to the 2 step authentication. If you haven’t used it before, you may be prompted to set up the 2 step authentication.</p></li>
+<li><p>You should now see the basic OHIF screen with a large selection of projects.</p></li>
+</ul>
+<p><strong>Step 3:</strong> Browse to The example Data Set</p>
+<ul class="simple">
+<li><p>Select helx-dev</p></li>
+<li><p>Select the northamerica- northeast1 region</p></li>
+<li><p>Select the DicomTestData dataset</p></li>
+<li><p>Select the TestData Dicom Store</p></li>
+<li><p>You should now see our test datasets.</p></li>
+</ul>
+<p>Chose your test data set and have fun!</p>
+</div>
 </div>
 
 
@@ -191,7 +220,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="app_imagej_napari.html" class="btn btn-neutral float-right" title="2.1.3.5. Sample Text" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="app_imagej_napari.html" class="btn btn-neutral float-right" title="ImageJ-Napari" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="app_cloudtop.html" class="btn btn-neutral float-left" title="CloudTop" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

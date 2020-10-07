@@ -9,10 +9,10 @@ CloudTop OHIF Docker, and the CloudTop ImageJ/Napari Docker.
 Testing the CloudTop Docker
 ===========================
 
-*Begin by starting the App as described in the section Creating an
-Application_. Select the CloudTop Viewer application.*
+Begin by starting the App as described in the section Creating an
+Application_. Select the CloudTop Viewer application.
 
-.. _<app_create>
+.. _Application: https://helx-10.readthedocs.io/en/latest/app_create.html?highlight=create%20an%20application
 
 **Step 1:** Run the CloudTop Docker
 ::
@@ -149,13 +149,9 @@ emulator from the applications menu. In the resultant shell, type:
 -  At this point the basic CloudTop functionality is working. Next we
    will want to verify that ImageJ and Napari are working
 
-**Step 4:** Make sure the ImageJ application launcher works correct 
+**Step 4:** Make sure the ImageJ application launcher works correctly
 
--  Exit the terminal application and click the ImageJ icon. There is no
-ImageJ test data included in the docker. 
--  Exit ImageJ and make sure the
-Napari application launcher works correctly. 
--  The docker does not
-contain any test data. The docker test is now complete. 
--  Exit Napari
-and stop the docker.
+-  Exit the terminal application and click the ImageJ icon. There is no ImageJ test data included in the docker. 
+-  Exit ImageJ and make sure the Napari application launcher works correctly. 
+-  The docker does not contain any test data. The docker test is now complete. 
+-  Exit Napari and stop the docker.

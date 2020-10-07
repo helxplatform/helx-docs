@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Sample Text &mdash; HeLx 1.0 documentation</title>
+  <title>DevOps &mdash; HeLx 1.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Sample Text" href="install_more.html" />
-    <link rel="prev" title="5. Installation" href="installation.html" /> 
+    <link rel="prev" title="Installation" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,10 +85,19 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tycho.html">1. Tycho</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appstore.html">2. AppStore</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">4. More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">5. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">6. Installing HeLx</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html#installing-helx">Installing HeLx</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="installation.html#install-helm3">Install helm3</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="installation.html#install-all-charts-using-a-single-command">Install all charts using a single command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#install-charts-individually">Install charts individually</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="installation.html#installation-notes">Installation Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="releases.html">7. Current and Upcoming Releases</a></li>
 </ul>
 
@@ -136,9 +145,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="installation.html"><span class="section-number">5. </span>Installation</a> &raquo;</li>
+          <li><a href="installation.html">Installation</a> &raquo;</li>
         
-      <li><span class="section-number">3. </span>Sample Text</li>
+      <li>DevOps</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,8 +166,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sample-text">
-<h1>Sample Text<a class="headerlink" href="#sample-text" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="devops">
+<h1>DevOps<a class="headerlink" href="#devops" title="Permalink to this headline">¶</a></h1>
+<p>To deploy HeLx 1.0 on the Google Kubernetes Engine you will need to have
+an account with Google Cloud Platform and configure the <a href="#id1"><span class="problematic" id="id2">`</span></a>Google Cloud
+<a class="reference external" href="https://cloud.google.com/sdk/docs/quickstarts">SDK</a> on your local
+system.</p>
+<p>Check your Google Cloud SDK is setup correctly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">glcoud</span> <span class="n">info</span>
+</pre></div>
+</div>
+<p>Decide which directory you want the code to deploy HeLx to be and
+execute the following commands to checkout code from their GitHub
+repositories. Some variables will need to be changed. These commands
+were done in a BASH shell checked on MacOS and will probably work on
+Linux, maybe on Windows if you use Cygwin, the Windows Subsystem for
+Linux (WSL), or something similar. Most variables can be set as either
+environment variables or within the configuration file. Look towards the
+top of “devops/bin/gke-cluster.sh” to see a list of variables.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Set the Google project ID that you want the cluster to be created in.
+PROJECT=&quot;A_GOOGLE_PROJECT_ID&quot;
+# Check the Google console for what cluster versions are available to use.
+# This can found in &quot;Master version&quot; property when you start the creation of
+# a cluster.
+CLUSTER_VERSION=&quot;1.15.11-gke.3&quot;
+HELXPLATFORM_HOME=$HOME/src/helxplatform
+CLUSTER_NAME=&quot;$USER-cluster&quot;
+# Copy &quot;hydroshare-secret.yaml&quot; to
+#   &quot;$HELXPLATFORM_HOME/hydroshare-secret.yaml&quot; or set
+#   HYDROSHARE_SECRET_SRC_FILE to point to it&#39;s location below, which is
+#   currently the default value.
+HYDROSHARE_SECRET_SRC_FILE=&quot;$HELXPLATFORM_HOME/hydroshare-secret.yaml&quot;
+# The previous variables can also be exported instead of using a configuration
+# file with GKE_CLUSTER_CONFIG exported below.
+export GKE_CLUSTER_CONFIG=$HELXPLATFORM_HOME/env-vars-$USER-test-dev.sh
+
+# Create directory to hold the source repositories.
+mkdir -p $HELXPLATFORM_HOME
+echo &quot;export CLUSTER_NAME=$CLUSTER_NAME&quot; &gt; $GKE_CLUSTER_CONFIG
+echo &quot;export CLUSTER_VERSION=$CLUSTER_VERSION&quot; &gt;&gt; $GKE_CLUSTER_CONFIG
+echo &quot;export PROJECT=$PROJECT&quot; &gt;&gt; $GKE_CLUSTER_CONFIG
+echo &quot;export HYDROSHARE_SECRET_SRC_FILE=$HYDROSHARE_SECRET_SRC_FILE&quot; &gt;&gt; $GKE_CLUSTER_CONFIG
+
+cd $HELXPLATFORM_HOME
+git clone https://github.com/helxplatform/CAT_helm.git
+git clone https://github.com/helxplatform/devops.git
+
+cd $HELXPLATFORM_HOME/devops/bin
+# To create the cluster using the config file specified as a command line
+# argument run this.
+./gke-cluster.sh -c $GKE_CLUSTER_CONFIG deploy all
+
+# ...or with the GKE_CLUSTER_CONFIG variable exported you can just run this.
+# ./gke-cluster.sh deploy all
+
+# Work with cluster and then terminate it.
+echo &quot;###&quot;
+echo &quot;When you are done with the cluster you can terminate it with&quot;
+echo &quot;these commands.&quot;
+echo &quot;export GKE_CLUSTER_CONFIG=$HELXPLATFORM_HOME/env-vars-$USER-test-dev.sh&quot;
+echo &quot;cd $HELXPLATFORM_HOME/devops/bin&quot;
+echo &quot;./gke-cluster.sh delete all&quot;
+</pre></div>
+</div>
 </div>
 
 
@@ -172,7 +242,7 @@
         <a href="install_more.html" class="btn btn-neutral float-right" title="4. Sample Text" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation.html" class="btn btn-neutral float-left" title="5. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
