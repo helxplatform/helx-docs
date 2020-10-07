@@ -3,7 +3,6 @@ DICOM Viewer for Google Health API
 ##################################
 
 ====================================
-
 Running the DICOM Viewer Application
 ====================================
 

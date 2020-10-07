@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7. Sample Text &mdash; HeLx 1.0 documentation</title>
+  <title>Architecture &mdash; HeLx 1.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="4. Sample Text" href="install_more.html" /> 
+    <link rel="prev" title="More Specific Installs" href="install_more.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,11 +84,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tycho.html">1. Tycho</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appstore.html">2. AppStore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_devops.html">3. DevOps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_more.html">4. More Specific Installs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">5. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html#installing-helx">6. Installing HeLx</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Current and Upcoming Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Current and Upcoming Releases</a></li>
 </ul>
 
             
@@ -135,7 +132,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">7. </span>Sample Text</li>
+      <li>Architecture</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -154,8 +151,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sample-text">
-<h1>Sample Text<a class="headerlink" href="#sample-text" title="Permalink to this headline">¶</a></h1>
+  <hr class="docutils" />
+<p>Current &amp; Upcoming Releases</p>
+<hr class="docutils" />
+<p>HeLx is alpha. This section outlines a few areas of anticipated focus
+for upcoming improvements.</p>
+<div class="section" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<p><strong>Semantic Search</strong> Our team has a semantic search
+engine_ for mapping to research
+data sets based on full text search. We anticipate extending the Tycho
+metadata model to include semantic links to ontologies, incorporating
+analytical tools into the semantic search capability. See
+EDAM_ &amp;
+Biolink_ for more
+information.</p>
+<p>.. _Engine: https://github.com/helxplatform/dug
+.. _EDAM: http://edamontology.org/page
+.. _Biolink: https://biolink.github.io/biolink-model</p>
+<p><strong>Utilization Metrics</strong> Basic per application resource utilization
+information is already provided. But we anticipate creating scalable
+policy based resource management able to cope with the range of
+implications of the analytic workspaces we provide, ranging from single
+user notebooks, to GPU accelerated workflows, to Spark clusters.</p>
+<p><strong>Proxy Management</strong> Coming soon.</p>
+<p><strong>Helm 3 Deployment</strong> Coming soon.</p>
 </div>
 
 
@@ -167,7 +187,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="install_more.html" class="btn btn-neutral float-left" title="4. Sample Text" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install_more.html" class="btn btn-neutral float-left" title="More Specific Installs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
