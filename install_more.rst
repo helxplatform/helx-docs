@@ -185,6 +185,10 @@ Rstudio Deployment.
 -------------------
 1. Configure the filebeat to resolve the DNS for
 logstash instead of manually adding the logstash IP Address which is
-exposed using a LoadBlancer type Service. 2. Securing Communication
-between filebeat and Logstash using SSL. 3. Cluster specific settings.
+exposed using a LoadBlancer type Service. 
+
+2. Securing Communication
+between filebeat and Logstash using SSL. 
+
+3. Cluster specific settings.
 
