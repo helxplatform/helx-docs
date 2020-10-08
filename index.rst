@@ -19,16 +19,19 @@ questions.
 Installing HeLx
 ********************
 
-HeLx Configuration for a Bare-Metal Kubernetes Cluster
-==========================================================
- 
-Requirements for Cluster
---------------------------
- 
-Tools Needed
-^^^^^^^^^^^^^^
+These instructions aim at offering way to deploy, run and maintain a HeLx installation on any kind of Kubernetes-based cloud infrastructure.
+
+You can use this on your laptop, in your on-prem datacentre or public cloud. With the power of Kubernetes, many scenarios are possible.
+
+^^^^^^^^^^^^^^^^^
+Prerequisites
+^^^^^^^^^^^^^^^^^
+
 * kubectl
-   * Needs to be configured with a kubeconfig to access the cluster.
+   * Needs to be configured with a kubeconfig to access the cluster
+   
+* git 
+
 * Helm version 2
  
 * Access to a Kubernetes cluster.  Currently we use Kubernetes version 1.17 for development and testing.  Older and newer versions of Kubernetes should also work.
