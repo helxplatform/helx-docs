@@ -5,6 +5,7 @@ Current & Upcoming Releases
 HeLx is alpha. This section outlines a few areas of anticipated focus
 for upcoming improvements.
 
+*************
 Architecture
 *************
 
@@ -39,7 +40,9 @@ Coming soon.
 
 Coming soon.
 
-**Current Deployments**
+*********************
+Current Deployments
+*********************
 
 +-------------------+-----------------------------------------------------+---------------+-----------------+
 | **Application**   | **Version**                                         | **Cluster**   | **Namespace**   |
