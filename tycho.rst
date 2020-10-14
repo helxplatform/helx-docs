@@ -140,7 +140,7 @@ And show that they're gone.
 Architecture
 ~~~~~~~~~~~~
 
-.. image:: /images/tycho-1.png
+.. image:: images/tycho-1.png
     :align: center
     :alt: tycho architecture diagram
     
