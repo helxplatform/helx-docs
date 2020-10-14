@@ -29,9 +29,10 @@ in using either GitHub or Google.
     :align: center
     :alt: ceating an application
     
-Then,
+Then
     
-    .. image:: images/create-4.png
+
+.. image:: images/create-4.png
     :align: center
     :alt: ceating an application
    
