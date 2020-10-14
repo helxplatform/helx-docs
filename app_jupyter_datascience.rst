@@ -74,18 +74,22 @@ Working with jupyter-datascience notebook in HeLx
 **Step-1:** Launch a jupyter-datascience notebook from HeLx by clicking
 on “Launch Application” button. 
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT
-GOES HERE!!!!]]
-
+.. image:: images/jupyter-1.png
+    :align: center
+    :alt: launching jupyter-datascience
+    
 **Step-2:** This brings us to the jupyter-lab panel where we can select
 the environment that we want to work on (Python, Julia, R). 
 
-[[AUTHOR
-NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/jupyter-2.png
+    :align: center
+    :alt: launching jupyter-datascience
+    
 **Step-3:** Start working on it. Below code shows loading iris dataset
 (features, labels) from sklearn package to train/test our machine
 learning model. 
 
-
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
+.. image:: images/jupyter-3.png
+    :align: center
+    :alt: launching jupyter-datascience
+    
