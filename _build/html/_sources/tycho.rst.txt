@@ -140,8 +140,10 @@ And show that they're gone.
 Architecture
 ~~~~~~~~~~~~
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/tycho-1.png
+    :align: center
+    :alt: tycho architecture diagram
+    
 Install
 ~~~~~~~
 
