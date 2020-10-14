@@ -106,6 +106,7 @@ At this point the basic CloudTop functionality is working.
 3. Select the DicomTestData dataset 
 4. Select the TestData Dicom Store 
 5. You should now see our test datasets.
+
 Chose your test data set and have fun!
 
 Testing the CloudTop ImageJ/Napari Docker
