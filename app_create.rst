@@ -13,16 +13,27 @@ Log in and Start your App
 **Step-1:** Begin by navigating to your team's instance of HeLx and signing
 in using either GitHub or Google.
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/create-1.png
+    :align: center
+    :alt: ceating an application
+    
 **Step-2:** Log in to HeLx.
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/create-2.png
+    :align: center
+    :alt: ceating an application
+   
 **Step-3:** Select "New Application" to choose the App you wish to run.
 
-[[AUTHOR NOTE: THERE'S TWO PICTURES THAT GOES HERE!!!!]]
-
+.. image:: images/create-3.png
+    :align: center
+    :alt: ceating an application
+    
+    .. image:: images/create-4.png
+    :align: center
+    :alt: ceating an application
+   
+   
 **Step-4:** Once you have launched your App, use the following guides for
 instructions on launching the following Existing Apps:
 
