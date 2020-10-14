@@ -40,10 +40,18 @@ Then
 **Step-4:** Once you have launched your App, use the following guides for
 instructions on launching the following Existing Apps:
 
-- Blackbalsam, 
-- CloudTop, 
-- DICOM Viewer for Google Health API, 
-- ImageJ-Napari, 
-- Jupyter-DataScience, 
-- Nextflow API, and 
-- Rstudio
+- Blackbalsam_, 
+- CloudTop_, 
+- DICOM_ Viewer for Google Health API, 
+- ImageJ-Napari_, 
+- Jupyter-DataScience_, 
+- Nextflow API_, and 
+- Rstudio_
+
+.. _Blackbalsam: app_blackbalsam.rst
+.. _CloudTop: app_cloudtop.rst
+.. _DICOM: app_dicom.rst
+.. _ImageJ-Napari: app_imagej_napari.rst 
+.. _Jupyter-DataScience: app_jupyter_datascience.rst 
+.. _API: app_nextflow_api.rst
+.. _RStudio: app_rstudio.rst
