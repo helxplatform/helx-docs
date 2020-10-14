@@ -27,7 +27,7 @@ to whichever tag you want to test.
 
 1. Browse to ``localhost:8080``
 2. Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
-``Dockerfile`` 
+	``Dockerfile`` 
 3. Press the Login button 
 4. Wait for Guacamole to respond
 
@@ -69,7 +69,7 @@ Change the tag to whichever tag you want to test.
 
 1. Browse to ``localhost:8080``
 2. Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
-Dockerfile 
+	Dockerfile 
 3. Press the Login button - Wait for Guacamole to respond
 
 **Step 3:** Make sure the home directory is OK 
@@ -106,6 +106,7 @@ At this point the basic CloudTop functionality is working.
 3. Select the DicomTestData dataset 
 4. Select the TestData Dicom Store 
 5. You should now see our test datasets.
+
 Chose your test data set and have fun!
 
 Testing the CloudTop ImageJ/Napari Docker
@@ -129,7 +130,7 @@ tag to whichever tag you want to test.
 
 1. Browse to ``localhost:8080``
 2. Enter the ``USERNAME`` and ``VNC_PW`` you specified when starting the
-Dockerfile 
+	Dockerfile 
 3. Press the Login button 
 4. Wait for Guacamole to respond
 

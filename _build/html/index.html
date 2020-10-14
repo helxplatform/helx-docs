@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. HeLx Framework Overview" href="tycho.html" /> 
+    <link rel="next" title="HeLx Framework Overview" href="tycho.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,10 +82,9 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="tycho.html">1. Tycho</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appstore.html">2. AppStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tycho.html">Tycho</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appstore.html">AppStore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases.html">Current and Upcoming Releases</a></li>
 </ul>
 
             
@@ -158,7 +157,7 @@
 <dd class="field-odd"><p>1.0</p>
 </dd>
 <dt class="field-even">Date</dt>
-<dd class="field-even"><p>Oct 07, 2020</p>
+<dd class="field-even"><p>Oct 14, 2020</p>
 </dd>
 </dl>
 <p>HeLx puts the most advanced analytical scientific models at
@@ -171,20 +170,19 @@ concerns has broad reaching benefits.</p>
 questions.</p>
 <div class="section" id="installing-helx">
 <h2>Installing HeLx<a class="headerlink" href="#installing-helx" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="helx-configuration-for-a-bare-metal-kubernetes-cluster">
-<h3>HeLx Configuration for a Bare-Metal Kubernetes Cluster<a class="headerlink" href="#helx-configuration-for-a-bare-metal-kubernetes-cluster" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="requirements-for-cluster">
-<h4>Requirements for Cluster<a class="headerlink" href="#requirements-for-cluster" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="tools-needed">
-<h5>Tools Needed<a class="headerlink" href="#tools-needed" title="Permalink to this headline">¶</a></h5>
+<p>These instructions aim at offering way to deploy, run and maintain a HeLx installation on any kind of Kubernetes-based cloud infrastructure.</p>
+<p>You can use this on your laptop, in your on-prem datacentre or public cloud. With the power of Kubernetes, many scenarios are possible.</p>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt>kubectl</dt><dd><ul>
-<li><p>Needs to be configured with a kubeconfig to access the cluster.</p></li>
+<li><p>Needs to be configured with a kubeconfig to access the cluster</p></li>
 </ul>
 </dd>
 </dl>
 </li>
+<li><p>git</p></li>
 <li><p>Helm version 2</p></li>
 <li><p>Access to a Kubernetes cluster.  Currently we use Kubernetes version 1.17 for development and testing.  Older and newer versions of Kubernetes should also work.</p></li>
 <li><p>Admin access to a namespace on a Kubernetes cluster as well as the ability to create Persistent Volumes on the cluster.</p></li>
@@ -198,9 +196,8 @@ questions.</p>
 <p>In your GitHub account create an OAuth application for HeLx.  The “Homepage URL” in the GitHub OAuth settings should be set to the root of your HeLx website.  The “Authorization callback URL” should be set to “<a class="reference external" href="https://www.example.com/github/account">https://www.example.com/github/account</a>”.  Once the OAuth App is created take the Client ID and Client Secret and assign them to the GITHUB_CLINET_ID and GITHUB_SECRET.</p>
 <p>Set a password for CLOUD_TOP_VNC_PW.</p>
 <p>Set a username and password for the outgoing email service to use.  Currently this is set to use a Google Email App username and password and Google’s SMTP server.</p>
-</div>
 <div class="section" id="an-example-configuration-file">
-<h5>An Example Configuration File<a class="headerlink" href="#an-example-configuration-file" title="Permalink to this headline">¶</a></h5>
+<h4>An Example Configuration File<a class="headerlink" href="#an-example-configuration-file" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">`</span>
 <span class="pre">export</span> <span class="pre">CLUSTER_NAME=&quot;helx-cluster&quot;</span> <span class="pre">#</span> <span class="pre">GKE</span> <span class="pre">cluster</span> <span class="pre">name</span> <span class="pre">and</span> <span class="pre">also</span> <span class="pre">used</span> <span class="pre">for</span> <span class="pre">other</span> <span class="pre">object</span> <span class="pre">names.</span>
 <span class="pre">export</span> <span class="pre">NAMESPACE=&quot;helx&quot;</span>
@@ -227,7 +224,7 @@ questions.</p>
 <span class="pre">`</span></code></p>
 </div>
 <div class="section" id="commands-to-deploy-helx">
-<h5>Commands to Deploy HeLx<a class="headerlink" href="#commands-to-deploy-helx" title="Permalink to this headline">¶</a></h5>
+<h4>Commands to Deploy HeLx<a class="headerlink" href="#commands-to-deploy-helx" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">`</span>
 <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/helxplatform/devops.git</span>
 <span class="pre">cd</span> <span class="pre">devops/bin</span>
@@ -235,23 +232,22 @@ questions.</p>
 <span class="pre">`</span></code></p>
 </div>
 <div class="section" id="command-to-delete-helx">
-<h5>Command to Delete HeLx<a class="headerlink" href="#command-to-delete-helx" title="Permalink to this headline">¶</a></h5>
+<h4>Command to Delete HeLx<a class="headerlink" href="#command-to-delete-helx" title="Permalink to this headline">¶</a></h4>
 <p><cite>./k8s-apps.sh -c $YOUR_CONFIGURATION_FILE delete all</cite></p>
 <p>This will leave the PVs and PVCs behind to also remove them add the following to your configuration file.</p>
 <p><cite>export APPSTORE_OAUTH_PD_DELETE_W_APP=true</cite></p>
 <p>Remove any persistent data from the NFS server manually.</p>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-</div>
 <div class="section" id="indices-and-tables">
-<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
+<h5>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h5>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -264,7 +260,7 @@ questions.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tycho.html" class="btn btn-neutral float-right" title="1. HeLx Framework Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tycho.html" class="btn btn-neutral float-right" title="HeLx Framework Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
