@@ -301,7 +301,6 @@ tycho api
 </div>
 <div class="section" id="usage-a-development-environment-next-to-minikube">
 <h3>Usage - A. Development Environment Next to Minikube<a class="headerlink" href="#usage-a-development-environment-next-to-minikube" title="Permalink to this headline">¶</a></h3>
-<p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
 <p>This mode uses a local minikube instance with Tycho running outside of
 Minikube. This is the easiest way to add and test new features quickly.</p>
 <p>Run minikube:</p>
@@ -318,7 +317,7 @@ PYTHONPATH=$PWD/.. python api.py
 </pre></div>
 </div>
 <p>Launch the Swagger interface <code class="docutils literal notranslate"><span class="pre">http://localhost:5000/apidocs/</span></code></p>
-<p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
+<img alt="tycho architecture diagram" class="align-center" src="_images/tycho-2.png" />
 <p>Use the Tycho CLI client as shown above or invoke the API.</p>
 <div class="section" id="usage-b-development-environment-within-minikube">
 <h4>Usage - B. Development Environment Within Minikube<a class="headerlink" href="#usage-b-development-environment-within-minikube" title="Permalink to this headline">¶</a></h4>
@@ -345,7 +344,7 @@ service/tycho-api created
 <div class="section" id="shell">
 <h4>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h4>
 <p>Starting out, Tycho’s not running on the cluster:</p>
-<p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
+<img alt="tycho architecture diagram" class="align-center" src="_images/tycho-3.png" />
 <p>First deploy the Tycho API</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ kubectl create -f ../kubernetes/
 deployment.extensions/tycho-api created
@@ -360,7 +359,7 @@ type:LoadBalancer for the purposes of a command line demo. In general,
 we’ll access the service from within the cluster rather than exposing it
 externally.</em></p>
 <p>That runs Tycho:</p>
-<p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
+<img alt="tycho architecture diagram" class="align-center" src="_images/tycho-4.png" />
 <p>Initialize the Tycho API’s load balancer IP and node port.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lb_ip=$(kubectl get svc tycho-api -o json | jq .status.loadBalancer.ingress[0].ip | sed -e s,\&quot;,,g)
 $ tycho_port=$(kubectl get service tycho-api --output json | jq .spec.ports[0].port)
@@ -388,9 +387,9 @@ prompting for authentication credentials.</p>
 </div>
 <p>Refreshing the GKE cluster monitoring UI will now show the service
 starting:</p>
-<p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
+<img alt="tycho architecture diagram" class="align-center" src="_images/tycho-5.png" />
 <p>Then running:</p>
-<p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
+<img alt="tycho architecture diagram" class="align-center" src="_images/tycho-6.png" />
 <p>Get the job’s load balancer ip and make a request to test the service.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ job_lb_ip=$(kubectl get svc jupyter-data-science-3425 -o json | jq .status.loadBalancer.ingress[0].ip | sed -e s,\&quot;,,g)
 $ wget --quiet -O- http://$job_lb_ip:8888 | grep -i /title
@@ -398,7 +397,7 @@ $ wget --quiet -O- http://$job_lb_ip:8888 | grep -i /title
 </pre></div>
 </div>
 <p>From a browser, that URL takes us directly to the Jupyter Lab IDE:</p>
-<p>[[AUTHOR NOTE: THERE’S A PICTURE THAT GOES HERE!!!!]]</p>
+<img alt="tycho architecture diagram" class="align-center" src="_images/tycho-7.png" />
 <p>And shut the service down:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PYTHONPATH=$PWD/.. python client.py --down -n jupyter-data-science-3425 -s http://$lb_ip:$tycho_port
 200

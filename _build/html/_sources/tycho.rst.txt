@@ -163,8 +163,6 @@ Install
 Usage - A. Development Environment Next to Minikube
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
 This mode uses a local minikube instance with Tycho running outside of
 Minikube. This is the easiest way to add and test new features quickly.
 
@@ -189,8 +187,10 @@ Run the Tycho API:
 
 Launch the Swagger interface ``http://localhost:5000/apidocs/``
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/tycho-2.png
+    :align: center
+    :alt: tycho architecture diagram
+    
 Use the Tycho CLI client as shown above or invoke the API.
 
 Usage - B. Development Environment Within Minikube
@@ -225,8 +225,10 @@ Shell
 
 Starting out, Tycho's not running on the cluster:
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/tycho-3.png
+    :align: center
+    :alt: tycho architecture diagram
+    
 First deploy the Tycho API
 
 ::
@@ -245,8 +247,10 @@ externally.*
 
 That runs Tycho:
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/tycho-4.png
+    :align: center
+    :alt: tycho architecture diagram
+    
 Initialize the Tycho API's load balancer IP and node port.
 
 ::
@@ -279,12 +283,16 @@ prompting for authentication credentials.
 Refreshing the GKE cluster monitoring UI will now show the service
 starting:
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/tycho-5.png
+    :align: center
+    :alt: tycho architecture diagram
+    
 Then running:
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/tycho-6.png
+    :align: center
+    :alt: tycho architecture diagram
+    
 Get the job's load balancer ip and make a request to test the service.
 
 ::
@@ -295,8 +303,10 @@ Get the job's load balancer ip and make a request to test the service.
 
 From a browser, that URL takes us directly to the Jupyter Lab IDE:
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
-
+.. image:: images/tycho-7.png
+    :align: center
+    :alt: tycho architecture diagram
+    
 And shut the service down:
 
 ::
