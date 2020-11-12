@@ -6,8 +6,22 @@ Installation
 Installing HeLx
 ***************
 
+Standard K8S Install
+==========================
+
+Prerequisites 
+-------------
+
+1. create namespace
+2. create NFS subdirectory based on namespace
+3. create namespace specific DNS record
+4. allocate IP address
+5. create namespace specific TLS certificate secret
+6. create pv and pvc for appstore
+7. create pv and pvc for stdnfs
+
 Install helm3
-=============
+-------------
 
 1. Download_ any helm3 release.
 2. Unpack it using tar (tar -zxvf helm-v3.0.0-linux-amd64.tar.gz).
@@ -16,54 +30,34 @@ Install helm3
    
 .. _Download: https://github.com/helm/helm/releases 
 
-Install all charts using a single command
------------------------------------------- 
-::
+Get a GitHub or Google Oauth client id and token
+------------------------------------------------
 
-    helm install release-name helx/ -n namespace
 
-Install charts individually
----------------------------
+Access to install script
+------------------------
+1. Use Git to clone the devops repo using the following command: 
+git clone https://github.com/helxplatform/devops.git
+2. Navigate to devops/bin and copy env-vars-template.sh to an env specific properties file for your cluster 
+cp env-vars-template.sh env-vars-clustername-helx.sh
+3. Edit the env vars file to be more specific to the cluster env you have set up earlier. 
 
-**Ambassador** 
+Deploy
+------
+To deploy tycho, ambassador, nginx, and appstore use "deploy all"
+./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy all
 
-1. Edit the values.yaml ( **Important** : service(ClusterIP or LoadBalancer) and prp(True or False)). 
-2. helm install **release-name** ambassador/ -n`
-**AppsStore** 
+To deploy specific components such as tycho use 
+./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy tycho
 
-1. Edit the values.yaml (**Important**: service(ClusterIP or LoadBalancer, ambassador.flag(True or False) and image). 
-2. helm install **release-name** appstore/ -n
+To delete all deployments 
+./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete apps
 
-*LoadBalancer IP won't be necessary when used with nginx reverse proxy
-and ambassador. Mapping for AppsStore is defined in the ambassador.*
+Please note that PVs/PVCs will need to be deleted separately. To delete everything including the PVs and PVCs, you can use
+./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete all
 
-**nginx** 
-
-1. Edit the values.yaml ( **Important**: resolver(coredns.kube-system.svc or kube-dns.kube- system.svc)). 
-2. helm install **release-name** nginx/ -n
-
-*Use kube-dns.kube-system.svc for GKE clusters and
-coredns.kube-system.svc for on-prem clusters.*
-
-**tycho-api** 
-
-1. Edit the values.yaml (**Important**: service(ClusterIP or LoadBalancer) and image). 
-2. Copy the role.yaml (for PRP) or serviceaccount.yaml (for SciDas and BRAIN-I) from /devops/helx to /devops/helx/charts/tycho-api/templates/.
-
-Installation Notes
-------------------
-
--  role.yaml - set of permissions binding to a single namespace (service account) using Role and Rolebinding having access to only that namespace.
-
--  serviceaccount.yaml - set of permissions binding to a single namespace(service account) using ClusterRole(cluster-admin) and ClusterRoleBinding having access to entire cluster.
-
--  The current version of tycho-api on Braini/Scidas needs a LoadBalancer IP, but the later versions we will not need that.
-
-1. helm install release-name tycho-api/ -n
-
-.. Hide the contents from the front page because they are already in
-.. the side bar in the Alabaster sphinx style; requires Alabaster
-.. config sidebar_includehidden=True (default)
+To delete a specific deployment
+./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh tycho
 
 .. Contents
 .. ========
