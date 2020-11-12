@@ -12,13 +12,20 @@ Standard K8S Install
 Prerequisites 
 -------------
 
-1. create namespace
-2. create NFS subdirectory based on namespace
-3. create namespace specific DNS record
-4. allocate IP address
-5. create namespace specific TLS certificate secret
-6. create pv and pvc for appstore
-7. create pv and pvc for stdnfs
+These instructions assume you have cluster admin permissions for your cluster. 
+
+1. Set up a loadbalancer (we use MetalLB) for the cluster
+2. Set up an NFS server for persistent storage 
+3. Create a namespace 
+   kubectl create namespace <<helx-username>>
+4. Create two NFS subdirectories based on namespace
+   /srv/k8s-pvs/namespace/appstore
+   /srv/k8s-pvs/namespace/stdnfs
+5. Allocate an IP address for your helx website i.e. 192.168.0.1
+6. Create a DNS record for your helx website i.e. helx.example.com
+7. Create a TLS certificate for your website and a secret for the certificate
+
+PV and PVC for appstore and stdnfs will be created as part of the deployment script later. 
 
 Install helm3
 -------------
@@ -33,6 +40,23 @@ Install helm3
 Get a GitHub or Google Oauth client id and token
 ------------------------------------------------
 
+GitHub
+^^^^^^
+
+1. In your GitHub account, go to Settings->Developer Settings
+2. On the left panel, select OAuth Apps -> New OAuth App
+3. Enter the application name i.e helx-github
+4. Set Homepage URL -> https://[your hostname]/accounts/login 
+5. Set Authorization Callback URL -> https://[your hostname]/accounts/github/login/callback/
+6. Record the values for GITHUB_NAME, GITHUB_CLIENT_ID, and GITHUB_SECRET to be used in deployment later
+
+Google
+^^^^^^
+1. Log in to your GCP account and navigate to API & Services->Credentials
+2. Create a new OAuth client ID with the application type of Web application
+3. Set Authorized JavaScript origins URIs -> https://[your hostname] 
+4. Set Authorized redirect URIs -> to https://[your hostname]/accounts/google/login/callback/
+5. After the credentials are created record GOOGLE_NAME, GOOGLE_CLIENT_ID, and GOOGLE_SECRET to be used in deployment later 
 
 Access to install script
 ------------------------
@@ -41,6 +65,7 @@ git clone https://github.com/helxplatform/devops.git
 2. Navigate to devops/bin and copy env-vars-template.sh to an env specific properties file for your cluster 
 cp env-vars-template.sh env-vars-clustername-helx.sh
 3. Edit the env vars file to be more specific to the cluster env you have set up earlier. 
+4. Add variables for GITHUB_NAME, GITHUB_CLIENT_ID, and GITHUB_SECRET in the variables file and assign the corresponding values after the OAuth App is created.
 
 Deploy
 ------
