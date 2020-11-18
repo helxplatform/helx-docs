@@ -216,7 +216,7 @@
 <h3>GKE Install using Helm<a class="headerlink" href="#gke-install-using-helm" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="access-to-a-gke-cluster">
 <h4>Access to a GKE Cluster<a class="headerlink" href="#access-to-a-gke-cluster" title="Permalink to this headline">¶</a></h4>
-<p>Obtain access to a GKE cluster (For instructions on setting up a cluster, refer to GKE <a class="reference external" href="https://cloud.google.com/kubernetes-engine/docs/quickstart">Quickstart</a>)</p>
+<p>Obtain access to a GKE cluster (For instructions on setting up a cluster, refer to this <a class="reference external" href="https://cloud.google.com/kubernetes-engine/docs/quickstart">Quickstart</a>)</p>
 </div>
 <div class="section" id="deployment">
 <h4>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h4>
@@ -255,8 +255,11 @@ HeLx URL: http://34.73.96.240
 Django admin URL: http://34.73.96.240/admin
 </pre></div>
 </div>
-<p>Once logged in as the django admin you can go to the HeLx URL and navigate to the apps section to create new apps.</p>
-<p>To create and launch apps as an admin, navigate to <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/apps</span></code></p>
+<p>An admin username and password is created as part of the install process to allow access to the application and configure other users and social auth.</p>
+<p>To access HeLx admin portal, use the admin URL shown above for your install i.e. <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/admin</span></code>.</p>
+<p>To create and launch apps as an admin, navigate to apps URL for your install i.e. <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/apps</span></code>.</p>
+<p>Ideally, a non-admin HeLx user should be added to django Users and Authorized Users on the admin portal.</p>
+<p>Use the optional GitHub/Google OAuth setup instructions above to get a Client ID and token and use it in django admin panel to configure social applications to enable user login.</p>
 </div>
 <div class="section" id="adding-a-user-and-oauth-credentials">
 <h4>Adding a user and OAuth credentials<a class="headerlink" href="#adding-a-user-and-oauth-credentials" title="Permalink to this headline">¶</a></h4>
@@ -266,7 +269,7 @@ admin-&gt;Users-&gt;Add New User</p></li>
 <li><p>Whitelist the newly created user
 admin-&gt;Authorized Users-&gt;Add New</p></li>
 <li><p>Set up GitHub/Google OAuth accounts</p></li>
-<li><p>Add social auth credentials in django admin for new user</p></li>
+<li><p>Set up social account(s) in django admin</p></li>
 </ol>
 </div>
 <div class="section" id="cleanup">
