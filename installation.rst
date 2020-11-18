@@ -65,7 +65,10 @@ Following is some output from the helm install command:
    HELX_IP=`kubectl get svc nginx-revproxy -o jsonpath="{.status.loadBalancer.ingress[*].ip}"`
    printf "Django admin username: $DJANGO_ADMIN_USERNAME\nDjango admin password: $DJANGO_ADMIN_PASSWORD\nHeLx URL: http://$HELX_IP\nDjango admin URL: http://$HELX_IP/admin\n"
  
-   Example:
+Example:
+
+::
+
    [vagrant@localhost helxplatform]$ DJANGO_ADMIN_USERNAME=`kubectl get secret csappstore-secret -o jsonpath="{.data.APPSTORE_DJANGO_USERNAME}" | base64 --decode`
    [vagrant@localhost helxplatform]$ DJANGO_ADMIN_PASSWORD=`kubectl get secret csappstore-secret -o jsonpath="{.data.APPSTORE_DJANGO_PASSWORD}" | base64 --decode`
    [vagrant@localhost helxplatform]$ HELX_IP=`kubectl get svc nginx-revproxy -o jsonpath="{.status.loadBalancer.ingress[*].ip}"`
