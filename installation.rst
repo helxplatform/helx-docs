@@ -8,9 +8,14 @@ Installing HeLx
 
 Prerequisites
 ===============
-1. Install GCloud sdk https://cloud.google.com/sdk/docs/install and configure for your project 
-2. Install Helm3 https://helm.sh/docs/intro/install/
-3. Install Git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+1. Install GCloud sdk_ and configure for your project 
+2. Install Helm3_ 
+3. Install Git_ 
+
+.. _sdk: https://cloud.google.com/sdk/docs/install
+.. _Helm3: https://helm.sh/docs/intro/install/
+.. _Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
 
 Optional Fourth Step: Set up GitHub or Google OAuth credentials if configuring social auth for your install
 -------------------------------------------------------------------------------------------------------------
