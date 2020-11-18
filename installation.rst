@@ -42,7 +42,7 @@ GKE Install using Helm
 
 Access to a GKE Cluster
 -----------------------
-Obtain access to a GKE cluster (For instructions on setting up a cluster, refer to GKE Quickstart_)
+Obtain access to a GKE cluster (For instructions on setting up a cluster, refer to this Quickstart_)
 
 .. _Quickstart: https://cloud.google.com/kubernetes-engine/docs/quickstart
 
@@ -88,10 +88,16 @@ Example:
    Django admin password: sHoc6OqUNIhRHs1YHhtF
    HeLx URL: http://34.73.96.240
    Django admin URL: http://34.73.96.240/admin
- 
-Once logged in as the django admin you can go to the HeLx URL and navigate to the apps section to create new apps. 
   
-To create and launch apps as an admin, navigate to ``http://34.73.96.240/apps``
+An admin username and password is created as part of the install process to allow access to the application and configure other users and social auth. 
+
+To access HeLx admin portal, use the admin URL shown above for your install i.e. ``http://34.73.96.240/admin``. 
+
+To create and launch apps as an admin, navigate to apps URL for your install i.e. ``http://34.73.96.240/apps``.
+
+Ideally, a non-admin HeLx user should be added to django Users and Authorized Users on the admin portal.  
+
+Use the optional GitHub/Google OAuth setup instructions above to get a Client ID and token and use it in django admin panel to configure social applications to enable user login. 
    
 Adding a user and OAuth credentials
 ------------------------------------
@@ -100,7 +106,7 @@ Adding a user and OAuth credentials
 2. Whitelist the newly created user
    admin->Authorized Users->Add New
 3. Set up GitHub/Google OAuth accounts 
-4. Add social auth credentials in django admin for new user
+4. Set up social account(s) in django admin
 
 
 Cleanup
