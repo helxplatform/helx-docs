@@ -45,9 +45,11 @@ Deployment
 -----------
 
 1. Clone the devops repo into a directory on your local machine using the following command: 
+
    ``git clone https://github.com/helxplatform/devops.git ``
 
 This will clone the repo into "devops" folder in your current working directory.
+
 2. Install HeLx using the following command:
 
    ``helm install helx ./devops/helx``
