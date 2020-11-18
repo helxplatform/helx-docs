@@ -103,7 +103,7 @@ Adding a user and OAuth credentials in Django admin portal
    Authentication and Authorization->Users->Add
 2. Whitelist the newly created user
    Core->Authorized Users->Add
-4. Set up social account(s) in Django admin
+3. Set up social account(s) in Django admin
    Social Accounts->Social Applications->Add 
    
    NOTE: Use the Client ID and token from GitHub/Google OAuth setup in prerequisites
