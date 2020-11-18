@@ -94,6 +94,7 @@ Cleanup
 To delete HeLx run this command:
 
 ::
+
    helm delete helx
 
 NOTE: You will need to delete any apps created with HeLx using the web UI or manually with kubectl commands.
