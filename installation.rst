@@ -42,7 +42,9 @@ GKE Install using Helm
 
 Access to a GKE Cluster
 -----------------------
-Obtain access to a GKE cluster (For instructions on setting up a cluster, refer to https://cloud.google.com/kubernetes-engine/docs/quickstart)
+Obtain access to a GKE cluster (For instructions on setting up a cluster, refer to GKE Quickstart_)
+
+.. _Quickstart: https://cloud.google.com/kubernetes-engine/docs/quickstart
 
 Deployment
 -----------
