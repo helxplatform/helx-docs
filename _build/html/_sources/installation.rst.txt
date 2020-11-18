@@ -93,20 +93,21 @@ An admin username and password is created as part of the install process to allo
 
 To access HeLx admin portal, use the admin URL shown above for your install i.e. ``http://34.73.96.240/admin``. 
 
-To create and launch apps as an admin, navigate to apps URL for your install i.e. ``http://34.73.96.240/apps``.
+To launch apps, navigate to apps URL for your install i.e. ``http://34.73.96.240/apps``.
 
-Ideally, a non-admin HeLx user should be added to django Users and Authorized Users on the admin portal.  
+Although an admin user has the ability to launch apps, ideally, a non-admin HeLx user should be added to Django Users and Authorized Users on the admin portal.  
 
-Use the optional GitHub/Google OAuth setup instructions above to get a Client ID and token and use it in django admin panel to configure social applications to enable user login. 
+Use the optional GitHub/Google OAuth setup instructions above to get a Client ID and token and use it in Django admin panel to configure social applications to enable user login. 
    
-Adding a user and OAuth credentials
-------------------------------------
-1. Use django admin panel to add a new user for your new HeLx instance.
-   admin->Users->Add New User
+Adding a user and OAuth credentials in Django admin portal
+------------------------------------------------------------
+1. Add a new user for your  HeLx instance
+   Authentication and Authorization->Users->Add
 2. Whitelist the newly created user
-   admin->Authorized Users->Add New
-3. Set up GitHub/Google OAuth accounts 
-4. Set up social account(s) in django admin
+   Core->Authorized Users->Add
+4. Set up social account(s) in Django admin
+   Social Accounts->Social Applications->Add 
+   Note: Use the Client ID and token from GitHub/Google OAuth setup in prerequisites
 
 
 Cleanup

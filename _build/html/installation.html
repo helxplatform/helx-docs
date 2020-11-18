@@ -94,7 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#gke-install-using-helm">GKE Install using Helm</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#access-to-a-gke-cluster">Access to a GKE Cluster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#deployment">Deployment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#adding-a-user-and-oauth-credentials">Adding a user and OAuth credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-user-and-oauth-credentials-in-django-admin-portal">Adding a user and OAuth credentials in Django admin portal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cleanup">Cleanup</a></li>
 </ul>
 </li>
@@ -257,19 +257,22 @@ Django admin URL: http://34.73.96.240/admin
 </div>
 <p>An admin username and password is created as part of the install process to allow access to the application and configure other users and social auth.</p>
 <p>To access HeLx admin portal, use the admin URL shown above for your install i.e. <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/admin</span></code>.</p>
-<p>To create and launch apps as an admin, navigate to apps URL for your install i.e. <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/apps</span></code>.</p>
-<p>Ideally, a non-admin HeLx user should be added to django Users and Authorized Users on the admin portal.</p>
-<p>Use the optional GitHub/Google OAuth setup instructions above to get a Client ID and token and use it in django admin panel to configure social applications to enable user login.</p>
+<p>To launch apps, navigate to apps URL for your install i.e. <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/apps</span></code>.</p>
+<p>Although an admin user has the ability to launch apps, ideally, a non-admin HeLx user should be added to Django Users and Authorized Users on the admin portal.</p>
+<p>Use the optional GitHub/Google OAuth setup instructions above to get a Client ID and token and use it in Django admin panel to configure social applications to enable user login.</p>
 </div>
-<div class="section" id="adding-a-user-and-oauth-credentials">
-<h4>Adding a user and OAuth credentials<a class="headerlink" href="#adding-a-user-and-oauth-credentials" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="adding-a-user-and-oauth-credentials-in-django-admin-portal">
+<h4>Adding a user and OAuth credentials in Django admin portal<a class="headerlink" href="#adding-a-user-and-oauth-credentials-in-django-admin-portal" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
-<li><p>Use django admin panel to add a new user for your new HeLx instance.
-admin-&gt;Users-&gt;Add New User</p></li>
+<li><p>Add a new user for your  HeLx instance
+Authentication and Authorization-&gt;Users-&gt;Add</p></li>
 <li><p>Whitelist the newly created user
-admin-&gt;Authorized Users-&gt;Add New</p></li>
-<li><p>Set up GitHub/Google OAuth accounts</p></li>
-<li><p>Set up social account(s) in django admin</p></li>
+Core-&gt;Authorized Users-&gt;Add</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Set up social account(s) in Django admin
+Social Accounts-&gt;Social Applications-&gt;Add
+Note: Use the Client ID and token from GitHub/Google OAuth setup in prerequisites</p></li>
 </ol>
 </div>
 <div class="section" id="cleanup">
