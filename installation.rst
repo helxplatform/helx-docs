@@ -1,13 +1,13 @@
-############
+#############
 Installation
-############
+#############
 
-***************
+****************
 Installing HeLx
-***************
+****************
 
 Prerequisites
--------------
+===============
 1. Install GCloud sdk https://cloud.google.com/sdk/docs/install and configure for your project 
 2. Install Helm3 https://helm.sh/docs/intro/install/
 3. Install Git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -17,22 +17,21 @@ Optional:
 4. Set up GitHub or Google OAuth credentials if configuring social auth for your install
 
 GitHub
-^^^^^^
-
+-------
 1. In your GitHub account, go to Settings->Developer Settings
 2. On the left panel, select OAuth Apps -> New OAuth App
-3. Enter the application name i.e helx-github
-4. Set Homepage URL -> https://[your hostname]/accounts/login 
-5. Set Authorization Callback URL -> https://[your hostname]/accounts/github/login/callback/
-6. Record the values for GITHUB_NAME, GITHUB_CLIENT_ID, and GITHUB_SECRET to be used in deployment later
+3. Enter the application name i.e ``helx-github``
+4. Set Homepage URL -> ``https://[your hostname]/accounts/login``
+5. Set Authorization Callback URL -> ``https://[your hostname]/accounts/github/login/callback/``
+6. Record the values for ``GITHUB_NAME``, ``GITHUB_CLIENT_ID``, and ``GITHUB_SECRET`` to be used in deployment later
 
 Google
-^^^^^^
+-------
 1. Log in to your GCP account and navigate to API & Services->Credentials
 2. Create a new OAuth client ID with the application type of Web application
-3. Set Authorized JavaScript origins URIs -> https://[your hostname] 
-4. Set Authorized redirect URIs -> to https://[your hostname]/accounts/google/login/callback/
-5. After the credentials are created record GOOGLE_NAME, GOOGLE_CLIENT_ID, and GOOGLE_SECRET to be used in deployment later 
+3. Set Authorized JavaScript origins URIs -> ``https://[your hostname]`` 
+4. Set Authorized redirect URIs -> to ``https://[your hostname]/accounts/google/login/callback/``
+5. After the credentials are created record ``GOOGLE_NAME``, ``GOOGLE_CLIENT_ID``, and ``GOOGLE_SECRET`` to be used in deployment later 
 
 GKE Install using Helm
 ======================
@@ -47,10 +46,12 @@ Deployment
    git clone https://github.com/helxplatform/devops.git 
    This will clone the repo into "devops" folder in your current working directory.
 2. Install HeLx using the following command:
-   helm install helx ./devops/helx
+   ``helm install helx ./devops/helx``
    
-   Following is some output from the helm install command:
+Following is some output from the helm install command:
    
+:: 
+
    [vagrant@localhost helxplatform]$ helm install helx devops/helx
    NAME: helx
    LAST DEPLOYED: Tue Nov 17 21:40:55 2020
@@ -74,24 +75,27 @@ Deployment
    HeLx URL: http://34.73.96.240
    Django admin URL: http://34.73.96.240/admin
  
-   Once logged in as the django admin you can go to the HeLx URL and navigate to the apps section to create new apps. 
+Once logged in as the django admin you can go to the HeLx URL and navigate to the apps section to create new apps. 
+  
+To create and launch apps as an admin, navigate to http://34.73.96.240/apps
    
-   To create and launch apps as an admin, navigate to http://34.73.96.240/apps
-   
-   Adding a user and OAuth credentials
-   ------------------------------------
-3. Use django admin panel to add a new user for your new HeLx instance.
+Adding a user and OAuth credentials
+------------------------------------
+1. Use django admin panel to add a new user for your new HeLx instance.
    admin->Users->Add New User
-4. Whitelist the newly created user
+2. Whitelist the newly created user
    admin->Authorized Users->Add New
-5. Set up GitHub/Google OAuth accounts 
-6. Add social auth credentials in django admin for new user
+3. Set up GitHub/Google OAuth accounts 
+4. Add social auth credentials in django admin for new user
 
 
 Cleanup
 -------------
 To delete HeLx run this command:
+
+::
    helm delete helx
+
 NOTE: You will need to delete any apps created with HeLx using the web UI or manually with kubectl commands.
 
 Standard K8S Install Using an HeLx install script
@@ -107,9 +111,9 @@ These instructions assume you have cluster admin permissions for your cluster.
 3. Create a namespace 
    kubectl create namespace <<helx-username>>
 4. Create two NFS subdirectories based on namespace
-   /srv/k8s-pvs/namespace/appstore
-   /srv/k8s-pvs/namespace/stdnfs
-5. Allocate an IP address for your helx website i.e. 192.168.0.1
+   ``/srv/k8s-pvs/namespace/appstore``
+   ``/srv/k8s-pvs/namespace/stdnfs``
+5. Allocate an IP address for your helx website i.e. ``192.168.0.1``
 6. Create a DNS record for your helx website i.e. helx.example.com
 7. Create a TLS certificate for your website and a secret for the certificate
 
@@ -122,26 +126,26 @@ git clone https://github.com/helxplatform/devops.git
 2. Navigate to devops/bin and copy env-vars-template.sh to an env specific properties file for your cluster 
 cp env-vars-template.sh env-vars-clustername-helx.sh
 3. Edit the env vars file to be more specific to the cluster env you have set up earlier. 
-4. Add variables for GITHUB_NAME, GITHUB_CLIENT_ID, and GITHUB_SECRET in the variables file and assign the corresponding values after the OAuth App is created.
+4. Add variables for ``GITHUB_NAME``, ``GITHUB_CLIENT_ID``, and ``GITHUB_SECRET`` in the variables file and assign the corresponding values after the OAuth App is created.
 
 Deploy
 ------
 To deploy tycho, ambassador, nginx, and appstore use "deploy all"
-./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy all
+``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy all``
 
 To deploy specific components such as tycho use 
-./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy tycho
+``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy tycho``
 
 Cleanup 
 -------
 To delete all deployments 
-./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete apps
+``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete apps``
 
 Please note that PVs/PVCs will need to be deleted separately. To delete everything including the PVs and PVCs, you can use
-./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete all
+``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete all``
 
 To delete a specific deployment
-./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh tycho
+``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh tycho``
 
 .. Contents
 .. ========
