@@ -125,6 +125,7 @@ PV and PVC for appstore and stdnfs will be created as part of the deployment scr
 
 Access to install script
 ------------------------
+
 1. Use Git to clone the devops repo using the following command: 
 git clone https://github.com/helxplatform/devops.git
 2. Navigate to devops/bin and copy env-vars-template.sh to an env specific properties file for your cluster 
@@ -142,6 +143,7 @@ To deploy specific components such as tycho use
 
 Cleanup 
 -------
+
 To delete all deployments 
 ``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete apps``
 
