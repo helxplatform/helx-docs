@@ -259,20 +259,18 @@ Django admin URL: http://34.73.96.240/admin
 <p>To access HeLx admin portal, use the admin URL shown above for your install i.e. <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/admin</span></code>.</p>
 <p>To launch apps, navigate to apps URL for your install i.e. <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/apps</span></code>.</p>
 <p>Although an admin user has the ability to launch apps, ideally, a non-admin HeLx user should be added to Django Users and Authorized Users on the admin portal.</p>
-<p>Use the optional GitHub/Google OAuth setup instructions above to get a Client ID and token and use it in Django admin panel to configure social applications to enable user login.</p>
 </div>
 <div class="section" id="adding-a-user-and-oauth-credentials-in-django-admin-portal">
 <h4>Adding a user and OAuth credentials in Django admin portal<a class="headerlink" href="#adding-a-user-and-oauth-credentials-in-django-admin-portal" title="Permalink to this headline">¶</a></h4>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Add a new user for your  HeLx instance
 Authentication and Authorization-&gt;Users-&gt;Add</p></li>
 <li><p>Whitelist the newly created user
 Core-&gt;Authorized Users-&gt;Add</p></li>
-</ol>
-<ol class="arabic simple" start="4">
 <li><p>Set up social account(s) in Django admin
-Social Accounts-&gt;Social Applications-&gt;Add
-Note: Use the Client ID and token from GitHub/Google OAuth setup in prerequisites</p></li>
+Social Accounts-&gt;Social Applications-&gt;Add</p>
+<p>NOTE: Use the Client ID and token from GitHub/Google OAuth setup in prerequisites</p>
+</li>
 </ol>
 </div>
 <div class="section" id="cleanup">
