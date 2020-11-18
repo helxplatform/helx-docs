@@ -12,13 +12,11 @@ Prerequisites
 2. Install Helm3 https://helm.sh/docs/intro/install/
 3. Install Git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-Optional Fourth Step
-
-Set up GitHub or Google OAuth credentials if configuring social auth for your install
-=======================================================================================
+Optional Fourth Step: Set up GitHub or Google OAuth credentials if configuring social auth for your install
+-------------------------------------------------------------------------------------------------------------
 
 GitHub
--------
+^^^^^^^
 1. In your GitHub account, go to Settings->Developer Settings
 2. On the left panel, select OAuth Apps -> New OAuth App
 3. Enter the application name i.e ``helx-github``
@@ -27,7 +25,7 @@ GitHub
 6. Record the values for ``GITHUB_NAME``, ``GITHUB_CLIENT_ID``, and ``GITHUB_SECRET`` to be used in deployment later
 
 Google
--------
+^^^^^^^
 1. Log in to your GCP account and navigate to API & Services->Credentials
 2. Create a new OAuth client ID with the application type of Web application
 3. Set Authorized JavaScript origins URIs -> ``https://[your hostname]`` 
