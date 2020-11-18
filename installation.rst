@@ -113,7 +113,7 @@ These instructions assume you have cluster admin permissions for your cluster.
 1. Set up a loadbalancer (we use MetalLB) for the cluster
 2. Set up an NFS server for persistent storage 
 3. Create a namespace 
-   kubectl create namespace <<helx-username>>
+   kubectl create namespace ``<<helx-username>>``
 4. Create two NFS subdirectories based on namespace
    ``/srv/k8s-pvs/namespace/appstore``
    ``/srv/k8s-pvs/namespace/stdnfs``
