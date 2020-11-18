@@ -12,9 +12,10 @@ Prerequisites
 2. Install Helm3 https://helm.sh/docs/intro/install/
 3. Install Git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-Optional:
+Optional Fourth Step
 
-4. Set up GitHub or Google OAuth credentials if configuring social auth for your install
+Set up GitHub or Google OAuth credentials if configuring social auth for your install
+=======================================================================================
 
 GitHub
 -------
@@ -44,9 +45,11 @@ Deployment
 -----------
 
 1. Clone the devops repo into a directory on your local machine using the following command: 
-   git clone https://github.com/helxplatform/devops.git 
-   This will clone the repo into "devops" folder in your current working directory.
+   ``git clone https://github.com/helxplatform/devops.git ``
+
+This will clone the repo into "devops" folder in your current working directory.
 2. Install HeLx using the following command:
+
    ``helm install helx ./devops/helx``
    
 Following is some output from the helm install command:
@@ -81,7 +84,7 @@ Example:
  
 Once logged in as the django admin you can go to the HeLx URL and navigate to the apps section to create new apps. 
   
-To create and launch apps as an admin, navigate to http://34.73.96.240/apps
+To create and launch apps as an admin, navigate to ``http://34.73.96.240/apps``
    
 Adding a user and OAuth credentials
 ------------------------------------
@@ -134,22 +137,28 @@ Access to install script
 
 Deploy
 ------
-To deploy tycho, ambassador, nginx, and appstore use "deploy all"
+
+To deploy tycho, ambassador, nginx, and appstore, run the following:
+
 ``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy all``
 
-To deploy specific components such as tycho use 
+To deploy specific components such as tycho run:
+
 ``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh deploy tycho``
 
 Cleanup 
 -------
 
-To delete all deployments 
+To delete all deployments:
+
 ``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete apps``
 
-Please note that PVs/PVCs will need to be deleted separately. To delete everything including the PVs and PVCs, you can use
+Please note that PVs/PVCs will need to be deleted separately. To delete everything including the PVs and PVCs, you can use:
+
 ``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh delete all``
 
-To delete a specific deployment
+To delete a specific deployment:
+
 ``./k8s-apps.sh -c env-vars-blackbalsam-igilani-helx.sh tycho``
 
 .. Contents
