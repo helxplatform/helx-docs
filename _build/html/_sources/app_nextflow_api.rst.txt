@@ -26,29 +26,38 @@ Working with Nextflow on HeLx
 
 -  After selecting the Nextflow API application, you will be taken to the Nextflow API home page, where we can view the launched workflows and create new workflows. 
 
-[[AUTHOR NOTE:
-THERE'S A PICTURE THAT GOES HERE!!!!]]
+.. image:: images/nextflow-2.png
+    :align: center
+    :alt: launch a nextflow API app
+    
 
-**Step-3:** 
+**Step-2:** 
 
 -  Below is a demo of how to launch a systemsgenetics/kinc workflow. 
 -  Click on "Create Workflow" button and fill in the form to give it a "Name" and specify the Pipeline (in this case `systemsgenetics/kinc-nf`). 
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES
-HERE!!!!]]
+.. image:: images/nextflow-3.png
+    :align: center
+    :alt: launch a nextflow API app
 
-**Step-4:** 
+
+**Step-3:** 
 
 -  Uploading the necessary files, a GEM file in the format "\*.emx.txt" and a nextflow.config file (can upload all files at once). 
 -  Click on "Upload" button. 
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES
-HERE!!!!]]
+.. image:: images/nextflow-3.png
+    :align: center
+    :alt: launch a nextflow API app
 
-**Step-5:** 
+
+**Step-4:** 
 
 -  Now we are all set to launch the workflow. Go ahead and click on "Launch" button. 
 -  This should show all the logs of the processes/jobs running in the background on the Kubernetes cluster.
 
 
-[[AUTHOR NOTE: THERE'S A PICTURE THAT GOES HERE!!!!]]
+.. image:: images/nextflow-4.png
+    :align: center
+    :alt: launch a nextflow API app
+

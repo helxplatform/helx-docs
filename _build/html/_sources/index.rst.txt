@@ -32,7 +32,7 @@ Prerequisites
    
 * git 
 
-* Helm version 2
+* Helm version 3
  
 * Access to a Kubernetes cluster.  Currently we use Kubernetes version 1.17 for development and testing.  Older and newer versions of Kubernetes should also work.
  

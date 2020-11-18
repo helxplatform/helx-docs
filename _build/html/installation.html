@@ -87,10 +87,22 @@
 <li class="toctree-l1"><a class="reference internal" href="appstore.html">AppStore</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installing-helx">Installing HeLx</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install-helm3">Install helm3</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#install-all-charts-using-a-single-command">Install all charts using a single command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#install-charts-individually">Install charts individually</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installation-notes">Installation Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#optional-fourth-step-set-up-github-or-google-oauth-credentials-if-configuring-social-auth-for-your-install">Optional Fourth Step: Set up GitHub or Google OAuth credentials if configuring social auth for your install</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gke-install-using-helm">GKE Install using Helm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#access-to-a-gke-cluster">Access to a GKE Cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deployment">Deployment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-user-and-oauth-credentials">Adding a user and OAuth credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cleanup">Cleanup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-k8s-install-using-an-helx-install-script">Standard K8S Install Using an HeLx install script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#access-to-install-script">Access to install script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploy">Deploy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Cleanup</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -98,6 +110,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">Current and Upcoming Releases</a></li>
 </ul>
 
             
@@ -167,57 +180,147 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="installing-helx">
 <h2>Installing HeLx<a class="headerlink" href="#installing-helx" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="install-helm3">
-<h3>Install helm3<a class="headerlink" href="#install-helm3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/helm/helm/releases">Download</a> any helm3 release.</p></li>
-<li><p>Unpack it using tar (tar -zxvf helm-v3.0.0-linux-amd64.tar.gz).</p></li>
-<li><p>Move the helm binary to a desired location (mv linux-amd64/helm
-/usr/local/bin/helm).</p></li>
+<li><p>Install GCloud <a class="reference external" href="https://cloud.google.com/sdk/docs/install">sdk</a> and configure for your project</p></li>
+<li><p>Install <a class="reference external" href="https://helm.sh/docs/intro/install/">Helm3</a></p></li>
+<li><p>Install <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></p></li>
 </ol>
-<div class="section" id="install-all-charts-using-a-single-command">
-<h4>Install all charts using a single command<a class="headerlink" href="#install-all-charts-using-a-single-command" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">helm</span> <span class="n">install</span> <span class="n">release</span><span class="o">-</span><span class="n">name</span> <span class="n">helx</span><span class="o">/</span> <span class="o">-</span><span class="n">n</span> <span class="n">namespace</span>
+<div class="section" id="optional-fourth-step-set-up-github-or-google-oauth-credentials-if-configuring-social-auth-for-your-install">
+<h4>Optional Fourth Step: Set up GitHub or Google OAuth credentials if configuring social auth for your install<a class="headerlink" href="#optional-fourth-step-set-up-github-or-google-oauth-credentials-if-configuring-social-auth-for-your-install" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="github">
+<h5>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h5>
+<ol class="arabic simple">
+<li><p>In your GitHub account, go to Settings-&gt;Developer Settings</p></li>
+<li><p>On the left panel, select OAuth Apps -&gt; New OAuth App</p></li>
+<li><p>Enter the application name i.e <code class="docutils literal notranslate"><span class="pre">helx-github</span></code></p></li>
+<li><p>Set Homepage URL -&gt; <code class="docutils literal notranslate"><span class="pre">https://[your</span> <span class="pre">hostname]/accounts/login</span></code></p></li>
+<li><p>Set Authorization Callback URL -&gt; <code class="docutils literal notranslate"><span class="pre">https://[your</span> <span class="pre">hostname]/accounts/github/login/callback/</span></code></p></li>
+<li><p>Record the values for <code class="docutils literal notranslate"><span class="pre">GITHUB_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">GITHUB_CLIENT_ID</span></code>, and <code class="docutils literal notranslate"><span class="pre">GITHUB_SECRET</span></code> to be used in deployment later</p></li>
+</ol>
+</div>
+<div class="section" id="google">
+<h5>Google<a class="headerlink" href="#google" title="Permalink to this headline">¶</a></h5>
+<ol class="arabic simple">
+<li><p>Log in to your GCP account and navigate to API &amp; Services-&gt;Credentials</p></li>
+<li><p>Create a new OAuth client ID with the application type of Web application</p></li>
+<li><p>Set Authorized JavaScript origins URIs -&gt; <code class="docutils literal notranslate"><span class="pre">https://[your</span> <span class="pre">hostname]</span></code></p></li>
+<li><p>Set Authorized redirect URIs -&gt; to <code class="docutils literal notranslate"><span class="pre">https://[your</span> <span class="pre">hostname]/accounts/google/login/callback/</span></code></p></li>
+<li><p>After the credentials are created record <code class="docutils literal notranslate"><span class="pre">GOOGLE_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">GOOGLE_CLIENT_ID</span></code>, and <code class="docutils literal notranslate"><span class="pre">GOOGLE_SECRET</span></code> to be used in deployment later</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="gke-install-using-helm">
+<h3>GKE Install using Helm<a class="headerlink" href="#gke-install-using-helm" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="access-to-a-gke-cluster">
+<h4>Access to a GKE Cluster<a class="headerlink" href="#access-to-a-gke-cluster" title="Permalink to this headline">¶</a></h4>
+<p>Obtain access to a GKE cluster (For instructions on setting up a cluster, refer to GKE <a class="reference external" href="https://cloud.google.com/kubernetes-engine/docs/quickstart">Quickstart</a>)</p>
+</div>
+<div class="section" id="deployment">
+<h4>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Clone the devops repo into a directory on your local machine using the following command:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/helxplatform/devops.git</span></code></p>
+<p>This will clone the repo into “devops” folder in your current working directory.</p>
+<ol class="arabic simple" start="2">
+<li><p>Install HeLx using the following command:</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">helm</span> <span class="pre">install</span> <span class="pre">helx</span> <span class="pre">./devops/helx</span></code></p>
+<p>Following is some output from the helm install command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[vagrant@localhost helxplatform]$ helm install helx devops/helx
+NAME: helx
+LAST DEPLOYED: Tue Nov 17 21:40:55 2020
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+Use the following commands to get information about how to log in to the HeLx website.
+DJANGO_ADMIN_USERNAME=`kubectl get secret csappstore-secret -o jsonpath=&quot;{.data.APPSTORE_DJANGO_USERNAME}&quot; | base64 --decode`
+DJANGO_ADMIN_PASSWORD=`kubectl get secret csappstore-secret -o jsonpath=&quot;{.data.APPSTORE_DJANGO_PASSWORD}&quot; | base64 --decode`
+HELX_IP=`kubectl get svc nginx-revproxy -o jsonpath=&quot;{.status.loadBalancer.ingress[*].ip}&quot;`
+printf &quot;Django admin username: $DJANGO_ADMIN_USERNAME\nDjango admin password: $DJANGO_ADMIN_PASSWORD\nHeLx URL: http://$HELX_IP\nDjango admin URL: http://$HELX_IP/admin\n&quot;
 </pre></div>
 </div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[vagrant@localhost helxplatform]$ DJANGO_ADMIN_USERNAME=`kubectl get secret csappstore-secret -o jsonpath=&quot;{.data.APPSTORE_DJANGO_USERNAME}&quot; | base64 --decode`
+[vagrant@localhost helxplatform]$ DJANGO_ADMIN_PASSWORD=`kubectl get secret csappstore-secret -o jsonpath=&quot;{.data.APPSTORE_DJANGO_PASSWORD}&quot; | base64 --decode`
+[vagrant@localhost helxplatform]$ HELX_IP=`kubectl get svc nginx-revproxy -o jsonpath=&quot;{.status.loadBalancer.ingress[*].ip}&quot;`
+[vagrant@localhost helxplatform]$ printf &quot;Django admin username: $DJANGO_ADMIN_USERNAME\nDjango admin password: $DJANGO_ADMIN_PASSWORD\nHeLx URL: http://$HELX_IP\nDjango admin URL: http://$HELX_IP/admin\n&quot;
+Django admin username: admin
+Django admin password: sHoc6OqUNIhRHs1YHhtF
+HeLx URL: http://34.73.96.240
+Django admin URL: http://34.73.96.240/admin
+</pre></div>
 </div>
-<div class="section" id="install-charts-individually">
-<h4>Install charts individually<a class="headerlink" href="#install-charts-individually" title="Permalink to this headline">¶</a></h4>
-<p><strong>Ambassador</strong></p>
+<p>Once logged in as the django admin you can go to the HeLx URL and navigate to the apps section to create new apps.</p>
+<p>To create and launch apps as an admin, navigate to <code class="docutils literal notranslate"><span class="pre">http://34.73.96.240/apps</span></code></p>
+</div>
+<div class="section" id="adding-a-user-and-oauth-credentials">
+<h4>Adding a user and OAuth credentials<a class="headerlink" href="#adding-a-user-and-oauth-credentials" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
-<li><p>Edit the values.yaml ( <strong>Important</strong> : service(ClusterIP or LoadBalancer) and prp(True or False)).</p></li>
-</ol>
-<p>2. helm install <strong>release-name</strong> ambassador/ -n`
-<strong>AppsStore</strong></p>
-<ol class="arabic simple">
-<li><p>Edit the values.yaml (<strong>Important</strong>: service(ClusterIP or LoadBalancer, ambassador.flag(True or False) and image).</p></li>
-<li><p>helm install <strong>release-name</strong> appstore/ -n</p></li>
-</ol>
-<p><em>LoadBalancer IP won’t be necessary when used with nginx reverse proxy
-and ambassador. Mapping for AppsStore is defined in the ambassador.</em></p>
-<p><strong>nginx</strong></p>
-<ol class="arabic simple">
-<li><p>Edit the values.yaml ( <strong>Important</strong>: resolver(coredns.kube-system.svc or kube-dns.kube- system.svc)).</p></li>
-<li><p>helm install <strong>release-name</strong> nginx/ -n</p></li>
-</ol>
-<p><em>Use kube-dns.kube-system.svc for GKE clusters and
-coredns.kube-system.svc for on-prem clusters.</em></p>
-<p><strong>tycho-api</strong></p>
-<ol class="arabic simple">
-<li><p>Edit the values.yaml (<strong>Important</strong>: service(ClusterIP or LoadBalancer) and image).</p></li>
-<li><p>Copy the role.yaml (for PRP) or serviceaccount.yaml (for SciDas and BRAIN-I) from /devops/helx to /devops/helx/charts/tycho-api/templates/.</p></li>
+<li><p>Use django admin panel to add a new user for your new HeLx instance.
+admin-&gt;Users-&gt;Add New User</p></li>
+<li><p>Whitelist the newly created user
+admin-&gt;Authorized Users-&gt;Add New</p></li>
+<li><p>Set up GitHub/Google OAuth accounts</p></li>
+<li><p>Add social auth credentials in django admin for new user</p></li>
 </ol>
 </div>
-<div class="section" id="installation-notes">
-<h4>Installation Notes<a class="headerlink" href="#installation-notes" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>role.yaml - set of permissions binding to a single namespace (service account) using Role and Rolebinding having access to only that namespace.</p></li>
-<li><p>serviceaccount.yaml - set of permissions binding to a single namespace(service account) using ClusterRole(cluster-admin) and ClusterRoleBinding having access to entire cluster.</p></li>
-<li><p>The current version of tycho-api on Braini/Scidas needs a LoadBalancer IP, but the later versions we will not need that.</p></li>
-</ul>
+<div class="section" id="cleanup">
+<h4>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this headline">¶</a></h4>
+<p>To delete HeLx run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">helm</span> <span class="n">delete</span> <span class="n">helx</span>
+</pre></div>
+</div>
+<p>NOTE: You will need to delete any apps created with HeLx using the web UI or manually with kubectl commands.</p>
+</div>
+</div>
+<div class="section" id="standard-k8s-install-using-an-helx-install-script">
+<h3>Standard K8S Install Using an HeLx install script<a class="headerlink" href="#standard-k8s-install-using-an-helx-install-script" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Prerequisites<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>These instructions assume you have cluster admin permissions for your cluster.</p>
 <ol class="arabic simple">
-<li><p>helm install release-name tycho-api/ -n</p></li>
+<li><p>Set up a loadbalancer (we use MetalLB) for the cluster</p></li>
+<li><p>Set up an NFS server for persistent storage</p></li>
+<li><p>Create a namespace
+kubectl create namespace <code class="docutils literal notranslate"><span class="pre">&lt;&lt;helx-username&gt;&gt;</span></code></p></li>
+<li><p>Create two NFS subdirectories based on namespace
+<code class="docutils literal notranslate"><span class="pre">/srv/k8s-pvs/namespace/appstore</span></code>
+<code class="docutils literal notranslate"><span class="pre">/srv/k8s-pvs/namespace/stdnfs</span></code></p></li>
+<li><p>Allocate an IP address for your helx website i.e. <code class="docutils literal notranslate"><span class="pre">192.168.0.1</span></code></p></li>
+<li><p>Create a DNS record for your helx website i.e. helx.example.com</p></li>
+<li><p>Create a TLS certificate for your website and a secret for the certificate</p></li>
 </ol>
+<p>PV and PVC for appstore and stdnfs will be created as part of the deployment script later.</p>
+</div>
+<div class="section" id="access-to-install-script">
+<h4>Access to install script<a class="headerlink" href="#access-to-install-script" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Use Git to clone the devops repo using the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/helxplatform/devops.git</span></code></p></li>
+<li><p>Navigate to devops/bin and copy <code class="docutils literal notranslate"><span class="pre">env-vars-template.sh</span></code> to an env specific properties file for your cluster <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">env-vars-template.sh</span> <span class="pre">env-vars-clustername-helx.sh</span></code></p></li>
+<li><p>Edit the env vars file to be more specific to the cluster env you have set up earlier.</p></li>
+<li><p>Add variables for <code class="docutils literal notranslate"><span class="pre">GITHUB_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">GITHUB_CLIENT_ID</span></code>, and <code class="docutils literal notranslate"><span class="pre">GITHUB_SECRET</span></code> in the variables file and assign the corresponding values after the OAuth App is created.</p></li>
+</ol>
+</div>
+<div class="section" id="deploy">
+<h4>Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h4>
+<p>To deploy tycho, ambassador, nginx, and appstore, run the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./k8s-apps.sh</span> <span class="pre">-c</span> <span class="pre">env-vars-blackbalsam-igilani-helx.sh</span> <span class="pre">deploy</span> <span class="pre">all</span></code></p>
+<p>To deploy specific components such as tycho run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./k8s-apps.sh</span> <span class="pre">-c</span> <span class="pre">env-vars-blackbalsam-igilani-helx.sh</span> <span class="pre">deploy</span> <span class="pre">tycho</span></code></p>
+</div>
+<div class="section" id="id2">
+<h4>Cleanup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>To delete all deployments:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./k8s-apps.sh</span> <span class="pre">-c</span> <span class="pre">env-vars-blackbalsam-igilani-helx.sh</span> <span class="pre">delete</span> <span class="pre">apps</span></code></p>
+<p>Please note that PVs/PVCs will need to be deleted separately. To delete everything including the PVs and PVCs, you can use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./k8s-apps.sh</span> <span class="pre">-c</span> <span class="pre">env-vars-blackbalsam-igilani-helx.sh</span> <span class="pre">delete</span> <span class="pre">all</span></code></p>
+<p>To delete a specific deployment:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./k8s-apps.sh</span> <span class="pre">-c</span> <span class="pre">env-vars-blackbalsam-igilani-helx.sh</span> <span class="pre">tycho</span></code></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
