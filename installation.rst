@@ -127,10 +127,8 @@ PV and PVC for appstore and stdnfs will be created as part of the deployment scr
 Access to install script
 ------------------------
 
-1. Use Git to clone the devops repo using the following command: 
-``git clone https://github.com/helxplatform/devops.git``
-2. Navigate to devops/bin and copy ``env-vars-template.sh`` to an env specific properties file for your cluster 
-``cp env-vars-template.sh env-vars-clustername-helx.sh``
+1. Use Git to clone the devops repo using the following command: ``git clone https://github.com/helxplatform/devops.git``
+2. Navigate to devops/bin and copy ``env-vars-template.sh`` to an env specific properties file for your cluster ``cp env-vars-template.sh env-vars-clustername-helx.sh``
 3. Edit the env vars file to be more specific to the cluster env you have set up earlier. 
 4. Add variables for ``GITHUB_NAME``, ``GITHUB_CLIENT_ID``, and ``GITHUB_SECRET`` in the variables file and assign the corresponding values after the OAuth App is created.
 
