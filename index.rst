@@ -12,6 +12,13 @@ applied in many domains. Its ability to empower researchers to leverage
 advanced analytical tools without installation or other infrastructure
 concerns has broad reaching benefits.
 
+============
+Architecture
+============
+HeLx puts the most advanced analytical scientific models at investigator's finger tips using equally advanced cloud native, container orchestrated, distributed computing systems.
+
+<<Insert diagram here>>
+
 HeLx can be applied in many domains. It's ability to empower researchers to leverage advanced analytical tools without installation or other infrastructure concerns has broad reaching benefits.
 
 =======
@@ -34,15 +41,11 @@ Blackbalsam
 ===========
 Blackbalsam is an open source data science environment with an initial focus on COVID-19 and North Carolina. It also serves as an experimental space for ideas and prototypes, some of which will graduate into the core of HeLx. For more information, see the blackbalsam documentation.
 
-============
-Architecture
-============
-HeLx puts the most advanced analytical scientific models at investigator's finger tips using equally advanced cloud native, container orchestrated, distributed computing systems.
-
 ===============
 User Experience
 ===============
 Users browse tools of interest and launch those tools to explore and analyze available data. From the user's perspective, HeLx will feel like an operating system since it runs useful tools. But there's no installation, the data's already present in the cloud with the computation, and analyses can be reproducibly shared with others on the platform.
+
 Contact `HeLx Help <mailto:catalyst-admin@lists.renci.org>`__ with
 questions.
 
