@@ -5,17 +5,10 @@ HeLx Documentation
 :Release: |release|
 :Date: |today|
 
-HeLx puts the most advanced analytical scientific models at
-investigator's finger tips using equally advanced cloud native,
-container orchestrated, distributed computing systems. HeLx can be
-applied in many domains. Its ability to empower researchers to leverage
-advanced analytical tools without installation or other infrastructure
-concerns has broad reaching benefits.
-
 ============
 Architecture
 ============
-HeLx puts the most advanced analytical scientific models at investigator's finger tips using equally advanced cloud native, container orchestrated, distributed computing systems.
+HeLx puts the most advanced analytical scientific models at investigator's finger tips using equally advanced cloud native, container orchestrated, distributed computing systems. HeLx can be applied in many domains. Its ability to empower researchers to leverage advanced analytical tools without installation or other infrastructure concerns has broad reaching benefits.
 
 .. image:: images/HeLx-1.0-diagram.jpg
     :align: center
