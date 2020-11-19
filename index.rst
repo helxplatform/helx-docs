@@ -13,8 +13,6 @@ HeLx puts the most advanced analytical scientific models at investigator's finge
 .. image:: images/HeLx-1.0-diagram.jpg
     :align: center
     :alt: HeLx 1.0 diagram
-    
-HeLx can be applied in many domains. It's ability to empower researchers to leverage advanced analytical tools without installation or other infrastructure concerns has broad reaching benefits.
 
 =======
 BRAIN-I
