@@ -28,7 +28,7 @@ Goals
    the creation and control of many objects to execute comparatively
    simple scenarios. Tycho bridges the simplicity of Compose to the
    richness of the Kubernetes' architecture.
--  **icroservice**: We wanted an end to end Python 12-factory style
+-  **Microservice**: We wanted an end to end Python 12-factory style
    OpenAPI microservice that fits seamlessly into a Python ecosystem
    (which is why we did not use the excellent Kompose tool as a starting
    point).
