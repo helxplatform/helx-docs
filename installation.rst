@@ -49,7 +49,7 @@ Obtain access to a GKE cluster (For instructions on setting up a cluster, refer 
 Deployment
 -----------
 
-Watch a video of these instructions here_
+Watch a video of this process here_.
 
 .. _here: https://drive.google.com/file/d/1hoITvV4gUjkynLO7GSHoCIqwq_t8vCi5/view?usp=sharing
 
