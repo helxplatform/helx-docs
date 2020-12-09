@@ -4,13 +4,12 @@ AppStore
 
 The HeLx Appstore is the primary user experience component of the HeLx data science platform. It is a Django based application whose chief responsibilities are authentication and authorization, all visual presentation concerns including transtions between the appstore and apps.
 
-*******
+
 Compute
 *******
 
 The system's underlying computational engine is Kubernetes. HeLx runs in a Kubernetes cluster and apps are launched and managed within the same namespace, or administrative context, it uses. Tycho translates the docker compose representation of systems with one ore more containers into a Kubernetes represenation, coordinates and tracks related processes, provides utilization information on running processes, and manages the coordinated deletion of all components when a running application is stopped.
 
-*******
 Storage
 *******
 
