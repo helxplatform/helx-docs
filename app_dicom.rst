@@ -35,4 +35,5 @@ Application_. Select the CloudTop Viewer application.
 -  Select the DicomTestData dataset 
 -  Select the TestData Dicom Store 
 -  You should now see our test datasets.
+
 Chose your test data set and have fun!

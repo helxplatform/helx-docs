@@ -26,10 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -84,6 +84,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="tycho.html">Tycho</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appstore.html">AppStore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appstore.html#development-environment-with-kubernetes">Development Environment with Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases.html">Current and Upcoming Releases</a></li>
 </ul>
@@ -158,97 +159,44 @@
 <dd class="field-odd"><p>1.0</p>
 </dd>
 <dt class="field-even">Date</dt>
-<dd class="field-even"><p>Nov 18, 2020</p>
+<dd class="field-even"><p>Dec 09, 2020</p>
 </dd>
 </dl>
-<p>HeLx puts the most advanced analytical scientific models at
-investigator’s finger tips using equally advanced cloud native,
-container orchestrated, distributed computing systems. HeLx can be
-applied in many domains. Its ability to empower researchers to leverage
-advanced analytical tools without installation or other infrastructure
-concerns has broad reaching benefits.</p>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<p>HeLx puts the most advanced analytical scientific models at investigator’s finger tips using equally advanced cloud native, container orchestrated, distributed computing systems. HeLx can be applied in many domains. Its ability to empower researchers to leverage advanced analytical tools without installation or other infrastructure concerns has broad reaching benefits.</p>
+<img alt="HeLx 1.0 diagram" class="align-center" src="_images/HeLx-1.0-diagram.jpg" />
+</div>
+<div class="section" id="brain-i">
+<h2>BRAIN-I<a class="headerlink" href="#brain-i" title="Permalink to this headline">¶</a></h2>
+<p>BRAIN-I investigators create large images of brain tissue which are then visualized and analyzed using a variety of tools which, architecturally, are not web applications but traditional desktop environments. These include image viewers like ImageJ and Napari. Appstore presents these kinds of workspaces using CloudTop, a Linux desktop with screen sharing software and adapters for presenting that interface via a web browser. CloudTop allows us to create HeLx apps for ImageJ, Napari, and other visualization tools. These tools would be time consuming, complex, and error prone, for researchers to install and would still require them to acquire the data. With CloudTop, the system can be run colocated with the data with no installation required.</p>
+</div>
+<div class="section" id="scidas">
+<h2>SciDAS<a class="headerlink" href="#scidas" title="Permalink to this headline">¶</a></h2>
+<p>The Scientific Data Analysis at Scale project brings large scale computational workflow for research to cloud and on premise computing. Using the appstore, users are able to launch Nextflow API, a web based user interface to the Nextflow workflow engine. Through that interface and associated tools, they are able to stage data into the system through a variety of protocls, execute Nextflow workflows such as the GPU accelerated KINK workflow. Appstore and associated infrastructure has run KINK on the Google Kubernetes Engine and is being installed on the Nautilus Optiputer.</p>
+</div>
+<div class="section" id="biodata-catalyst">
+<h2>BioData Catalyst<a class="headerlink" href="#biodata-catalyst" title="Permalink to this headline">¶</a></h2>
+<p>NHLBI BioData Catalyst is a cloud-based platform providing tools, applications, and workflows in secure workspaces. The RENCI team participating in the program uses HeLx as a development environment for new applications. It is the first host for the team’s DICOM medical imaging viewer. The system is designed to operate over 11TB of images in the cloud. We have created versions using the OrthaNC DICOM server at the persistence layer as well as the Google Health Dicom API service. HeLx also serves as the proving ground for concepts and demonstrations contributed to the BDC Apps and Tools Working Group. For more information, see the BioData Catalyst website.</p>
+</div>
+<div class="section" id="blackbalsam">
+<h2>Blackbalsam<a class="headerlink" href="#blackbalsam" title="Permalink to this headline">¶</a></h2>
+<p>Blackbalsam is an open source data science environment with an initial focus on COVID-19 and North Carolina. It also serves as an experimental space for ideas and prototypes, some of which will graduate into the core of HeLx. For more information, see the blackbalsam documentation.</p>
+</div>
+<div class="section" id="user-experience">
+<h2>User Experience<a class="headerlink" href="#user-experience" title="Permalink to this headline">¶</a></h2>
+<p>Users browse tools of interest and launch those tools to explore and analyze available data. From the user’s perspective, HeLx will feel like an operating system since it runs useful tools. But there’s no installation, the data’s already present in the cloud with the computation, and analyses can be reproducibly shared with others on the platform.</p>
 <p>Contact <a class="reference external" href="mailto:catalyst-admin&#37;&#52;&#48;lists&#46;renci&#46;org">HeLx Help</a> with
 questions.</p>
-<div class="section" id="installing-helx">
-<h2>Installing HeLx<a class="headerlink" href="#installing-helx" title="Permalink to this headline">¶</a></h2>
-<p>These instructions aim at offering way to deploy, run and maintain a HeLx installation on any kind of Kubernetes-based cloud infrastructure.</p>
-<p>You can use this on your laptop, in your on-prem datacentre or public cloud. With the power of Kubernetes, many scenarios are possible.</p>
-<div class="section" id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><dl class="simple">
-<dt>kubectl</dt><dd><ul>
-<li><p>Needs to be configured with a kubeconfig to access the cluster</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>git</p></li>
-<li><p>Helm version 3</p></li>
-<li><p>Access to a Kubernetes cluster.  Currently we use Kubernetes version 1.17 for development and testing.  Older and newer versions of Kubernetes should also work.</p></li>
-<li><p>Admin access to a namespace on a Kubernetes cluster as well as the ability to create Persistent Volumes on the cluster.</p></li>
-</ul>
-<p>Copy the example configuration file below to a new file and adjust the variables according to the information below.</p>
-<p>The applications use NFS for persistent storage so the ability to create NFS shares is needed.  Create two directories on the NFS server and specify the locations in the CAT_NFS_PATH (for user and app data) and APPSTORE_OAUTH_NFS_PATH (for Django database) variables.  The NFS server also needs to be specified in the CAT_NFS_SERVER variable.</p>
-<p>TLS is used for securing the web traffic.  Create a Kubernetes secret in the namespace that HeLx is going to be deployed in that contains the certificate, key, and CA certificate.  Set the NGINX_TLS_SECRET variable to the name of the secret.</p>
-<p>Set NGINX_IP to the IP that the web service should assigned to.</p>
-<p>Set a username and password for the DJANGO user.</p>
-<p>Set a random 50 character password to the SECRET_KEY for Django.</p>
-<p>In your GitHub account create an OAuth application for HeLx.  The “Homepage URL” in the GitHub OAuth settings should be set to the root of your HeLx website.  The “Authorization callback URL” should be set to “<a class="reference external" href="https://www.example.com/github/account">https://www.example.com/github/account</a>”.  Once the OAuth App is created take the Client ID and Client Secret and assign them to the GITHUB_CLINET_ID and GITHUB_SECRET.</p>
-<p>Set a password for CLOUD_TOP_VNC_PW.</p>
-<p>Set a username and password for the outgoing email service to use.  Currently this is set to use a Google Email App username and password and Google’s SMTP server.</p>
-<div class="section" id="an-example-configuration-file">
-<h4>An Example Configuration File<a class="headerlink" href="#an-example-configuration-file" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">export</span> <span class="pre">CLUSTER_NAME=&quot;helx-cluster&quot;</span> <span class="pre">#</span> <span class="pre">GKE</span> <span class="pre">cluster</span> <span class="pre">name</span> <span class="pre">and</span> <span class="pre">also</span> <span class="pre">used</span> <span class="pre">for</span> <span class="pre">other</span> <span class="pre">object</span> <span class="pre">names.</span>
-<span class="pre">export</span> <span class="pre">NAMESPACE=&quot;helx&quot;</span>
-<span class="pre">PV_DIR=&quot;/srv/k8s-pvs/$NAMESPACE&quot;</span>
-<span class="pre">export</span> <span class="pre">CAT_NFS_SERVER=&quot;nfs.example.com&quot;</span>
-<span class="pre">export</span> <span class="pre">CAT_NFS_PATH=&quot;$PV_DIR/stdnfs&quot;</span>
-<span class="pre">export</span> <span class="pre">NGINX_SERVERNAME=&quot;helx.example.com&quot;</span>
-<span class="pre">export</span> <span class="pre">NGINX_IP=&quot;192.168.0.1&quot;</span>
-<span class="pre">export</span> <span class="pre">NGINX_TLS_SECRET=&quot;helx-tls-secret&quot;</span>
-<span class="pre">export</span> <span class="pre">APPSTORE_IMAGE=&quot;heliumdatastage/appstore:mastercca-v0.0.18&quot;</span>
-<span class="pre">export</span> <span class="pre">TYCHO_API_IMAGE=&quot;heliumdatastage/tycho-api:develop-v0.0.22&quot;</span>
-<span class="pre">export</span> <span class="pre">NGINX_IMAGE=&quot;heliumdatastage/nginx:cca-v0.0.5&quot;</span>
-<span class="pre">export</span> <span class="pre">APPSTORE_OAUTH_NFS_PATH=&quot;$PV_DIR/appstore-oauth&quot;</span>
-<span class="pre">export</span> <span class="pre">APPSTORE_DJANGO_USERNAME=&quot;admin&quot;</span>
-<span class="pre">export</span> <span class="pre">APPSTORE_DJANGO_PASSWORD=&quot;&lt;</span> <span class="pre">SECRET</span> <span class="pre">HERE</span> <span class="pre">&gt;&quot;</span>
-<span class="pre">export</span> <span class="pre">SECRET_KEY=&quot;&lt;</span> <span class="pre">SECRET</span> <span class="pre">HERE</span> <span class="pre">(50</span> <span class="pre">chars)</span> <span class="pre">&gt;&quot;</span>
-<span class="pre">export</span> <span class="pre">OAUTH_PROVIDERS=&quot;github&quot;</span>
-<span class="pre">export</span> <span class="pre">GITHUB_NAME=&quot;&lt;GitHub</span> <span class="pre">OAuth</span> <span class="pre">App</span> <span class="pre">Name&gt;&quot;</span>
-<span class="pre">export</span> <span class="pre">GITHUB_CLIENT_ID=&quot;&lt;</span> <span class="pre">SECRET</span> <span class="pre">HERE</span> <span class="pre">&gt;&quot;</span>
-<span class="pre">export</span> <span class="pre">GITHUB_SECRET=&quot;&lt;</span> <span class="pre">SECRET</span> <span class="pre">HERE</span> <span class="pre">&gt;&quot;</span>
-<span class="pre">export</span> <span class="pre">CLOUD_TOP_VNC_PW='&lt;</span> <span class="pre">SECRET</span> <span class="pre">HERE</span> <span class="pre">&gt;'</span>
-<span class="pre">export</span> <span class="pre">EMAIL_HOST_USER=&quot;email&#64;example.com&quot;</span>
-<span class="pre">export</span> <span class="pre">EMAIL_HOST_PASSWORD=&quot;&lt;</span> <span class="pre">SECRET</span> <span class="pre">HERE</span> <span class="pre">&gt;&quot;</span>
-<span class="pre">`</span></code></p>
-</div>
-<div class="section" id="commands-to-deploy-helx">
-<h4>Commands to Deploy HeLx<a class="headerlink" href="#commands-to-deploy-helx" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/helxplatform/devops.git</span>
-<span class="pre">cd</span> <span class="pre">devops/bin</span>
-<span class="pre">./k8s-apps.sh</span> <span class="pre">-c</span> <span class="pre">$YOUR_CONFIGURATION_FILE</span> <span class="pre">deploy</span> <span class="pre">all</span>
-<span class="pre">`</span></code></p>
-</div>
-<div class="section" id="command-to-delete-helx">
-<h4>Command to Delete HeLx<a class="headerlink" href="#command-to-delete-helx" title="Permalink to this headline">¶</a></h4>
-<p><cite>./k8s-apps.sh -c $YOUR_CONFIGURATION_FILE delete all</cite></p>
-<p>This will leave the PVs and PVCs behind to also remove them add the following to your configuration file.</p>
-<p><cite>export APPSTORE_OAUTH_PD_DELETE_W_APP=true</cite></p>
-<p>Remove any persistent data from the NFS server manually.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="section" id="indices-and-tables">
-<h5>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h5>
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
-</div>
 </div>
 </div>
 </div>
