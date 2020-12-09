@@ -269,7 +269,7 @@ Step 2:
 Step 3:
 
 - Now Appstore is running, navigate to the admin panel by appending ``/admin`` to the url ``http://localhost:8000/admin``.
-- Login in to the admin panel using admin/admin for user/password.
+- Login in to the admin panel using ``admin/admin`` for user/password.
 - Nagivate to the application manager: ``http://localhost:8000/apps``. From this endpoint we can launch applications.
 
 .. Hide the contents from the front page because they are already in
