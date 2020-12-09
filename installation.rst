@@ -119,7 +119,7 @@ To delete HeLx run this command:
 
 NOTE: You will need to delete any apps created with HeLx using the web UI or manually with kubectl commands.
 
-Standard K8S Install Using an HeLx install script
+Standard K8S Install Using a HeLx Install Script
 =================================================
 
 Prerequisites 
