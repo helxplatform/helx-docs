@@ -208,12 +208,14 @@ Prerequisites
 3. Installing kubectl on Linux:
 4. Download the latest release
 5. Run::
+
     curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-               release/release/stable.txt)/bin/linux/amd64/kubectl"
-5. Make the kubectl binary executable::
+    
+6. Make the kubectl binary executable::
    chmod +x ./kubectl
-6. Move the binary into your PATH::
+7. Move the binary into your PATH::
    sudo mn ./kubectl /usr/local/bin/kubectl
-7. Check to see if installed::
+8. Check to see if installed::
    kubectl version --client
 
 NOTE:
