@@ -7,36 +7,43 @@ The HeLx Appstore is the primary user experience component of the HeLx data scie
 *******
 Compute
 *******
+
 The system's underlying computational engine is Kubernetes. HeLx runs in a Kubernetes cluster and apps are launched and managed within the same namespace, or administrative context, it uses. Tycho translates the docker compose representation of systems with one ore more containers into a Kubernetes represenation, coordinates and tracks related processes, provides utilization information on running processes, and manages the coordinated deletion of all components when a running application is stopped.
 
 *******
 Storage
 *******
+
 HeLx apps, in the near term, will mount a read only file system containing reference data and to a writable file system for user data.
 
 ********
 Security
 ********
+
 HeLx prefers open standard security protocols where available, and applies standards based best practices, especially from NIST and FISMA, in several areas.
 
 **************
 Authentication
 **************
+
 Authentication is concerned with verifying the identity of a principal and is distinct from determining what actions tha principal is entitled to take in the system. We use the OpenID Connect (OIDC) protocol federate user identities from an OIDC identity provider (IdP) like Google or GitHub. The OIDC protocol is integrated into the system via open source connectors for the Django enviornment. This approach entails configuring the application within the platform of each IdP to permit and execute the OIDC handshake.
 
 **************
 Authorization
 **************
+
 Authorization assumes an authenticated principal and is the determination of the actions permitted for that principal. The first layer of authorization is a list of identities allowed access to the system. Email addresses associated with IdP accounts are included in the list. Only principals whose IdPs present an email on the list on their behalf during authentication are authorized to access the system.
 
 *******
 Secrets
 *******
+
 Data that serves, for example, as a credential for an authentication, must be secret. Since it may not be added to source code control, these values are private to the deployment organization, and must be dynamically injected. This is handled by using Kubernetes secrets during deployment, and trivial keys for developer desktops, all within a uniform process framework. That framework provides a command line interface (CLI) for creating system super users, data migration, starting the application, and packaging executables, among other tasks.
 
 **************
 Management CLI
 **************
+
 The appstore management CLI provides uniform commands for using the environment. It provides default values for secrets during local development and ways to provide secrets in proudction.
 
 ===================
@@ -44,7 +51,7 @@ Command	Description
 ===================
 
 +--+--+
-| Command | Result |
+| Command | Description |
 +==+==+
 | bin/appstore tests {product} | Run automated unit tests with {product} settings. |
 +--+--+
@@ -68,17 +75,21 @@ Automated testing uses the Python standard unittest and Django testing framework
 **********
 Packaging
 **********
+
 Appstore is packaged as a Docker image. It is a non-root container, meaning the user is not a superuser. It packages a branch of Tycho cloned within the appstore hierarchy.
 
 ==========
 Deployment
 ==========
+
 Appstore is deployed to Kubernetes in production using Helm. The main deployment concerns are: Security: Secrets are added to the container via environment variables. Persistence: Storage must be mounted for a datbaase. Services: The chief dependency is on Tycho which must be at the correct version.
 
 ****************
 App Development
 ****************
+
 During development, environment variables can be set to control execution:
+
 +--+--+
 | Variable | Description |
 +==+==+
@@ -138,6 +149,7 @@ During development, environment variables can be set to control execution:
 ************
 App Metadata
 ************
+
 Making application development easy is key to bringing the widest range of useful tools to the platform so we prefer metadata to code wherever possible for creating HeLx Apps. Apps are systems of cooperating processes. These are expressed using Docker and Docker Compose. Appstore uses the Tycho engine to discover and manage Apps. The Tycho app metadata format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.
 
 Docker compose syntax is used to express cooperating containers comprising an application. The specificatinos are stored in GitHub, each in an application specific subfolder. Along with the docker compose, a .env file specifies environment variables for the application. If a file called icon.png is provided, that is used as the application's icon.
@@ -195,33 +207,34 @@ Prerequisites
 2. Have kubectl set up.
 3. Installing kubectl on Linux:
 4. Download the latest release
-5. Run: 
-   curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-               release/release/stable.txt)/bin/linux/amd64/kubectl"
-5. Make the kubectl binary executable:
+5. Run::
+    curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-               release/release/stable.txt)/bin/linux/amd64/kubectl"
+5. Make the kubectl binary executable::
    chmod +x ./kubectl
-6. Move the binary into your PATH:
+6. Move the binary into your PATH::
    sudo mn ./kubectl /usr/local/bin/kubectl
-7. Check to see if installed:
+7. Check to see if installed::
    kubectl version --client
 
 NOTE:
-Once kubectl has been setup then set the KUBECONFIG env variable to use other kubeconfigs for example the one provided to you will be exported into the terminal where tycho api would be run: export KUBECONFIG=path-to-kubeconfig-file.
+Once ``kubectl`` has been setup then set the ``KUBECONFIG`` env variable to use other kubeconfigs. For example, the one provided to you will be exported into the terminal where tycho api would be run: export KUBECONFIG=path-to-kubeconfig-file.
 
 Step 1:
-Clone the Appstore repo (develop branch):
+- Clone the Appstore repo (develop branch)::
 
- git clone -b develop [https://github.com/helxplatform/appstore.git](https://github.com/helxplatform/appstore.git)
-Activate virtual environment::
+    git clone -b develop [https://github.com/helxplatform/appstore.git](https://github.com/helxplatform/appstore.git
+
+- Activate virtual environment::
 
     python3 -m venv venv 
 
     source venv/bin/activate
 
-Install the requirements::
+- Install the requirements::
 
     pip install -r requirements.txt
     
-Finally run Appstore by using the management CLI::
+- Finally run Appstore by using the management CLI::
 
     bin/appstore start {product}
 
@@ -229,25 +242,25 @@ NOTE: After running bin/appstore start {product} for the first time, please use 
 
 Step 2:
 
-Clone the Tycho repo (develop branch)::
+- Clone the Tycho repo (develop branch)::
 
     git clone -b develop [https://github.com/helxplatform/tycho.git](https://github.com/helxplatform/tycho.git)
 
-Activate virtual environment::
+- Activate virtual environment::
 
     python3 -m venv venv 
 
     source venv/bin/activate
     
-Install the requirements::
+- Install the requirements::
 
     pip install -r requirements.txt
     
-Export the kubeconfig to the terminal where tycho api is to be run::
+- Export the kubeconfig to the terminal where tycho api is to be run::
 
     export KUBECONFIG=path-to-kubeconfig-file
     
-Now run tycho api in the terminal where the kubeconfig was exported::
+- Now run tycho api in the terminal where the kubeconfig was exported::
 
     bin/tycho api -d
     
