@@ -1,6 +1,6 @@
-#########
+*********
 AppStore
-#########
+*********
 
 The HeLx Appstore is the primary user experience component of the HeLx data science platform. It is a Django based application whose chief responsibilities are authentication and authorization, all visual presentation concerns including transtions between the appstore and apps.
 
