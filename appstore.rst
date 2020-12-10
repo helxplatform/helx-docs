@@ -50,21 +50,21 @@ The appstore management CLI provides uniform commands for using the environment.
 Command	Description
 ===================
 
-+--+--+
-| Command | Description |
-+==+==+
-| bin/appstore tests {product} | Run automated unit tests with {product} settings. |
-+--+--+
-| bin/appstore run {product} | Run the appstore using {product} settings. |
-+--+--+
++------------------------------+--------------------------------------------------------------+
+| Command                      | Description                                                  |
++==============================+==============================================================+
+| bin/appstore tests {product} | Run automated unit tests with {product} settings.            |
++------------------------------+--------------------------------------------------------------+
+| bin/appstore run {product}   | Run the appstore using {product} settings.                   |
++------------------------------+--------------------------------------------------------------+
 | bin/appstore createsuperuser | Create admin user with environment variable provided values. |
-+--+--+
-| bin/appstore image build | Build the docker image. |
-+--+--+
-| bin/appstore image push | Push the docker image to the repository. |
-+--+--+
-| bin/appstore help | Run automated unit tests with {product} settings. |
-+--+--+
++------------------------------+--------------------------------------------------------------+
+| bin/appstore image build     | Build the docker image.                                      |
++------------------------------+--------------------------------------------------------------+
+| bin/appstore image push      | Push the docker image to the repository.                     |
++------------------------------+--------------------------------------------------------------+
+| bin/appstore help            | Run automated unit tests with {product} settings.            |
++------------------------------+--------------------------------------------------------------+
 
 
 *******
