@@ -78,15 +78,27 @@ Packaging
 
 Appstore is packaged as a Docker image. It is a non-root container, meaning the user is not a superuser. It packages a branch of Tycho cloned within the appstore hierarchy.
 
+
+****************
+App Development
+****************
+HeLx supports metadata driven app development.  Apps are expressed using Docker and Docker Compose. AppStore uses the Tycho engine to discover and manage Apps. The Tycho app metadata format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.
+
+App specificatinos are stored in GitHub, each in an application specific subfolder. Along with the docker compose, a .env file specifies environment variables for the application. If a file called icon.png is provided, that is used as the application's icon.
+
+To develop a custom app for AppStore, use the guidelines below:
+
+1) develop one or more docker containers for your app following NIST security best practices
+2) create a docker-compose configuration
+3) create app metadata in Tycho registry metadata https://github.com/helxplatform/tycho/blob/develop/tycho/conf/app-registry.yaml
+4) fork repository and create pull request providing link to GitHub repo containing application source code. We'll run it through our build and security scan  pipeline, rejecting any container with high or critical vulnerabilities, subject to further review and either accept or reject the pull request.
+
+
 ==========
 Deployment
 ==========
 
 Appstore is deployed to Kubernetes in production using Helm. The main deployment concerns are: Security: Secrets are added to the container via environment variables. Persistence: Storage must be mounted for a datbaase. Services: The chief dependency is on Tycho which must be at the correct version.
-
-****************
-App Development
-****************
 
 During development, environment variables can be set to control execution:
 
@@ -146,13 +158,6 @@ During development, environment variables can be set to control execution:
 | ACCOUNT_DEFAULT_HTTP_PROTOCOL           | Allows to switch between http and https protocol.                 |
 +-----------------------------------------+-------------------------------------------------------------------+
 
-************
-App Metadata
-************
-
-Making application development easy is key to bringing the widest range of useful tools to the platform so we prefer metadata to code wherever possible for creating HeLx Apps. Apps are systems of cooperating processes. These are expressed using Docker and Docker Compose. Appstore uses the Tycho engine to discover and manage Apps. The Tycho app metadata format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.
-
-Docker compose syntax is used to express cooperating containers comprising an application. The specificatinos are stored in GitHub, each in an application specific subfolder. Along with the docker compose, a .env file specifies environment variables for the application. If a file called icon.png is provided, that is used as the application's icon.
 
 ************************
 Development Environment
