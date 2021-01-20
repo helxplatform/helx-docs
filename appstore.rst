@@ -82,13 +82,13 @@ Appstore is packaged as a Docker image. It is a non-root container, meaning the 
 ****************
 App Development
 ****************
-HeLx supports metadata driven app development.  Apps are expressed using `Docker <https://www.docker.com/>` and `Docker Compose <https://docs.docker.com/compose/>`. AppStore uses the Tycho engine to discover and manage Apps. The Tycho app metadata format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.
+HeLx supports metadata driven app development.  Apps are expressed using `Docker <https://www.docker.com/>`_ and `Docker Compose <https://docs.docker.com/compose/>`_. AppStore uses the Tycho engine to discover and manage Apps. The Tycho app metadata format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.
 
 App specificatinos are stored in GitHub, each in an application specific subfolder. Along with the docker compose, a .env file specifies environment variables for the application. If a file called icon.png is provided, that is used as the application's icon.
 
 To develop a custom app for AppStore, use the guidelines below:
 
-1) develop one or more docker containers for your app following `NIST security best practices <https://www.nist.gov/publications/application-container-security-guide/>`
+1) develop one or more docker containers for your app following `NIST security best practices <https://www.nist.gov/publications/application-container-security-guide/>`_
 2) create a docker-compose configuration
 3) create app metadata in `Tycho registry metadata <https://github.com/helxplatform/tycho/blob/develop/tycho/conf/app-registry.yaml>`_
 4) fork repository and create pull request providing link to GitHub repo containing application source code. We'll run it through our build and security scan  pipeline, rejecting any container with high or critical vulnerabilities, subject to further review and either accept or reject the pull request.
