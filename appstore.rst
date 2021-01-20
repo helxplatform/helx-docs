@@ -200,9 +200,9 @@ The following script outlines the process::
     # run the appstore at localhost:8000
     bin/appstore run $product
     
-#######################################
+***************************************
 Development Environment with Kubernetes
-#######################################
+***************************************
 
 *************
 Prerequisites
