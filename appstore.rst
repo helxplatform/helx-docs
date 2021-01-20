@@ -26,7 +26,7 @@ HeLx prefers open standard security protocols where available, and applies stand
 Authentication
 **************
 
-Authentication is concerned with verifying the identity of a principal and is distinct from determining what actions tha principal is entitled to take in the system. We use the OpenID Connect (OIDC) protocol federate user identities from an OIDC identity provider (IdP) like Google or GitHub. The OIDC protocol is integrated into the system via open source connectors for the Django enviornment. This approach entails configuring the application within the platform of each IdP to permit and execute the OIDC handshake.
+Authentication is concerned with verifying the identity of a principal and is distinct from determining what actions tha principal is entitled to take in the system. We use OAuth 2.0 facilitated by django allauth framework to integrate Google and GitHub login into the application.  In addition SAML based login is also supported for integration with institutional single sign on as needed. 
 
 **************
 Authorization
@@ -90,7 +90,7 @@ To develop a custom app for AppStore, use the guidelines below:
 
 1) develop one or more docker containers for your app following NIST security best practices
 2) create a docker-compose configuration
-3) create app metadata in `Tycho registry metadata <https://github.com/helxplatform/tycho/blob/develop/tycho/conf/app-registry.yaml>`
+3) create app metadata in `Tycho registry metadata <https://github.com/helxplatform/tycho/blob/develop/tycho/conf/app-registry.yaml>`_
 4) fork repository and create pull request providing link to GitHub repo containing application source code. We'll run it through our build and security scan  pipeline, rejecting any container with high or critical vulnerabilities, subject to further review and either accept or reject the pull request.
 
 
