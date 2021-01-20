@@ -88,7 +88,7 @@ App specificatinos are stored in GitHub, each in an application specific subfold
 
 To develop a custom app for AppStore, use the guidelines below:
 
-1) develop one or more docker containers for your app following NIST security best practices
+1) develop one or more docker containers for your app following `NIST security best practices <https://www.nist.gov/publications/application-container-security-guide/>`
 2) create a docker-compose configuration
 3) create app metadata in `Tycho registry metadata <https://github.com/helxplatform/tycho/blob/develop/tycho/conf/app-registry.yaml>`_
 4) fork repository and create pull request providing link to GitHub repo containing application source code. We'll run it through our build and security scan  pipeline, rejecting any container with high or critical vulnerabilities, subject to further review and either accept or reject the pull request.
