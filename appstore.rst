@@ -204,10 +204,7 @@ The following script outlines the process::
 Development Environment with Kubernetes
 ***************************************
 
-*************
 Prerequisites
-*************
-
 1. Have Access to a running k8s cluster.
 2. Have kubectl set up.
 3. Installing kubectl on Linux:
