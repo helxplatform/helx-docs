@@ -82,7 +82,7 @@ Appstore is packaged as a Docker image. It is a non-root container, meaning the 
 ****************
 App Development
 ****************
-HeLx supports metadata driven app development.  Apps are expressed using Docker and Docker Compose. AppStore uses the Tycho engine to discover and manage Apps. The Tycho app metadata format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.
+HeLx supports metadata driven app development.  Apps are expressed using `Docker <https://www.docker.com/>` and `Docker Compose <https://docs.docker.com/compose/>`. AppStore uses the Tycho engine to discover and manage Apps. The Tycho app metadata format specifies the details of each application, contexts to which applications belong, and inheritance relationships between contexts.
 
 App specificatinos are stored in GitHub, each in an application specific subfolder. Along with the docker compose, a .env file specifies environment variables for the application. If a file called icon.png is provided, that is used as the application's icon.
 
