@@ -53,15 +53,15 @@ Watch a video of this process here_.
 
 .. _here: https://drive.google.com/file/d/1hoITvV4gUjkynLO7GSHoCIqwq_t8vCi5/view?usp=sharing
 
-1. Clone the devops repo into a directory on your local machine using the following command: 
+1. Use the helm repo command to add HeLx chart repository 
 
-``git clone https://github.com/helxplatform/devops.git``
+``helm repo add helxplatform https://helxplatform.github.io/devops/charts``
 
-This will clone the repo into "devops" folder in your current working directory.
+This will add the repo into your helm repositories list if it doesn't already exist.
 
 2. Install HeLx using the following command:
 
-``helm install helx ./devops/helx``
+``helm -n helx install helx helxplatform/helx --values helx-pjl-values.yaml``
    
 Following is some output from the helm install command:
    
