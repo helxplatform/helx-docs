@@ -289,6 +289,8 @@ Step 3:
      
    Overview <overview.rst>
    Authentication <authentication.rst>
+   Applications <applications.rst>
+
 
 Indices and tables
 ==================
